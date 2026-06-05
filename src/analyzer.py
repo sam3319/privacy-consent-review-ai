@@ -2,6 +2,7 @@ import re
 from dataclasses import asdict, dataclass
 from typing import Iterable
 
+from src.field_extraction import extract_privacy_fields
 from src.legal_rules import load_legal_sources
 
 
@@ -17,6 +18,8 @@ class Finding:
     message: str
     evidence: str
     official_url: str
+    severity: str = "정보"
+    confidence: int = 80
 
 
 def normalize_text(text: str) -> str:
@@ -69,17 +72,54 @@ def analyze_document(text: str, document_type: str = "collection") -> dict:
 
     sources = load_legal_sources()
     findings: list[Finding] = []
+    extracted_fields = extract_privacy_fields(text, document_type)
+    for field in extracted_fields:
+        field["value"] = redact_personal_data(field["value"])
+    field_by_key = {field["key"]: field for field in extracted_fields}
+    rule_fields = {
+        "PIPA_15_2_PURPOSE": "collection_purpose",
+        "PIPA_15_2_ITEMS": "collection_items",
+        "PIPA_15_2_RETENTION": "collection_retention",
+        "PIPA_15_2_REFUSAL": "collection_refusal",
+        "PIPA_17_2_RECIPIENT": "third_party_recipient",
+        "PIPA_17_2_PURPOSE": "third_party_purpose",
+        "PIPA_17_2_ITEMS": "third_party_items",
+        "PIPA_17_2_RETENTION": "third_party_retention",
+        "PIPA_17_2_REFUSAL": "third_party_refusal",
+    }
 
     for rule in sources["rules"]:
         if document_type not in rule["applies_to"]:
             continue
-        evidence = first_evidence(normalized, rule["patterns"])
-        if evidence:
+        evidence = redact_personal_data(
+            first_evidence(normalized, rule["patterns"])
+        )
+        extracted_field = field_by_key.get(rule_fields.get(rule["id"], ""))
+        if extracted_field and extracted_field["status"] == "구체성 검토":
+            status = "구체성 검토"
+            message = (
+                "관련 값은 탐지되었지만 대상·범위·기간이 충분히 구체적인지 "
+                "확인해야 합니다."
+            )
+            confidence = extracted_field["confidence"]
+        elif extracted_field and extracted_field["status"] == "확인":
             status = "확인"
-            message = "관련 고지 문구가 탐지되었습니다. 실제 내용의 구체성과 정확성은 별도 검토가 필요합니다."
+            message = (
+                "관련 고지 문구와 구체적인 값이 탐지되었습니다. "
+                "실제 사실과의 일치 및 법적 충분성은 별도 검토가 필요합니다."
+            )
+            confidence = extracted_field["confidence"]
+        elif evidence:
+            status = "확인"
+            message = (
+                "관련 고지 문구가 탐지되었습니다. 실제 내용의 구체성과 "
+                "정확성은 별도 검토가 필요합니다."
+            )
+            confidence = 80
         else:
             status = "누락 가능성"
             message = f"자동 분석에서 다음 법정 고지사항을 찾지 못했습니다: {rule['requirement']}"
+            confidence = 90
         findings.append(
             Finding(
                 rule_id=rule["id"],
@@ -89,11 +129,15 @@ def analyze_document(text: str, document_type: str = "collection") -> dict:
                 message=message,
                 evidence=evidence,
                 official_url=rule["official_url"],
+                severity="높음" if status == "누락 가능성" else "정보",
+                confidence=confidence,
             )
         )
 
     for signal in sources["review_signals"]:
-        trigger = first_evidence(normalized, signal["trigger_patterns"])
+        trigger = redact_personal_data(
+            first_evidence(normalized, signal["trigger_patterns"])
+        )
         if not trigger:
             continue
         if matches_any(normalized, signal["satisfaction_patterns"]):
@@ -114,6 +158,8 @@ def analyze_document(text: str, document_type: str = "collection") -> dict:
                 message=message,
                 evidence=trigger,
                 official_url=signal["official_url"],
+                severity="높음" if status == "검토 필요" else "정보",
+                confidence=85,
             )
         )
 
@@ -124,6 +170,7 @@ def analyze_document(text: str, document_type: str = "collection") -> dict:
     return {
         "document_type": document_type,
         "completeness": completeness,
+        "extracted_fields": extracted_fields,
         "findings": [asdict(finding) for finding in findings],
         "redacted_preview": redact_personal_data(text),
         "legal_metadata": sources["metadata"],
@@ -132,4 +179,3 @@ def analyze_document(text: str, document_type: str = "collection") -> dict:
             "구체적인 사안은 변호사, 개인정보보호책임자 또는 관계 기관의 검토가 필요합니다."
         ),
     }
-

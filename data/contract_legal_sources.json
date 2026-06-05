@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "jurisdiction": "대한민국",
+    "law_name": "약관의 규제에 관한 법률",
+    "effective_date": "2024-08-07",
+    "verified_date": "2026-06-05",
+    "official_source": "국가법령정보센터",
+    "official_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=260021",
+    "scope_note": "계약의 한쪽 당사자가 여러 상대방과 계약하기 위하여 미리 마련한 약관형 계약서의 문언상 검토 신호만 다룬다. 개별 협상 계약이나 특별법 적용 계약의 법적 효력을 판정하지 않는다."
+  },
+  "review_signals": [
+    {
+      "id": "ATCA_6_UNFAIR_GENERAL",
+      "article": "제6조",
+      "title": "일방적 변경 또는 예상하기 어려운 조항 검토",
+      "severity": "높음",
+      "trigger_patterns": [
+        "(회사|사업자|갑).{0,20}(언제든지|임의로|일방적으로).{0,20}(변경|수정)",
+        "(사전 통지 없이|별도 통지 없이).{0,20}(변경|수정)",
+        "변경.{0,20}(동의한 것으로|수락한 것으로)"
+      ],
+      "message": "사업자에게 일방적인 변경 권한을 부여하거나 고객이 예상하기 어려운 내용을 포함할 가능성이 있습니다. 변경 사유·범위·사전 통지·고객의 해지권이 균형 있게 규정되어 있는지 검토해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900589959"
+    },
+    {
+      "id": "ATCA_7_EXEMPTION",
+      "article": "제7조",
+      "title": "사업자 책임 배제·제한 조항 검토",
+      "severity": "높음",
+      "trigger_patterns": [
+        "(회사|사업자|갑).{0,20}(어떠한|일체의|모든).{0,10}책임.{0,10}(지지|부담하지)",
+        "(고의|중대한 과실|중과실).{0,20}책임.{0,10}(면제|배제|지지 않)",
+        "손해배상.{0,15}(책임이 없|책임을 지지 않|범위를 제한)"
+      ],
+      "message": "사업자의 법률상 책임을 넓게 배제하거나 손해배상 범위를 제한하는 표현이 탐지되었습니다. 고의·중대한 과실 책임 배제, 상당한 이유 없는 책임 제한 또는 위험 전가에 해당하는지는 구체적 사실관계와 함께 검토해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900589959"
+    },
+    {
+      "id": "ATCA_8_LIQUIDATED_DAMAGES",
+      "article": "제8조",
+      "title": "위약금·지연손해금 수준 검토",
+      "severity": "중간",
+      "trigger_patterns": [
+        "위약금",
+        "위약벌",
+        "지연손해금",
+        "연체료",
+        "손해배상액.{0,10}(예정|정함)"
+      ],
+      "message": "위약금·위약벌·지연손해금 관련 조항이 탐지되었습니다. 금액이나 비율이 거래 목적, 예상 손해 및 당사자 의무에 비추어 고객에게 부당하게 과중한지 검토해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900589959"
+    },
+    {
+      "id": "ATCA_9_TERMINATION",
+      "article": "제9조",
+      "title": "해제·해지 권리 제한 및 불균형 검토",
+      "severity": "높음",
+      "trigger_patterns": [
+        "(고객|을).{0,20}(해제|해지).{0,10}(할 수 없|불가|제한)",
+        "(회사|사업자|갑).{0,20}(언제든지|임의로|일방적으로).{0,10}(해제|해지)",
+        "(해제|해지).{0,20}(환불하지 않|반환하지 않|원상회복.{0,10}면제)"
+      ],
+      "message": "고객의 해제·해지권을 제한하거나 사업자의 해제·해지권 및 원상회복 의무를 불균형하게 정할 가능성이 있습니다. 법정 권리의 배제 여부와 당사자별 요건을 함께 검토해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900589959"
+    },
+    {
+      "id": "ATCA_12_DEEMED_INTENT",
+      "article": "제12조",
+      "title": "고객 의사표시 간주 조항 검토",
+      "severity": "중간",
+      "trigger_patterns": [
+        "(이의|거절|해지 의사).{0,15}(없|하지 않).{0,15}(동의|승낙|수락).{0,10}(간주|것으로 본)",
+        "(침묵|미응답).{0,15}(동의|승낙).{0,10}(간주|것으로 본)"
+      ],
+      "message": "고객의 작위나 부작위를 특정 의사표시로 간주하는 조항이 탐지되었습니다. 별도 고지, 상당한 기간 및 예외 사유를 포함해 제12조 요건을 검토해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900589959"
+    },
+    {
+      "id": "ATCA_14_JURISDICTION",
+      "article": "제14조",
+      "title": "재판관할·입증책임 조항 검토",
+      "severity": "중간",
+      "trigger_patterns": [
+        "(회사|사업자|갑).{0,15}(소재지|본점).{0,20}(전속|전속적).{0,5}관할",
+        "[가-힣]+(지방법원|지원).{0,10}(전속|전속적).{0,5}관할",
+        "(고객|을).{0,15}(모든|전적인).{0,10}입증책임"
+      ],
+      "message": "특정 재판관할 또는 고객의 입증책임을 정하는 표현이 탐지되었습니다. 고객에게 부당하게 불리한 전속 관할이나 상당한 이유 없는 입증책임 전가인지 검토해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900589959"
+    }
+  ]
+}
+

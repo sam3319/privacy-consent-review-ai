@@ -41,6 +41,28 @@ def test_missing_retention_period_is_reported_as_possible_omission():
     assert finding(result, "PIPA_15_2_RETENTION")["status"] == "누락 가능성"
 
 
+def test_vague_retention_period_requires_specificity_review():
+    text = COMPLETE_COLLECTION_CONSENT.replace(
+        "회원 탈퇴 시까지",
+        "필요한 기간 동안",
+    )
+
+    result = analyze_document(text, "collection")
+
+    assert finding(result, "PIPA_15_2_RETENTION")["status"] == "구체성 검토"
+    assert result["completeness"] == 75
+
+
+def test_structured_fields_include_extracted_values():
+    result = analyze_document(COMPLETE_COLLECTION_CONSENT, "collection")
+    fields = {field["key"]: field for field in result["extracted_fields"]}
+
+    assert fields["collection_purpose"]["value"] == "회원 가입 및 본인 확인"
+    assert fields["collection_items"]["value"] == "이름, 이메일"
+    assert fields["collection_retention"]["value"] == "회원 탈퇴 시까지"
+    assert fields["collection_refusal"]["status"] == "확인"
+
+
 def test_sensitive_information_triggers_separate_consent_review():
     text = COMPLETE_COLLECTION_CONSENT.replace(
         "이름, 이메일",
@@ -66,6 +88,8 @@ def test_third_party_notice_uses_article_17_requirements():
 
     assert result["completeness"] == 100
     assert finding(result, "PIPA_17_2_RECIPIENT")["status"] == "확인"
+    fields = {field["key"]: field for field in result["extracted_fields"]}
+    assert fields["third_party_refusal"]["status"] == "확인"
 
 
 def test_resident_number_requires_specific_legal_basis_review():

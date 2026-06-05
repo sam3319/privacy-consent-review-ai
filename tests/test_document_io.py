@@ -3,6 +3,7 @@ from io import BytesIO
 import pytest
 from docx import Document
 
+from src import document_io
 from src.document_io import extract_text
 
 
@@ -27,3 +28,12 @@ def test_rejects_unsupported_file_type():
     with pytest.raises(ValueError):
         extract_text("consent.xlsx", b"invalid")
 
+
+def test_image_uses_ocr_extractor(monkeypatch):
+    monkeypatch.setattr(
+        document_io,
+        "_extract_ocr_text",
+        lambda content, extension: "OCR 계약서 내용",
+    )
+
+    assert extract_text("contract.png", b"image") == "OCR 계약서 내용"
