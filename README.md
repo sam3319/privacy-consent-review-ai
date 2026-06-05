@@ -48,6 +48,15 @@ python -m venv .venv
 테스트는 필수 고지사항 탐지, 누락 가능성, 민감정보 검토 신호, 개인정보
 마스킹, 문서 읽기, 공식 법령 URL 제약 및 Streamlit 입력 흐름을 검증합니다.
 
+`samples` 폴더에는 실제 개인정보를 포함하지 않는 합성 테스트 문서가 있습니다.
+
+- `complete_collection_consent.txt`: 수집·이용 필수 고지사항 포함
+- `missing_items_consent.txt`: 보유 기간과 거부 권리 문구 누락
+- `sensitive_information_consent.txt`: 건강·질병 정보 포함
+- `complete_third_party_consent.txt`: 제3자 제공 필수 고지사항 포함
+- `resident_number_consent.txt`: 주민등록번호 처리 법령 근거 검토 사례
+- `combined_marketing_consent.txt`: 필수·선택·제3자 제공 복합 사례
+
 ## 법률 업데이트 원칙
 
 - 법률 규칙은 국가법령정보센터 또는 개인정보보호위원회 공식 자료로만 추가합니다.
