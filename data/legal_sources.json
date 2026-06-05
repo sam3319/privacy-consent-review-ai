@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "jurisdiction": "대한민국",
+    "law_name": "개인정보 보호법",
+    "effective_date": "2025-10-02",
+    "verified_date": "2026-06-05",
+    "official_source": "국가법령정보센터",
+    "scope_note": "이 파일은 개인정보 수집·이용 및 제3자 제공 동의서의 고지 항목과 별도 동의 검토 신호만 다룬다."
+  },
+  "rules": [
+    {
+      "id": "PIPA_15_2_PURPOSE",
+      "article": "제15조 제2항 제1호",
+      "title": "개인정보 수집·이용 목적 고지",
+      "applies_to": ["collection", "combined"],
+      "requirement": "동의를 받을 때 개인정보의 수집·이용 목적을 알려야 한다.",
+      "patterns": ["수집.{0,5}(이용)?.{0,5}목적", "이용.{0,5}목적", "수집목적"],
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900079620"
+    },
+    {
+      "id": "PIPA_15_2_ITEMS",
+      "article": "제15조 제2항 제2호",
+      "title": "수집 개인정보 항목 고지",
+      "applies_to": ["collection", "combined"],
+      "requirement": "동의를 받을 때 수집하려는 개인정보의 항목을 알려야 한다.",
+      "patterns": ["수집.{0,5}(하려는)?.{0,5}(개인정보)?.{0,5}항목", "수집항목", "개인정보.{0,5}항목"],
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900079620"
+    },
+    {
+      "id": "PIPA_15_2_RETENTION",
+      "article": "제15조 제2항 제3호",
+      "title": "보유 및 이용 기간 고지",
+      "applies_to": ["collection", "combined"],
+      "requirement": "동의를 받을 때 개인정보의 보유 및 이용 기간을 알려야 한다.",
+      "patterns": ["보유.{0,5}(및|·|ㆍ)?\\s*이용.{0,5}기간", "보유기간", "이용기간"],
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900079620"
+    },
+    {
+      "id": "PIPA_15_2_REFUSAL",
+      "article": "제15조 제2항 제4호",
+      "title": "동의 거부 권리와 불이익 고지",
+      "applies_to": ["collection", "combined"],
+      "requirement": "동의 거부 권리와 거부에 따른 불이익이 있는 경우 그 내용을 알려야 한다.",
+      "patterns": ["동의.{0,8}거부.{0,8}(권리|권리가|할 수)", "거부.{0,8}불이익", "동의하지.{0,8}(않|아니)"],
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900079620"
+    },
+    {
+      "id": "PIPA_17_2_RECIPIENT",
+      "article": "제17조 제2항 제1호",
+      "title": "개인정보를 제공받는 자 고지",
+      "applies_to": ["third_party", "combined"],
+      "requirement": "제3자 제공 동의를 받을 때 개인정보를 제공받는 자를 알려야 한다.",
+      "patterns": ["제공.{0,5}받는.{0,5}자", "제공받는.{0,5}자", "제공.{0,5}대상"],
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900079383"
+    },
+    {
+      "id": "PIPA_17_2_PURPOSE",
+      "article": "제17조 제2항 제2호",
+      "title": "제공받는 자의 이용 목적 고지",
+      "applies_to": ["third_party", "combined"],
+      "requirement": "제3자 제공 동의를 받을 때 제공받는 자의 개인정보 이용 목적을 알려야 한다.",
+      "patterns": ["제공.{0,12}이용.{0,5}목적", "제공목적", "제공.{0,5}받는.{0,10}목적"],
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900079383"
+    },
+    {
+      "id": "PIPA_17_2_ITEMS",
+      "article": "제17조 제2항 제3호",
+      "title": "제공 개인정보 항목 고지",
+      "applies_to": ["third_party", "combined"],
+      "requirement": "제3자 제공 동의를 받을 때 제공하는 개인정보의 항목을 알려야 한다.",
+      "patterns": ["제공.{0,8}(개인정보)?.{0,5}항목", "제공항목"],
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900079383"
+    },
+    {
+      "id": "PIPA_17_2_RETENTION",
+      "article": "제17조 제2항 제4호",
+      "title": "제공받는 자의 보유 및 이용 기간 고지",
+      "applies_to": ["third_party", "combined"],
+      "requirement": "제3자 제공 동의를 받을 때 제공받는 자의 보유 및 이용 기간을 알려야 한다.",
+      "patterns": ["제공.{0,20}보유.{0,8}이용.{0,8}기간", "제공받는.{0,20}보유.{0,8}기간"],
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900079383"
+    },
+    {
+      "id": "PIPA_17_2_REFUSAL",
+      "article": "제17조 제2항 제5호",
+      "title": "제3자 제공 동의 거부 권리와 불이익 고지",
+      "applies_to": ["third_party", "combined"],
+      "requirement": "제3자 제공 동의 거부 권리와 거부에 따른 불이익이 있는 경우 그 내용을 알려야 한다.",
+      "patterns": ["제3자.{0,20}동의.{0,8}거부", "제공.{0,20}동의.{0,8}거부", "동의.{0,8}거부.{0,8}(권리|불이익)"],
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900079383"
+    }
+  ],
+  "review_signals": [
+    {
+      "id": "PIPA_22_SEPARATE_CONSENT",
+      "article": "제22조 제1항",
+      "title": "동의 사항 구분 및 개별 동의 검토",
+      "trigger_patterns": ["제3자.{0,10}제공", "마케팅", "홍보", "민감정보", "고유식별정보"],
+      "satisfaction_patterns": ["각각.{0,8}동의", "별도.{0,8}동의", "선택.{0,5}동의", "필수.{0,5}동의"],
+      "message": "여러 처리 목적이나 동의 사항이 함께 있는 경우 각각 구분하여 명확히 알리고 각각 동의를 받는 구조인지 확인해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsId=011357&lsJoLnkSeq=900077468"
+    },
+    {
+      "id": "PIPA_23_SENSITIVE",
+      "article": "제23조 제1항",
+      "title": "민감정보 별도 동의 또는 법령 근거 검토",
+      "trigger_patterns": ["건강", "질병", "장애", "진료", "유전정보", "범죄경력", "사상", "신념", "정치적 견해", "노동조합", "정당", "성생활"],
+      "satisfaction_patterns": ["민감정보.{0,20}별도.{0,8}동의", "민감정보.{0,20}동의"],
+      "message": "민감정보를 처리한다면 다른 개인정보 처리 동의와 별도 동의를 받았는지 또는 법령상 요구·허용 근거가 있는지 확인해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?ancYnChk=&chrClsCd=010202&lsJoLnkSeq=1020398539"
+    },
+    {
+      "id": "PIPA_24_UNIQUE_ID",
+      "article": "제24조 제1항",
+      "title": "고유식별정보 별도 동의 또는 법령 근거 검토",
+      "trigger_patterns": ["여권번호", "운전면허번호", "운전면허의 면허번호", "외국인등록번호"],
+      "satisfaction_patterns": ["고유식별정보.{0,20}별도.{0,8}동의", "고유식별정보.{0,20}동의"],
+      "message": "고유식별정보를 처리한다면 다른 개인정보 처리 동의와 별도 동의를 받았는지 또는 구체적인 법령 근거가 있는지 확인해야 합니다.",
+      "official_url": "https://www.law.go.kr/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000532197"
+    },
+    {
+      "id": "PIPA_24_2_RESIDENT_NUMBER",
+      "article": "제24조의2 제1항",
+      "title": "주민등록번호 처리 법령 근거 검토",
+      "trigger_patterns": ["주민등록번호", "주민번호"],
+      "satisfaction_patterns": ["법률.{0,20}(요구|허용)", "대통령령.{0,20}(요구|허용)", "법령.{0,20}(근거|요구|허용)"],
+      "message": "주민등록번호는 정보주체의 동의만으로 처리할 수 있는 일반 고유식별정보와 다릅니다. 법률·대통령령 등에서 구체적으로 처리를 요구하거나 허용하는지 등 제24조의2 제1항의 예외 사유를 확인해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=270351"
+    },
+    {
+      "id": "PIPA_16_MINIMUM",
+      "article": "제16조",
+      "title": "최소 수집 원칙 검토",
+      "trigger_patterns": ["수집.{0,5}항목", "개인정보.{0,5}항목"],
+      "satisfaction_patterns": ["최소한", "선택.{0,5}항목", "선택.{0,5}정보"],
+      "message": "수집 항목이 목적에 필요한 최소 범위인지, 최소 필요 정보 외 항목에 동의하지 않을 수 있음을 구체적으로 알리는지 검토해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900079387"
+    }
+  ]
+}
