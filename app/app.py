@@ -10,12 +10,14 @@ if str(ROOT) not in sys.path:
 
 from src.analyzer import analyze_document
 from src.contract_analyzer import analyze_contract
+from src.document_classifier import detect_document_type
 from src.document_io import extract_text
 from src.legal_rules import load_contract_sources, load_legal_sources
 from src.reporting import build_json_report, build_markdown_report
 
 
 DOCUMENT_TYPE_LABELS = {
+    "자동 감지 (권장)": "auto",
     "개인정보 수집·이용 동의": "collection",
     "개인정보 제3자 제공 동의": "third_party",
     "수집·이용 및 제3자 제공 복합 문서": "combined",
@@ -44,10 +46,15 @@ active_sources = (
     else sources
 )
 metadata = active_sources["metadata"]
-st.caption(
-    f"법률 기준: {metadata['law_name']} | 시행일 {metadata['effective_date']} | "
-    f"근거 확인일 {metadata['verified_date']} | {metadata['official_source']}"
-)
+if document_type == "auto":
+    st.caption(
+        "문서 내용을 기준으로 개인정보 동의서 또는 약관형 계약서를 자동 감지합니다."
+    )
+else:
+    st.caption(
+        f"법률 기준: {metadata['law_name']} | 시행일 {metadata['effective_date']} | "
+        f"근거 확인일 {metadata['verified_date']} | {metadata['official_source']}"
+    )
 if document_type == "standard_terms_contract":
     st.info(
         "계약서 분석은 사업자가 여러 상대방과 계약하기 위해 미리 마련한 "
@@ -72,10 +79,15 @@ if st.button("문서 분석", type="primary", use_container_width=True):
             if uploaded_file.size > 10 * 1024 * 1024:
                 raise ValueError("업로드 파일은 10MB 이하여야 합니다.")
             document_text = extract_text(uploaded_file.name, uploaded_file.getvalue())
-        if document_type == "standard_terms_contract":
+        analyzed_type = document_type
+        detection = None
+        if analyzed_type == "auto":
+            detection = detect_document_type(document_text)
+            analyzed_type = detection["document_type"]
+        if analyzed_type == "standard_terms_contract":
             result = analyze_contract(document_text)
         else:
-            result = analyze_document(document_text, document_type)
+            result = analyze_document(document_text, analyzed_type)
     except ValueError as error:
         st.error(str(error))
     except Exception:
@@ -84,9 +96,14 @@ if st.button("문서 분석", type="primary", use_container_width=True):
         )
     else:
         st.subheader("분석 결과")
+        if detection:
+            st.success(
+                f"자동 감지 문서 유형: {detection['label']} "
+                f"(신뢰도 {detection['confidence']}%)"
+            )
         metric_label = (
             "계약 핵심정보 탐지율"
-            if document_type == "standard_terms_contract"
+            if analyzed_type == "standard_terms_contract"
             else "법정 고지사항 구체값 탐지율"
         )
         st.metric(metric_label, f"{result['completeness']}%")
@@ -159,8 +176,18 @@ if document_type == "standard_terms_contract":
         st.markdown(
             f"- [{rule['article']} {rule['title']}]({rule['official_url']})"
         )
-else:
+elif document_type != "auto":
     for rule in sources["rules"]:
         st.markdown(
             f"- [{rule['article']} {rule['title']}]({rule['official_url']})"
         )
+else:
+    contract_sources = load_contract_sources()
+    st.markdown(
+        f"- [{sources['metadata']['law_name']}]"
+        f"({sources['rules'][0]['official_url']})"
+    )
+    st.markdown(
+        f"- [{contract_sources['metadata']['law_name']}]"
+        f"({contract_sources['metadata']['official_url']})"
+    )
