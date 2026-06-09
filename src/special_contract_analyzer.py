@@ -1,5 +1,7 @@
+import json
 import re
 from dataclasses import asdict
+from pathlib import Path
 
 from src.analyzer import Finding, first_evidence, normalize_text, redact_personal_data
 from src.contract_structure import (
@@ -10,11 +12,18 @@ from src.contract_structure import (
     summarize_by_perspective,
 )
 from src.field_extraction import extract_employment_fields, extract_housing_fields
-from src.legal_rules import load_employment_sources, load_housing_sources
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def load_special_sources(filename: str) -> dict:
+    with (ROOT / "data" / filename).open(encoding="utf-8") as source_file:
+        return json.load(source_file)
 
 
 def analyze_housing_contract(text: str, perspective: str = "임차인") -> dict:
-    sources = load_housing_sources()
+    sources = load_special_sources("housing_legal_sources.json")
     result = _analyze_special_contract(
         text=text,
         document_type="housing_lease",
@@ -61,7 +70,7 @@ def analyze_housing_contract(text: str, perspective: str = "임차인") -> dict:
 
 
 def analyze_employment_contract(text: str, perspective: str = "근로자") -> dict:
-    sources = load_employment_sources()
+    sources = load_special_sources("employment_legal_sources.json")
     result = _analyze_special_contract(
         text=text,
         document_type="employment_contract",

@@ -5,8 +5,10 @@ import streamlit as st
 
 
 ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+root_path = str(ROOT)
+if root_path in sys.path:
+    sys.path.remove(root_path)
+sys.path.insert(0, root_path)
 
 from src.analyzer import analyze_document
 from src.contract_analyzer import analyze_contract
@@ -14,14 +16,13 @@ from src.document_classifier import detect_document_type
 from src.document_io import extract_text
 from src.legal_rules import (
     load_contract_sources,
-    load_employment_sources,
-    load_housing_sources,
     load_legal_sources,
 )
 from src.reporting import build_json_report, build_markdown_report
 from src.special_contract_analyzer import (
     analyze_employment_contract,
     analyze_housing_contract,
+    load_special_sources,
 )
 
 
@@ -53,8 +54,10 @@ document_label = st.selectbox("문서 유형", DOCUMENT_TYPE_LABELS)
 document_type = DOCUMENT_TYPE_LABELS[document_label]
 source_loaders = {
     "standard_terms_contract": load_contract_sources,
-    "housing_lease": load_housing_sources,
-    "employment_contract": load_employment_sources,
+    "housing_lease": lambda: load_special_sources("housing_legal_sources.json"),
+    "employment_contract": lambda: load_special_sources(
+        "employment_legal_sources.json"
+    ),
 }
 active_sources = source_loaders.get(document_type, lambda: sources)()
 metadata = active_sources["metadata"]
@@ -251,8 +254,8 @@ elif document_type != "auto":
         )
 else:
     contract_sources = load_contract_sources()
-    housing_sources = load_housing_sources()
-    employment_sources = load_employment_sources()
+    housing_sources = load_special_sources("housing_legal_sources.json")
+    employment_sources = load_special_sources("employment_legal_sources.json")
     st.markdown(
         f"- [{sources['metadata']['law_name']}]"
         f"({sources['rules'][0]['official_url']})"
