@@ -11,6 +11,9 @@
 
 현재 개발 상태와 다음 작업 계획은 `docs/HANDOFF.md`에 기록되어 있습니다.
 
+Google Colab 제출 및 기능 재현용 노트북은
+`privacy_consent_review_demo.ipynb`입니다.
+
 ## 현재 범위
 
 - 개인정보 수집·이용 동의: 개인정보 보호법 제15조 제2항
