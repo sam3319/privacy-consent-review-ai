@@ -1,0 +1,82 @@
+{
+  "model_type": "TF-IDF character n-gram + Logistic Regression",
+  "task": "contract clause risk category classification",
+  "trained_at_utc": "2026-06-09T02:07:09+00:00",
+  "dataset_size": 420,
+  "class_distribution": {
+    "excessive_work_hours": 60,
+    "employment_penalty": 60,
+    "termination_restriction": 60,
+    "liability_exemption": 60,
+    "excessive_penalty": 60,
+    "normal": 60,
+    "housing_renewal_restriction": 60
+  },
+  "holdout_size": 105,
+  "holdout_accuracy": 1.0,
+  "holdout_macro_f1": 1.0,
+  "cross_validation_macro_f1_mean": 1.0,
+  "cross_validation_macro_f1_std": 0.0,
+  "classification_report": {
+    "employment_penalty": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "excessive_penalty": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "excessive_work_hours": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "housing_renewal_restriction": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "liability_exemption": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "normal": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "termination_restriction": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 15.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 105.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 105.0
+    }
+  },
+  "limitations": [
+    "합성 템플릿 문장으로 학습되어 실제 계약서 외부 검증이 필요하다.",
+    "조항 분류는 법적 위험이나 무효를 확정하지 않는다.",
+    "법률 근거는 기존 규칙 엔진의 공식 법령 결과를 우선한다."
+  ]
+}

@@ -12,6 +12,19 @@ Streamlit 기반 검토 보조 도구입니다.
 
 ## 현재 구현 상태
 
+### 머신러닝 모델
+
+- 문서 유형 분류 모델: 문자 n-gram TF-IDF + Logistic Regression
+- 조항 위험 유형 분류 모델: 문자 n-gram TF-IDF + Logistic Regression
+- 학습 데이터: 합성 템플릿 문서 320건, 합성 조항 420건
+- 모델 산출물: `models/*.joblib`
+- 평가 지표: `models/*_metrics.json`
+- 학습 재현: `ai_model_training.ipynb`, `scripts/train_*.py`
+- 적용 방식: ML 예측과 공식 법령 규칙 엔진을 함께 표시하는 하이브리드 분석
+
+합성 템플릿 데이터의 내부 평가 점수가 실제 문서 성능을 의미하지 않으므로
+전문가 라벨 실제 문서에 대한 외부 검증이 필요합니다.
+
 ### 문서 입력
 
 - TXT, PDF, DOCX, PNG, JPG, JPEG 지원

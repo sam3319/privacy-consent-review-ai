@@ -11,6 +11,7 @@ from src.contract_structure import (
     split_contract_sections,
     summarize_by_perspective,
 )
+from src.ml_classifier import predict_clause_risks
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -276,6 +277,7 @@ def _analyze_special_contract(
             redacted_text, perspective
         ),
         "renewal_terms": extract_renewal_terms(redacted_text),
+        "ml_clause_predictions": predict_clause_risks(redacted_text),
         "redacted_preview": redacted_text,
         "legal_metadata": sources["metadata"],
         "scope_warning": scope_warning,

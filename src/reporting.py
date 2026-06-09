@@ -51,6 +51,19 @@ def build_markdown_report(result: dict) -> str:
         lines.extend(["", "## 갱신·해지 통지 조건", ""])
         lines.extend(f"- {term}" for term in result["renewal_terms"])
 
+    if result.get("ml_clause_predictions"):
+        lines.extend(["", "## AI 조항 위험 유형 예측", ""])
+        lines.append(
+            "학습 모델의 보조 예측이며 법적 판단이 아닙니다. "
+            "공식 법률 규칙 결과를 우선해 확인해야 합니다."
+        )
+        lines.append("")
+        for prediction in result["ml_clause_predictions"]:
+            lines.append(
+                f"- **{prediction['label']}** "
+                f"({prediction['probability']}%): {prediction['clause']}"
+            )
+
     lines.extend(["", "## 법률 검토 신호", ""])
     if not result["findings"]:
         lines.append("- 현재 규칙으로 탐지된 검토 신호가 없습니다.")

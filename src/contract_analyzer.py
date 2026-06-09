@@ -10,6 +10,7 @@ from src.contract_structure import (
 )
 from src.field_extraction import extract_contract_fields
 from src.legal_rules import load_contract_sources
+from src.ml_classifier import predict_clause_risks
 
 
 def analyze_contract(text: str, perspective: str = "을") -> dict:
@@ -78,6 +79,9 @@ def analyze_contract(text: str, perspective: str = "을") -> dict:
             redact_personal_data(text), perspective
         ),
         "renewal_terms": extract_renewal_terms(redact_personal_data(text)),
+        "ml_clause_predictions": predict_clause_risks(
+            redact_personal_data(text)
+        ),
         "redacted_preview": redact_personal_data(text),
         "legal_metadata": sources["metadata"],
         "scope_warning": (

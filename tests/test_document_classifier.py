@@ -1,7 +1,7 @@
 import pytest
 from pathlib import Path
 
-from src.document_classifier import detect_document_type
+from src.document_classifier import detect_document_type, detect_document_type_hybrid
 
 
 def test_detects_standard_terms_contract():
@@ -90,3 +90,22 @@ def test_detects_employment_contract():
     )
 
     assert result["document_type"] == "employment_contract"
+
+
+@pytest.mark.parametrize(
+    ("filename", "expected"),
+    [
+        ("samples/complete_collection_consent.txt", "collection"),
+        ("samples/risky_standard_terms_contract.txt", "standard_terms_contract"),
+        ("samples/risky_housing_lease.txt", "housing_lease"),
+        ("samples/risky_employment_contract.txt", "employment_contract"),
+    ],
+)
+def test_hybrid_classifier_uses_trained_model(filename, expected):
+    text = Path(filename).read_text(encoding="utf-8")
+
+    result = detect_document_type_hybrid(text)
+
+    assert result["document_type"] == expected
+    assert result["method"] == "hybrid_ml_rule"
+    assert result["ml_prediction"]["probability"] > 0

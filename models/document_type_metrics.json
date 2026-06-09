@@ -1,0 +1,61 @@
+{
+  "model_type": "TF-IDF character n-gram + Logistic Regression",
+  "trained_at_utc": "2026-06-09T02:07:05+00:00",
+  "random_seed": 42,
+  "dataset_size": 320,
+  "class_distribution": {
+    "employment_contract": 80,
+    "standard_terms_contract": 80,
+    "housing_lease": 80,
+    "privacy_consent": 80
+  },
+  "holdout_size": 80,
+  "holdout_accuracy": 1.0,
+  "holdout_macro_f1": 1.0,
+  "cross_validation_macro_f1_mean": 1.0,
+  "cross_validation_macro_f1_std": 0.0,
+  "classification_report": {
+    "employment_contract": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 20.0
+    },
+    "housing_lease": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 20.0
+    },
+    "privacy_consent": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 20.0
+    },
+    "standard_terms_contract": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 20.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 80.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 80.0
+    }
+  },
+  "limitations": [
+    "학습 데이터는 개인정보를 포함하지 않는 합성 템플릿 데이터이다.",
+    "실제 문서의 다양한 표현과 OCR 오류에 대한 외부 검증이 필요하다.",
+    "모델 예측은 법적 판단이 아니라 규칙 엔진 선택을 보조한다."
+  ]
+}

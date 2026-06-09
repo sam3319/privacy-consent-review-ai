@@ -49,6 +49,12 @@ def test_contract_flags_grounded_terms_review_signals():
     assert "ATCA_8_LIQUIDATED_DAMAGES" in ids
     assert "ATCA_9_TERMINATION" in ids
     assert "ATCA_14_JURISDICTION" in ids
+    ml_labels = {
+        prediction["risk_type"]
+        for prediction in result["ml_clause_predictions"]
+    }
+    assert "liability_exemption" in ml_labels
+    assert "termination_restriction" in ml_labels
 
 
 def test_contract_result_does_not_claim_illegality():
@@ -60,4 +66,3 @@ def test_contract_result_does_not_claim_illegality():
     assert "불법" not in combined_messages
     assert "위법" not in combined_messages
     assert "판정하지 않습니다" in result["disclaimer"]
-

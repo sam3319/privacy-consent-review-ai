@@ -12,7 +12,7 @@ sys.path.insert(0, root_path)
 
 from src.analyzer import analyze_document
 from src.contract_analyzer import analyze_contract
-from src.document_classifier import detect_document_type
+from src.document_classifier import detect_document_type_hybrid
 from src.document_io import extract_text
 from src.legal_rules import (
     load_contract_sources,
@@ -111,7 +111,7 @@ if st.button("문서 분석", type="primary", use_container_width=True):
         analyzed_type = document_type
         detection = None
         if analyzed_type == "auto":
-            detection = detect_document_type(document_text)
+            detection = detect_document_type_hybrid(document_text)
             analyzed_type = detection["document_type"]
         selected_perspective = perspective
         if selected_perspective == "자동 기본":
@@ -141,6 +141,18 @@ if st.button("문서 분석", type="primary", use_container_width=True):
                 f"자동 감지 문서 유형: {detection['label']} "
                 f"(신뢰도 {detection['confidence']}%)"
             )
+            ml_prediction = detection["ml_prediction"]
+            st.caption(
+                f"AI 모델: {ml_prediction['model_type']} | "
+                f"예측 {ml_prediction['label']} "
+                f"({ml_prediction['probability']}%) | "
+                f"규칙 엔진과 {'일치' if detection['agreement'] else '불일치'}"
+            )
+            if not detection["agreement"]:
+                st.warning(
+                    "AI 모델과 규칙 엔진의 문서 유형 판단이 다릅니다. "
+                    "원문과 선택된 문서 유형을 직접 확인하세요."
+                )
         metric_label = (
             "계약 핵심정보 탐지율"
             if analyzed_type in {
@@ -192,6 +204,19 @@ if st.button("문서 분석", type="primary", use_container_width=True):
             st.markdown("### 갱신·해지 통지 조건")
             for term in result["renewal_terms"]:
                 st.write(f"- {term}")
+
+        if result.get("ml_clause_predictions"):
+            st.markdown("### AI 조항 위험 유형 예측")
+            st.caption(
+                "학습 모델의 보조 예측이며 법적 판단이 아닙니다. "
+                "공식 법률 규칙 결과를 우선해 확인하세요."
+            )
+            for prediction in result["ml_clause_predictions"]:
+                st.write(
+                    f"- **{prediction['label']}** "
+                    f"({prediction['probability']}%): "
+                    f"{prediction['clause']}"
+                )
 
         for finding in result["findings"]:
             if finding["status"] in {

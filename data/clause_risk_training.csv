@@ -1,0 +1,421 @@
+text,label,source
+"소정근로시간은 1일 9시간, 주 60시간으로 한다.",excessive_work_hours,synthetic_template
+업무상 필요하면 하루 11시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+주당 근무시간은 60시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 2,000,000원을 납부한다.",employment_penalty,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+업무상 필요하면 하루 10시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+계약 위반 시 총 계약금액의 20%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+분쟁은 당사자 협의 후 민사소송법상 관할법원에서 해결한다.,normal,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+"근로자가 중도 퇴사하면 위약금 1,000,000원을 지급한다.",employment_penalty,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 3,000,000원을 납부한다.",employment_penalty,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+분쟁은 당사자 협의 후 민사소송법상 관할법원에서 해결한다.,normal,synthetic_template
+계약 해지는 60일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+"소정근로시간은 1일 11시간, 주 52시간으로 한다.",excessive_work_hours,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+업무상 필요하면 하루 11시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+주당 근무시간은 60시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+임금은 매월 10일 근로자 명의 계좌로 지급한다.,normal,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+임금은 매월 10일 근로자 명의 계좌로 지급한다.,normal,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+계약 해지는 30일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+계약 해지는 30일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 2,000,000원을 납부한다.",employment_penalty,synthetic_template
+"소정근로시간은 1일 10시간, 주 45시간으로 한다.",excessive_work_hours,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+계약 위반 시 총 계약금액의 50%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+분쟁은 당사자 협의 후 민사소송법상 관할법원에서 해결한다.,normal,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+계약 위반 시 총 계약금액의 50%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+"소정근로시간은 1일 11시간, 주 45시간으로 한다.",excessive_work_hours,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+계약 해지는 14일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+회원의 계약 해지 권리를 제한한다.,termination_restriction,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+세입자는 어떠한 경우에도 임대차 갱신을 요구할 수 없다.,housing_renewal_restriction,synthetic_template
+주당 근무시간은 52시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+임금은 매월 20일 근로자 명의 계좌로 지급한다.,normal,synthetic_template
+업무상 필요하면 하루 9시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+"근로자가 중도 퇴사하면 위약금 1,000,000원을 지급한다.",employment_penalty,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+분쟁은 당사자 협의 후 민사소송법상 관할법원에서 해결한다.,normal,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+업무상 필요하면 하루 12시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+계약 해지는 60일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+"근로자가 중도 퇴사하면 위약금 1,000,000원을 지급한다.",employment_penalty,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+"근로자가 중도 퇴사하면 위약금 500,000원을 지급한다.",employment_penalty,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+근로자는 매일 10시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 3,000,000원을 납부한다.",employment_penalty,synthetic_template
+회원의 계약 해지 권리를 제한한다.,termination_restriction,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+업무상 필요하면 하루 10시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+업무상 필요하면 하루 10시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+주당 근무시간은 60시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+계약 위반 시 총 계약금액의 30%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+계약 위반 시 총 계약금액의 30%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 1,000,000원을 납부한다.",employment_penalty,synthetic_template
+회원의 계약 해지 권리를 제한한다.,termination_restriction,synthetic_template
+계약 위반 시 총 계약금액의 50%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+"근로자가 중도 퇴사하면 위약금 500,000원을 지급한다.",employment_penalty,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+계약 해지는 14일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+연체 시 매월 30%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+"근로자가 중도 퇴사하면 위약금 1,000,000원을 지급한다.",employment_penalty,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+회원의 계약 해지 권리를 제한한다.,termination_restriction,synthetic_template
+회원의 계약 해지 권리를 제한한다.,termination_restriction,synthetic_template
+연체 시 매월 20%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+주당 근무시간은 45시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+"소정근로시간은 1일 11시간, 주 50시간으로 한다.",excessive_work_hours,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+연체 시 매월 20%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+업무상 필요하면 하루 11시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+계약 위반 시 총 계약금액의 20%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+연체 시 매월 30%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+주당 근무시간은 45시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+회원의 계약 해지 권리를 제한한다.,termination_restriction,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+근로자는 매일 11시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+"근로자가 중도 퇴사하면 위약금 1,000,000원을 지급한다.",employment_penalty,synthetic_template
+계약 해지는 60일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+연체 시 매월 20%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+계약 해지는 30일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+세입자는 어떠한 경우에도 임대차 갱신을 요구할 수 없다.,housing_renewal_restriction,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 3,000,000원을 납부한다.",employment_penalty,synthetic_template
+계약 해지는 7일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+"소정근로시간은 1일 10시간, 주 60시간으로 한다.",excessive_work_hours,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+세입자는 어떠한 경우에도 임대차 갱신을 요구할 수 없다.,housing_renewal_restriction,synthetic_template
+"근로자가 중도 퇴사하면 위약금 500,000원을 지급한다.",employment_penalty,synthetic_template
+"근로자가 중도 퇴사하면 위약금 1,000,000원을 지급한다.",employment_penalty,synthetic_template
+"근로자가 중도 퇴사하면 위약금 3,000,000원을 지급한다.",employment_penalty,synthetic_template
+"소정근로시간은 1일 12시간, 주 60시간으로 한다.",excessive_work_hours,synthetic_template
+"소정근로시간은 1일 11시간, 주 45시간으로 한다.",excessive_work_hours,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+회원의 계약 해지 권리를 제한한다.,termination_restriction,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+계약 해지는 14일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+업무상 필요하면 하루 12시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+연체 시 매월 50%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+연체 시 매월 20%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+업무상 필요하면 하루 9시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+연체 시 매월 30%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+계약 위반 시 총 계약금액의 20%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+"소정근로시간은 1일 12시간, 주 60시간으로 한다.",excessive_work_hours,synthetic_template
+계약 해지는 7일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+계약 해지는 30일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+분쟁은 당사자 협의 후 민사소송법상 관할법원에서 해결한다.,normal,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+근로자는 매일 10시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+계약 위반 시 총 계약금액의 50%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+계약 위반 시 총 계약금액의 100%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+"근로자가 중도 퇴사하면 위약금 2,000,000원을 지급한다.",employment_penalty,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+업무상 필요하면 하루 9시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+임금은 매월 10일 근로자 명의 계좌로 지급한다.,normal,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+"근로자가 중도 퇴사하면 위약금 1,000,000원을 지급한다.",employment_penalty,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+임금은 매월 25일 근로자 명의 계좌로 지급한다.,normal,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+"소정근로시간은 1일 10시간, 주 60시간으로 한다.",excessive_work_hours,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+연체 시 매월 30%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+근로자는 매일 9시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+근로자는 매일 11시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+주당 근무시간은 50시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+회원의 계약 해지 권리를 제한한다.,termination_restriction,synthetic_template
+"소정근로시간은 1일 10시간, 주 60시간으로 한다.",excessive_work_hours,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+연체 시 매월 30%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+계약 위반 시 총 계약금액의 20%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+업무상 필요하면 하루 11시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+임금은 매월 25일 근로자 명의 계좌로 지급한다.,normal,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+세입자는 어떠한 경우에도 임대차 갱신을 요구할 수 없다.,housing_renewal_restriction,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+주당 근무시간은 50시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+근로자는 매일 9시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+"근로자가 중도 퇴사하면 위약금 500,000원을 지급한다.",employment_penalty,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+계약 해지는 7일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+임금은 매월 10일 근로자 명의 계좌로 지급한다.,normal,synthetic_template
+세입자는 어떠한 경우에도 임대차 갱신을 요구할 수 없다.,housing_renewal_restriction,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+연체 시 매월 50%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+계약 위반 시 총 계약금액의 30%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+업무상 필요하면 하루 11시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+세입자는 어떠한 경우에도 임대차 갱신을 요구할 수 없다.,housing_renewal_restriction,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+계약 해지는 7일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+임금은 매월 25일 근로자 명의 계좌로 지급한다.,normal,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+연체 시 매월 30%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+연체 시 매월 20%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+업무상 필요하면 하루 10시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+연체 시 매월 50%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 1,000,000원을 납부한다.",employment_penalty,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+해지하는 고객은 이미 지급한 금액을 모두 포기한다.,excessive_penalty,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+회원의 계약 해지 권리를 제한한다.,termination_restriction,synthetic_template
+주당 근무시간은 50시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+"소정근로시간은 1일 12시간, 주 50시간으로 한다.",excessive_work_hours,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+업무상 필요하면 하루 10시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+"소정근로시간은 1일 9시간, 주 60시간으로 한다.",excessive_work_hours,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+갑은 모든 사고와 손해배상 책임을 부담하지 않는다.,liability_exemption,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+연체 시 매월 100%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+세입자는 어떠한 경우에도 임대차 갱신을 요구할 수 없다.,housing_renewal_restriction,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 500,000원을 납부한다.",employment_penalty,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+주당 근무시간은 52시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+분쟁은 당사자 협의 후 민사소송법상 관할법원에서 해결한다.,normal,synthetic_template
+세입자는 어떠한 경우에도 임대차 갱신을 요구할 수 없다.,housing_renewal_restriction,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 3,000,000원을 납부한다.",employment_penalty,synthetic_template
+분쟁은 당사자 협의 후 민사소송법상 관할법원에서 해결한다.,normal,synthetic_template
+계약기간을 채우지 못하면 급여 한 달분을 벌금으로 공제한다.,employment_penalty,synthetic_template
+세입자는 어떠한 경우에도 임대차 갱신을 요구할 수 없다.,housing_renewal_restriction,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+근로자는 매일 10시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+주당 근무시간은 60시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+근로자는 매일 11시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+"소정근로시간은 1일 12시간, 주 52시간으로 한다.",excessive_work_hours,synthetic_template
+각 당사자는 귀책사유로 발생한 직접 손해를 배상한다.,normal,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+계약 위반 시 총 계약금액의 20%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+근로자는 매일 9시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+근로자는 매일 12시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+"근로자가 중도 퇴사하면 위약금 2,000,000원을 지급한다.",employment_penalty,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+분쟁은 당사자 협의 후 민사소송법상 관할법원에서 해결한다.,normal,synthetic_template
+"소정근로시간은 1일 9시간, 주 45시간으로 한다.",excessive_work_hours,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+업무상 필요하면 하루 11시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+업무상 필요하면 하루 9시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 3,000,000원을 납부한다.",employment_penalty,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+회원의 계약 해지 권리를 제한한다.,termination_restriction,synthetic_template
+을은 중도 해지 시 잔여 대금 전액을 위약금으로 지급한다.,excessive_penalty,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+주당 근무시간은 52시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+업무상 필요하면 하루 10시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+임대인은 계약 종료 후 정산하여 보증금을 반환한다.,normal,synthetic_template
+연체 시 매월 30%의 지연손해금을 부담한다.,excessive_penalty,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 2,000,000원을 납부한다.",employment_penalty,synthetic_template
+분쟁은 당사자 협의 후 민사소송법상 관할법원에서 해결한다.,normal,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+이용자는 해지할 수 없고 사업자만 임의로 계약을 종료한다.,termination_restriction,synthetic_template
+계약 해지는 14일 전에 서면으로 통지할 수 있다.,normal,synthetic_template
+사업자는 고의 또는 중대한 과실이 있어도 책임이 없다.,liability_exemption,synthetic_template
+"소정근로시간은 1일 9시간, 주 52시간으로 한다.",excessive_work_hours,synthetic_template
+임차인의 갱신 요구 권리는 인정하지 않는다.,housing_renewal_restriction,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+계약 종료 시 임차인은 갱신 없이 즉시 퇴거한다.,housing_renewal_restriction,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 3,000,000원을 납부한다.",employment_penalty,synthetic_template
+근로자는 매일 12시간 근무하고 휴일에도 출근한다.,excessive_work_hours,synthetic_template
+회사는 어떠한 손해에 대해서도 일체의 책임을 지지 않는다.,liability_exemption,synthetic_template
+"무단 퇴사 시 근로자는 손해배상액 1,000,000원을 납부한다.",employment_penalty,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+사직하는 직원은 교육비 전액을 위약금으로 반환한다.,employment_penalty,synthetic_template
+업무상 필요하면 하루 10시간까지 상시 근무한다.,excessive_work_hours,synthetic_template
+고객에게 발생하는 모든 손해에 대해 회사의 책임을 면제한다.,liability_exemption,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+임차인은 계약갱신요구권을 포기한다.,housing_renewal_restriction,synthetic_template
+주당 근무시간은 45시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+계약 위반 시 총 계약금액의 100%를 위약벌로 납부한다.,excessive_penalty,synthetic_template
+고객의 중도 해지는 금지되며 회사는 언제든 해지할 수 있다.,termination_restriction,synthetic_template
+주당 근무시간은 45시간이며 추가 수당은 없다.,excessive_work_hours,synthetic_template
+을은 계약기간 중 어떠한 사유로도 계약을 해지할 수 없다.,termination_restriction,synthetic_template

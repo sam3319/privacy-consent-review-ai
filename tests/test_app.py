@@ -70,6 +70,7 @@ def test_app_auto_detects_contract():
     assert not app.exception
     assert app.success[0].value.startswith("자동 감지 문서 유형: 약관형 계약서")
     assert app.metric[0].label == "계약 핵심정보 탐지율"
+    assert any("TF-IDF" in caption.value for caption in app.caption)
 
 
 def test_app_analyzes_housing_lease():

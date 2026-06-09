@@ -114,3 +114,51 @@ def detect_document_type(text: str) -> dict:
             "employment_contract": employment_score,
         },
     }
+
+
+def detect_document_type_hybrid(text: str) -> dict:
+    from src.ml_classifier import predict_document_type
+
+    ml_prediction = predict_document_type(text)
+    try:
+        rule_prediction = detect_document_type(text)
+    except ValueError:
+        rule_prediction = None
+
+    if ml_prediction["document_type"] == "privacy_consent":
+        if rule_prediction and rule_prediction["document_type"] in {
+            "collection",
+            "third_party",
+            "combined",
+        }:
+            document_type = rule_prediction["document_type"]
+            label = rule_prediction["label"]
+        else:
+            document_type = "collection"
+            label = DOCUMENT_TYPE_LABELS[document_type]
+    else:
+        document_type = ml_prediction["document_type"]
+        label = DOCUMENT_TYPE_LABELS[document_type]
+
+    rule_type = rule_prediction["document_type"] if rule_prediction else None
+    ml_rule_group = (
+        "privacy_consent"
+        if rule_type in {"collection", "third_party", "combined"}
+        else rule_type
+    )
+    agreement = ml_rule_group == ml_prediction["document_type"]
+    confidence = ml_prediction["confidence"]
+    if agreement and rule_prediction:
+        confidence = round(
+            (ml_prediction["confidence"] + rule_prediction["confidence"]) / 2
+        )
+
+    return {
+        "document_type": document_type,
+        "label": label,
+        "confidence": confidence,
+        "method": "hybrid_ml_rule",
+        "agreement": agreement,
+        "ml_prediction": ml_prediction,
+        "rule_prediction": rule_prediction,
+    }
