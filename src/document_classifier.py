@@ -6,6 +6,8 @@ DOCUMENT_TYPE_LABELS = {
     "third_party": "개인정보 제3자 제공 동의",
     "combined": "수집·이용 및 제3자 제공 복합 문서",
     "standard_terms_contract": "약관형 계약서",
+    "housing_lease": "주택 임대차(전세·월세) 계약서",
+    "employment_contract": "근로계약서",
 }
 
 
@@ -45,11 +47,43 @@ def detect_document_type(text: str) -> dict:
             r"(분쟁\s*해결|재판\s*관할|관할\s*법원)",
         ],
     )
+    housing_score = _count_matches(
+        text,
+        [
+            r"(주택|아파트|오피스텔).{0,10}(임대차|전세|월세)",
+            r"(임대인|임차인)",
+            r"(보증금|차임|월세)",
+            r"(임대차\s*기간|임대\s*목적물)",
+            r"(전입신고|확정일자|계약갱신요구권)",
+        ],
+    )
+    employment_score = _count_matches(
+        text,
+        [
+            r"근로\s*계약서",
+            r"(사용자|사업주).{0,20}근로자",
+            r"(소정\s*근로\s*시간|근무\s*시간)",
+            r"(임금|기본급|시급|월급).{0,20}(지급|원)",
+            r"(근무\s*장소|업무\s*내용|주휴일|연차)",
+        ],
+    )
 
     if collection_score >= 2 and third_party_score >= 2:
         document_type = "combined"
         score = collection_score + third_party_score
         maximum = 8
+    elif employment_score >= max(
+        housing_score, contract_score, collection_score, third_party_score
+    ) and employment_score >= 2:
+        document_type = "employment_contract"
+        score = employment_score
+        maximum = 5
+    elif housing_score >= max(
+        contract_score, collection_score, third_party_score
+    ) and housing_score >= 2:
+        document_type = "housing_lease"
+        score = housing_score
+        maximum = 5
     elif contract_score >= max(collection_score, third_party_score) and contract_score >= 2:
         document_type = "standard_terms_contract"
         score = contract_score
@@ -76,5 +110,7 @@ def detect_document_type(text: str) -> dict:
             "collection": collection_score,
             "third_party": third_party_score,
             "standard_terms_contract": contract_score,
+            "housing_lease": housing_score,
+            "employment_contract": employment_score,
         },
     }

@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "jurisdiction": "대한민국",
+    "law_name": "주택임대차보호법",
+    "effective_date": "2026-01-02",
+    "verified_date": "2026-06-09",
+    "official_source": "국가법령정보센터",
+    "official_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsId=001248",
+    "scope_note": "주거용 건물의 전세·월세 임대차 문언을 점검한다. 등기부, 건축물대장, 세금 체납, 선순위 보증금 등 외부 자료의 실제 상태는 자동 확인하지 않는다."
+  },
+  "review_signals": [
+    {
+      "id": "HLA_TERM_UNDER_TWO_YEARS",
+      "article": "주택임대차보호법 제4조",
+      "title": "2년 미만 임대차 기간 검토",
+      "severity": "중간",
+      "trigger_patterns": ["(?:임대차|계약)\\s*기간.{0,30}(?:6|12|18)\\s*개월", "(?:임대차|계약)\\s*기간.{0,30}1\\s*년"],
+      "message": "2년 미만의 임대차 기간이 탐지되었습니다. 법정 존속기간과 임차인이 단기 약정의 유효함을 주장할 수 있는 예외를 함께 확인해야 합니다.",
+      "official_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1019994225"
+    },
+    {
+      "id": "HLA_DEPOSIT_RETURN",
+      "article": "주택임대차보호법 제4조제2항",
+      "title": "보증금 반환 제한 조항 검토",
+      "severity": "높음",
+      "trigger_patterns": ["보증금.{0,20}(반환하지 않|몰수|포기)", "퇴거.{0,20}보증금.{0,20}(포기|미반환)"],
+      "message": "임대차 종료 후 보증금 반환을 넓게 제한하는 표현이 탐지되었습니다. 실제 공제 사유와 반환 시점, 임대차관계 존속 규정을 검토해야 합니다.",
+      "official_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1019994225"
+    },
+    {
+      "id": "HLA_TACIT_RENEWAL_TERMINATION",
+      "article": "주택임대차보호법 제6조의2",
+      "title": "묵시적 갱신 후 임차인 해지권 검토",
+      "severity": "높음",
+      "trigger_patterns": ["묵시.{0,10}갱신.{0,30}임차인.{0,20}(해지할 수 없|해지 금지)", "묵시.{0,10}갱신.{0,30}(6개월|1년).{0,10}전.{0,10}통지"],
+      "message": "묵시적 갱신 후 임차인의 해지 통지를 제한할 가능성이 있습니다. 통지 후 효력 발생 시점과 임차인의 해지권을 확인해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1018577281"
+    },
+    {
+      "id": "HLA_RENEWAL_REQUEST_WAIVER",
+      "article": "주택임대차보호법 제6조의3",
+      "title": "계약갱신요구권 포기·제한 검토",
+      "severity": "높음",
+      "trigger_patterns": ["계약갱신요구권.{0,15}(포기|행사하지 않|없)", "임차인.{0,20}갱신.{0,10}(요구할 수 없|금지)"],
+      "message": "임차인의 계약갱신요구권을 미리 포기하거나 제한하는 표현이 탐지되었습니다. 법정 거절 사유와 실제 적용 범위를 별도로 검토해야 합니다.",
+      "official_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1031475527"
+    },
+    {
+      "id": "HLA_RENT_INCREASE",
+      "article": "주택임대차보호법 제7조",
+      "title": "차임·보증금 증액률 검토",
+      "severity": "높음",
+      "trigger_patterns": ["(?:차임|월세|보증금).{0,20}(?:6|7|8|9|[1-9][0-9])\\s*%\\s*(?:인상|증액)", "(?:매년|연간).{0,15}(?:10|20)\\s*%"],
+      "message": "5%를 초과하는 것으로 보이는 증액률이 탐지되었습니다. 증액 시점, 지방자치단체 조례 및 구체적인 산정 기준을 확인해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/LsiJoLinkP.do?docType=JO&joNo=000700000&languageType=KO&lsNm=%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95"
+    },
+    {
+      "id": "HLA_INFORMATION_CHECKLIST",
+      "article": "주택임대차보호법 제3조의7",
+      "title": "선순위 임대차·체납 정보 확인",
+      "severity": "중간",
+      "trigger_patterns": ["임대인.{0,20}(정보 제공 거부|체납.{0,10}확인 불가)", "선순위.{0,10}(보증금|임대차).{0,20}확인하지 않"],
+      "message": "선순위 임대차 정보 또는 임대인의 납세 관련 정보 확인을 제한하는 표현이 탐지되었습니다. 계약 체결 전 제시·열람 동의 여부를 확인해야 합니다.",
+      "official_url": "https://law.go.kr/LSW/LsiJoLinkP.do?docType=JO&joNo=000700002&languageType=KO&lsNm=%EC%A3%BC%ED%83%9D%EC%9E%84%EB%8C%80%EC%B0%A8%EB%B3%B4%ED%98%B8%EB%B2%95"
+    }
+  ]
+}

@@ -6,6 +6,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LEGAL_SOURCES_PATH = ROOT / "data" / "legal_sources.json"
 CONTRACT_SOURCES_PATH = ROOT / "data" / "contract_legal_sources.json"
+HOUSING_SOURCES_PATH = ROOT / "data" / "housing_legal_sources.json"
+EMPLOYMENT_SOURCES_PATH = ROOT / "data" / "employment_legal_sources.json"
 
 
 @lru_cache(maxsize=1)
@@ -19,3 +21,14 @@ def load_contract_sources(path: Path = CONTRACT_SOURCES_PATH) -> dict:
     with path.open(encoding="utf-8") as source_file:
         return json.load(source_file)
 
+
+@lru_cache(maxsize=1)
+def load_housing_sources(path: Path = HOUSING_SOURCES_PATH) -> dict:
+    with path.open(encoding="utf-8") as source_file:
+        return json.load(source_file)
+
+
+@lru_cache(maxsize=1)
+def load_employment_sources(path: Path = EMPLOYMENT_SOURCES_PATH) -> dict:
+    with path.open(encoding="utf-8") as source_file:
+        return json.load(source_file)

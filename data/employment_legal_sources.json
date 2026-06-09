@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "jurisdiction": "대한민국",
+    "law_name": "근로기준법 및 2026년 적용 최저임금 고시",
+    "effective_date": "2025-10-23",
+    "verified_date": "2026-06-09",
+    "official_source": "국가법령정보센터·고용노동부",
+    "official_url": "https://www.law.go.kr/LSW/lsEfInfoP.do?lsiSeq=283457",
+    "minimum_wage_2026": 10320,
+    "minimum_monthly_wage_209_hours": 2156880,
+    "scope_note": "일반적인 근로계약 문언을 점검한다. 사업장 규모, 업종, 근로자성, 감시·단속적 근로, 수습 특례 등 사실관계에 따른 예외는 자동 확정하지 않는다."
+  },
+  "review_signals": [
+    {
+      "id": "LSA_PENALTY",
+      "article": "근로기준법 제20조",
+      "title": "근로계약 불이행 위약금 검토",
+      "severity": "높음",
+      "trigger_patterns": ["(?:퇴사|사직|계약 불이행).{0,20}(?:위약금|벌금|손해배상액)", "(?:중도 퇴사|무단 퇴사).{0,20}[\\d,]+\\s*원"],
+      "message": "근로계약 불이행에 대한 위약금 또는 손해배상액을 미리 정한 것으로 보이는 표현이 탐지되었습니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282557"
+    },
+    {
+      "id": "LSA_WAGE_PAYMENT",
+      "article": "근로기준법 제43조",
+      "title": "임금 지급 방식 검토",
+      "severity": "높음",
+      "trigger_patterns": ["임금.{0,20}(현물|상품권|포인트).{0,10}지급", "임금.{0,20}(제3자|가족).{0,10}지급", "임금.{0,20}회사가 임의.{0,10}공제"],
+      "message": "임금의 통화·직접·전액·정기 지급 원칙과 충돌할 가능성이 있는 표현이 탐지되었습니다. 법령 또는 단체협약상 공제 근거를 확인해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282557"
+    },
+    {
+      "id": "LSA_EXCESSIVE_HOURS",
+      "article": "근로기준법 제50조",
+      "title": "법정근로시간 초과 가능성 검토",
+      "severity": "높음",
+      "trigger_patterns": ["1일.{0,10}(?:9|1[0-9])\\s*시간", "주.{0,10}(?:4[1-9]|[5-9][0-9])\\s*시간"],
+      "message": "1일 8시간 또는 1주 40시간을 초과하는 근로시간 표현이 탐지되었습니다. 연장근로 합의, 적용 예외 및 가산임금 규정을 함께 확인해야 합니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900161812"
+    },
+    {
+      "id": "LSA_BREAK_RESTRICTION",
+      "article": "근로기준법 제54조",
+      "title": "휴게시간 자유 이용 제한 검토",
+      "severity": "중간",
+      "trigger_patterns": ["휴게시간.{0,20}(사업장 이탈 금지|자유롭게 이용할 수 없|업무 대기)", "식사시간.{0,20}근무"],
+      "message": "휴게시간의 자유 이용을 제한하거나 실질적인 대기시간으로 정할 가능성이 있습니다.",
+      "official_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282557"
+    },
+    {
+      "id": "LSA_MINIMUM_WAGE",
+      "article": "최저임금법 제6조·고용노동부고시 제2025-47호",
+      "title": "2026년 최저임금 미달 가능성 검토",
+      "severity": "높음",
+      "trigger_patterns": [],
+      "message": "표시된 시간급이 2026년 적용 최저임금 시간급 10,320원보다 낮을 가능성이 있습니다. 산입범위와 적용 예외를 별도로 확인해야 합니다.",
+      "official_url": "https://www.moel.go.kr/info/lawinfo/instruction/view.do?bbs_seq=20250800121"
+    }
+  ]
+}

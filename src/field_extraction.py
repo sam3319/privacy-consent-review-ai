@@ -257,3 +257,59 @@ def extract_contract_fields(text: str) -> list[dict]:
             )
         )
     return fields
+
+
+HOUSING_FIELD_CONFIGURATIONS = [
+    ("parties", "임대인·임차인", [r"임대인", r"임차인"], 4),
+    ("property", "임대 목적물", [r"소재지", r"임대\s*(?:목적물|주택)", r"주소"], 4),
+    ("deposit", "보증금", [r"보증금"], 2),
+    ("monthly_rent", "월 차임·월세", [r"월\s*(?:차임|세)", r"차임"], 2),
+    ("term", "임대차 기간", [r"임대차\s*기간", r"계약\s*기간"], 4),
+    ("payment_date", "차임 지급일", [r"(?:차임|월세)\s*지급일", r"매월.{0,10}지급"], 2),
+    ("management_fee", "관리비", [r"관리비"], 2),
+    ("repairs", "수선·하자 책임", [r"수선", r"하자", r"수리\s*비용"], 4),
+    ("deposit_return", "보증금 반환", [r"보증금\s*반환"], 4),
+    ("special_terms", "특약사항", [r"특약\s*사항", r"특약"], 2),
+]
+
+
+EMPLOYMENT_FIELD_CONFIGURATIONS = [
+    ("parties", "사용자·근로자", [r"사용자", r"근로자", r"사업주"], 4),
+    ("workplace", "근무 장소", [r"근무\s*장소", r"취업\s*장소"], 2),
+    ("duties", "업무 내용", [r"업무\s*(?:내용|종류)", r"담당\s*업무"], 2),
+    ("term", "근로계약 기간", [r"근로계약\s*기간", r"계약\s*기간"], 4),
+    ("work_hours", "소정근로시간", [r"소정\s*근로\s*시간", r"근무\s*시간"], 2),
+    ("break_time", "휴게시간", [r"휴게\s*시간"], 2),
+    ("work_days", "근무일", [r"근무일", r"근로일"], 2),
+    ("holidays", "휴일", [r"주휴일", r"유급\s*휴일", r"휴일"], 2),
+    ("wage", "임금 구성·금액", [r"임금", r"기본급", r"시급", r"월급"], 2),
+    ("pay_date", "임금 지급일·방법", [r"임금\s*지급", r"급여\s*지급", r"지급일"], 2),
+    ("annual_leave", "연차 유급휴가", [r"연차", r"유급\s*휴가"], 2),
+]
+
+
+def extract_housing_fields(text: str) -> list[dict]:
+    return _extract_configured_fields(text, HOUSING_FIELD_CONFIGURATIONS)
+
+
+def extract_employment_fields(text: str) -> list[dict]:
+    return _extract_configured_fields(text, EMPLOYMENT_FIELD_CONFIGURATIONS)
+
+
+def _extract_configured_fields(text: str, configurations: list[tuple]) -> list[dict]:
+    fields = []
+    for key, label, patterns, minimum_length in configurations:
+        value = _extract_line_value(text, patterns)
+        fields.append(
+            asdict(
+                _build_field(
+                    key,
+                    label,
+                    value,
+                    lambda item, length=minimum_length: _has_meaningful_value(
+                        item, length
+                    ),
+                )
+            )
+        )
+    return fields

@@ -60,3 +60,33 @@ def test_detects_combined_privacy_document():
 def test_rejects_unknown_document():
     with pytest.raises(ValueError):
         detect_document_type("오늘 회의는 오후 세 시에 시작합니다.")
+
+
+def test_detects_housing_lease():
+    result = detect_document_type(
+        """
+        주택 임대차 계약서
+        임대인: 홍길동
+        임차인: 김예시
+        보증금: 100,000,000원
+        월세: 500,000원
+        임대차 기간: 2026년 7월 1일부터 2028년 6월 30일까지
+        """
+    )
+
+    assert result["document_type"] == "housing_lease"
+
+
+def test_detects_employment_contract():
+    result = detect_document_type(
+        """
+        근로계약서
+        사용자: 주식회사 예시
+        근로자: 김예시
+        소정근로시간: 1일 8시간
+        임금: 월 3,000,000원
+        근무 장소: 서울
+        """
+    )
+
+    assert result["document_type"] == "employment_contract"

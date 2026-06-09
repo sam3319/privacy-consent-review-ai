@@ -24,6 +24,33 @@ def build_markdown_report(result: dict) -> str:
             f"[{field['status']}, 신뢰도 {field['confidence']}%]"
         )
 
+    if result.get("sections"):
+        lines.extend(["", "## 조항 구조", ""])
+        for section in result["sections"]:
+            heading = " ".join(
+                item for item in (section["number"], section["title"]) if item
+            )
+            lines.extend([f"### {heading}", section["text"] or "(내용 없음)", ""])
+
+    if result.get("perspective_summary"):
+        lines.extend(
+            ["", f"## {result.get('perspective', '')} 관점 요약", ""]
+        )
+        labels = {
+            "rights": "권리",
+            "obligations": "의무",
+            "amounts": "금액",
+            "periods": "기간",
+            "termination": "해지·종료",
+        }
+        for key, label in labels.items():
+            values = result["perspective_summary"].get(key, [])
+            lines.append(f"- **{label}**: {' / '.join(values) if values else '(찾지 못함)'}")
+
+    if result.get("renewal_terms"):
+        lines.extend(["", "## 갱신·해지 통지 조건", ""])
+        lines.extend(f"- {term}" for term in result["renewal_terms"])
+
     lines.extend(["", "## 법률 검토 신호", ""])
     if not result["findings"]:
         lines.append("- 현재 규칙으로 탐지된 검토 신호가 없습니다.")
@@ -52,4 +79,3 @@ def build_json_report(result: dict) -> str:
         if key != "redacted_preview"
     }
     return json.dumps(report, ensure_ascii=False, indent=2)
-

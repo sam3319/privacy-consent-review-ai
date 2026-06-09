@@ -1,6 +1,11 @@
 from datetime import date
 
-from src.legal_rules import load_contract_sources, load_legal_sources
+from src.legal_rules import (
+    load_contract_sources,
+    load_employment_sources,
+    load_housing_sources,
+    load_legal_sources,
+)
 
 
 def test_every_rule_has_official_law_go_kr_source():
@@ -30,3 +35,19 @@ def test_contract_rules_use_official_current_law_source():
     for rule in sources["review_signals"]:
         assert rule["official_url"].startswith("https://www.law.go.kr/")
         assert rule["article"].startswith("제")
+
+
+def test_special_contract_rules_have_official_sources_and_dates():
+    for sources in (load_housing_sources(), load_employment_sources()):
+        metadata = sources["metadata"]
+        assert date.fromisoformat(metadata["effective_date"]) <= date.fromisoformat(
+            metadata["verified_date"]
+        )
+        for rule in sources["review_signals"]:
+            assert rule["official_url"].startswith(
+                (
+                    "https://www.law.go.kr/",
+                    "https://law.go.kr/",
+                    "https://www.moel.go.kr/",
+                )
+            )

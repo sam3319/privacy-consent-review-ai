@@ -12,8 +12,17 @@ from src.analyzer import analyze_document
 from src.contract_analyzer import analyze_contract
 from src.document_classifier import detect_document_type
 from src.document_io import extract_text
-from src.legal_rules import load_contract_sources, load_legal_sources
+from src.legal_rules import (
+    load_contract_sources,
+    load_employment_sources,
+    load_housing_sources,
+    load_legal_sources,
+)
 from src.reporting import build_json_report, build_markdown_report
+from src.special_contract_analyzer import (
+    analyze_employment_contract,
+    analyze_housing_contract,
+)
 
 
 DOCUMENT_TYPE_LABELS = {
@@ -22,6 +31,8 @@ DOCUMENT_TYPE_LABELS = {
     "개인정보 제3자 제공 동의": "third_party",
     "수집·이용 및 제3자 제공 복합 문서": "combined",
     "약관형 계약서": "standard_terms_contract",
+    "주택 임대차(전세·월세) 계약서": "housing_lease",
+    "근로계약서": "employment_contract",
 }
 
 
@@ -40,11 +51,12 @@ st.warning(
 )
 document_label = st.selectbox("문서 유형", DOCUMENT_TYPE_LABELS)
 document_type = DOCUMENT_TYPE_LABELS[document_label]
-active_sources = (
-    load_contract_sources()
-    if document_type == "standard_terms_contract"
-    else sources
-)
+source_loaders = {
+    "standard_terms_contract": load_contract_sources,
+    "housing_lease": load_housing_sources,
+    "employment_contract": load_employment_sources,
+}
+active_sources = source_loaders.get(document_type, lambda: sources)()
 metadata = active_sources["metadata"]
 if document_type == "auto":
     st.caption(
@@ -61,6 +73,20 @@ if document_type == "standard_terms_contract":
         "약관형 계약서를 대상으로 합니다. 개별 협상 계약이나 근로·임대차·금융 "
         "계약은 특별법 검토가 추가로 필요합니다."
     )
+elif document_type == "housing_lease":
+    st.info(
+        "등기사항증명서, 건축물대장, 선순위 보증금과 임대인 체납 여부는 "
+        "업로드한 계약서만으로 확인할 수 없습니다."
+    )
+elif document_type == "employment_contract":
+    st.info(
+        "근로자성, 사업장 규모, 업종과 근로시간 적용 예외는 계약서 문언만으로 "
+        "확정할 수 없습니다."
+    )
+perspective = st.selectbox(
+    "검토 관점",
+    ["자동 기본", "갑", "을", "소비자", "사업자", "임대인", "임차인", "사용자", "근로자"],
+)
 uploaded_file = st.file_uploader(
     "문서 업로드",
     type=["txt", "pdf", "docx", "png", "jpg", "jpeg"],
@@ -84,8 +110,19 @@ if st.button("문서 분석", type="primary", use_container_width=True):
         if analyzed_type == "auto":
             detection = detect_document_type(document_text)
             analyzed_type = detection["document_type"]
+        selected_perspective = perspective
+        if selected_perspective == "자동 기본":
+            selected_perspective = {
+                "housing_lease": "임차인",
+                "employment_contract": "근로자",
+                "standard_terms_contract": "을",
+            }.get(analyzed_type, "")
         if analyzed_type == "standard_terms_contract":
-            result = analyze_contract(document_text)
+            result = analyze_contract(document_text, selected_perspective)
+        elif analyzed_type == "housing_lease":
+            result = analyze_housing_contract(document_text, selected_perspective)
+        elif analyzed_type == "employment_contract":
+            result = analyze_employment_contract(document_text, selected_perspective)
         else:
             result = analyze_document(document_text, analyzed_type)
     except ValueError as error:
@@ -103,7 +140,11 @@ if st.button("문서 분석", type="primary", use_container_width=True):
             )
         metric_label = (
             "계약 핵심정보 탐지율"
-            if analyzed_type == "standard_terms_contract"
+            if analyzed_type in {
+                "standard_terms_contract",
+                "housing_lease",
+                "employment_contract",
+            }
             else "법정 고지사항 구체값 탐지율"
         )
         st.metric(metric_label, f"{result['completeness']}%")
@@ -121,6 +162,33 @@ if st.button("문서 분석", type="primary", use_container_width=True):
                 f"**{field['label']}**: {value} "
                 f"({field['status']}, 신뢰도 {field['confidence']}%)"
             )
+
+        if result.get("sections"):
+            with st.expander(f"조항 구조 ({len(result['sections'])}개)"):
+                for section in result["sections"]:
+                    heading = " ".join(
+                        item for item in (section["number"], section["title"]) if item
+                    )
+                    st.markdown(f"**{heading}**")
+                    st.write(section["text"] or "(내용 없음)")
+
+        if result.get("perspective_summary"):
+            st.markdown(f"### {result['perspective']} 관점 요약")
+            summary_labels = {
+                "rights": "권리",
+                "obligations": "의무",
+                "amounts": "금액",
+                "periods": "기간",
+                "termination": "해지·종료",
+            }
+            for key, label in summary_labels.items():
+                values = result["perspective_summary"].get(key, [])
+                st.write(f"**{label}**: " + (" / ".join(values) if values else "찾지 못함"))
+
+        if result.get("renewal_terms"):
+            st.markdown("### 갱신·해지 통지 조건")
+            for term in result["renewal_terms"]:
+                st.write(f"- {term}")
 
         for finding in result["findings"]:
             if finding["status"] in {
@@ -167,7 +235,7 @@ if st.button("문서 분석", type="primary", use_container_width=True):
 
 st.divider()
 st.subheader("적용 법률 근거")
-if document_type == "standard_terms_contract":
+if document_type in source_loaders:
     st.markdown(
         f"- [{active_sources['metadata']['law_name']}]"
         f"({active_sources['metadata']['official_url']})"
@@ -183,6 +251,8 @@ elif document_type != "auto":
         )
 else:
     contract_sources = load_contract_sources()
+    housing_sources = load_housing_sources()
+    employment_sources = load_employment_sources()
     st.markdown(
         f"- [{sources['metadata']['law_name']}]"
         f"({sources['rules'][0]['official_url']})"
@@ -190,4 +260,12 @@ else:
     st.markdown(
         f"- [{contract_sources['metadata']['law_name']}]"
         f"({contract_sources['metadata']['official_url']})"
+    )
+    st.markdown(
+        f"- [{housing_sources['metadata']['law_name']}]"
+        f"({housing_sources['metadata']['official_url']})"
+    )
+    st.markdown(
+        f"- [{employment_sources['metadata']['law_name']}]"
+        f"({employment_sources['metadata']['official_url']})"
     )

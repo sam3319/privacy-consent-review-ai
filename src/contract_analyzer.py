@@ -2,11 +2,17 @@ import re
 from dataclasses import asdict
 
 from src.analyzer import Finding, first_evidence, normalize_text, redact_personal_data
+from src.contract_structure import (
+    extract_renewal_terms,
+    find_internal_consistency_issues,
+    split_contract_sections,
+    summarize_by_perspective,
+)
 from src.field_extraction import extract_contract_fields
 from src.legal_rules import load_contract_sources
 
 
-def analyze_contract(text: str) -> dict:
+def analyze_contract(text: str, perspective: str = "을") -> dict:
     normalized = normalize_text(text)
     if not normalized:
         raise ValueError("분석할 계약서 내용이 없습니다.")
@@ -38,6 +44,21 @@ def analyze_contract(text: str) -> dict:
             )
         )
 
+    for issue in find_internal_consistency_issues(text):
+        findings.append(
+            Finding(
+                rule_id=issue["id"],
+                status="검토 필요",
+                title=issue["title"],
+                article="문서 내부 일관성",
+                message=issue["message"],
+                evidence=redact_personal_data(issue["evidence"]),
+                official_url=sources["metadata"]["official_url"],
+                severity=issue["severity"],
+                confidence=95,
+            )
+        )
+
     present_fields = sum(field["status"] == "확인" for field in extracted_fields)
     completeness = round(present_fields / len(extracted_fields) * 100)
     risk_counts = {
@@ -51,6 +72,12 @@ def analyze_contract(text: str) -> dict:
         "extracted_fields": extracted_fields,
         "findings": [asdict(finding) for finding in findings],
         "risk_counts": risk_counts,
+        "sections": split_contract_sections(redact_personal_data(text)),
+        "perspective": perspective,
+        "perspective_summary": summarize_by_perspective(
+            redact_personal_data(text), perspective
+        ),
+        "renewal_terms": extract_renewal_terms(redact_personal_data(text)),
         "redacted_preview": redact_personal_data(text),
         "legal_metadata": sources["metadata"],
         "scope_warning": (
