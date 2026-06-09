@@ -11,15 +11,68 @@ from src.contract_structure import (
     split_contract_sections,
     summarize_by_perspective,
 )
-from src.field_extraction import extract_employment_fields, extract_housing_fields
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+HOUSING_FIELDS = [
+    ("parties", "임대인·임차인", [r"임대인", r"임차인"]),
+    ("property", "임대 목적물", [r"소재지", r"임대\s*(?:목적물|주택)", r"주소"]),
+    ("deposit", "보증금", [r"보증금"]),
+    ("monthly_rent", "월 차임·월세", [r"월\s*(?:차임|세)", r"차임"]),
+    ("term", "임대차 기간", [r"임대차\s*기간", r"계약\s*기간"]),
+    ("payment_date", "차임 지급일", [r"(?:차임|월세)\s*지급일", r"매월.{0,10}지급"]),
+    ("management_fee", "관리비", [r"관리비"]),
+    ("repairs", "수선·하자 책임", [r"수선", r"하자", r"수리\s*비용"]),
+    ("deposit_return", "보증금 반환", [r"보증금\s*반환"]),
+    ("special_terms", "특약사항", [r"특약\s*사항", r"특약"]),
+]
+
+EMPLOYMENT_FIELDS = [
+    ("parties", "사용자·근로자", [r"사용자", r"근로자", r"사업주"]),
+    ("workplace", "근무 장소", [r"근무\s*장소", r"취업\s*장소"]),
+    ("duties", "업무 내용", [r"업무\s*(?:내용|종류)", r"담당\s*업무"]),
+    ("term", "근로계약 기간", [r"근로계약\s*기간", r"계약\s*기간"]),
+    ("work_hours", "소정근로시간", [r"소정\s*근로\s*시간", r"근무\s*시간"]),
+    ("break_time", "휴게시간", [r"휴게\s*시간"]),
+    ("work_days", "근무일", [r"근무일", r"근로일"]),
+    ("holidays", "휴일", [r"주휴일", r"유급\s*휴일", r"휴일"]),
+    ("wage", "임금 구성·금액", [r"임금", r"기본급", r"시급", r"월급"]),
+    ("pay_date", "임금 지급일·방법", [r"임금\s*지급", r"급여\s*지급", r"지급일"]),
+    ("annual_leave", "연차 유급휴가", [r"연차", r"유급\s*휴가"]),
+]
 
 
 def load_special_sources(filename: str) -> dict:
     with (ROOT / "data" / filename).open(encoding="utf-8") as source_file:
         return json.load(source_file)
+
+
+def _extract_special_fields(text: str, configurations: list[tuple]) -> list[dict]:
+    fields = []
+    for key, label, patterns in configurations:
+        expression = "|".join(patterns)
+        match = re.search(
+            rf"(?im)^\s*(?:{expression})\s*[:：]?\s*(.+?)\s*$",
+            text,
+        )
+        value = match.group(1).strip(" -·ㆍ") if match else ""
+        fields.append(
+            {
+                "key": key,
+                "label": label,
+                "value": value,
+                "status": "확인" if value else "누락 가능성",
+                "confidence": 90 if value else 95,
+                "message": (
+                    "표제와 구체적인 값이 탐지되었습니다. 실제 사실과의 일치 여부는 "
+                    "별도 확인이 필요합니다."
+                    if value
+                    else "표제와 구체적인 값을 자동 분석에서 찾지 못했습니다."
+                ),
+            }
+        )
+    return fields
 
 
 def analyze_housing_contract(text: str, perspective: str = "임차인") -> dict:
@@ -29,7 +82,7 @@ def analyze_housing_contract(text: str, perspective: str = "임차인") -> dict:
         document_type="housing_lease",
         perspective=perspective,
         sources=sources,
-        extracted_fields=extract_housing_fields(text),
+        extracted_fields=_extract_special_fields(text, HOUSING_FIELDS),
         scope_warning=(
             "등기사항증명서, 건축물대장, 선순위 임차보증금, 국세·지방세 체납, "
             "소유자 일치 여부는 문서 원문만으로 확인할 수 없습니다."
@@ -76,7 +129,7 @@ def analyze_employment_contract(text: str, perspective: str = "근로자") -> di
         document_type="employment_contract",
         perspective=perspective,
         sources=sources,
-        extracted_fields=extract_employment_fields(text),
+        extracted_fields=_extract_special_fields(text, EMPLOYMENT_FIELDS),
         scope_warning=(
             "근로자성, 사업장 규모, 업종, 수습·단시간근로 및 근로시간 적용 예외는 "
             "계약서 문언만으로 확정할 수 없습니다."
