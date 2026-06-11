@@ -1,7 +1,8 @@
 import json
+import re
 from pathlib import Path
 
-import joblib
+from src.model_security import load_verified_joblib
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -9,6 +10,12 @@ DEFAULT_MODEL_PATH = ROOT / "models" / "document_type_classifier.joblib"
 DEFAULT_METRICS_PATH = ROOT / "models" / "document_type_metrics.json"
 DEFAULT_CLAUSE_MODEL_PATH = ROOT / "models" / "clause_risk_classifier.joblib"
 DEFAULT_CLAUSE_METRICS_PATH = ROOT / "models" / "clause_risk_metrics.json"
+DEFAULT_FIELD_MODEL_PATH = ROOT / "models" / "field_extractor.joblib"
+DEFAULT_FIELD_METRICS_PATH = ROOT / "models" / "field_extractor_metrics.json"
+DEFAULT_FIELD_SPAN_MODEL_PATH = ROOT / "models" / "field_span_extractor.joblib"
+DEFAULT_FIELD_SPAN_METRICS_PATH = (
+    ROOT / "models" / "field_span_extractor_metrics.json"
+)
 
 ML_LABELS = {
     "privacy_consent": "개인정보 동의서",
@@ -41,7 +48,7 @@ def load_document_type_model(path: Path = DEFAULT_MODEL_PATH):
             "학습된 문서 유형 분류 모델이 없습니다. "
             "`python scripts/train_document_classifier.py`를 실행하세요."
         )
-    return joblib.load(path)
+    return load_verified_joblib(path)
 
 
 def predict_document_type(text: str, model=None) -> dict:
@@ -82,7 +89,7 @@ def load_clause_risk_model(path: Path = DEFAULT_CLAUSE_MODEL_PATH):
             "학습된 조항 위험 분류 모델이 없습니다. "
             "`python scripts/train_clause_classifier.py`를 실행하세요."
         )
-    return joblib.load(path)
+    return load_verified_joblib(path)
 
 
 def predict_clause_risks(
@@ -90,7 +97,10 @@ def predict_clause_risks(
     model=None,
     minimum_probability: float = 0.55,
 ) -> list[dict]:
-    classifier = model or load_clause_risk_model()
+    try:
+        classifier = model or load_clause_risk_model()
+    except (FileNotFoundError, OSError, ValueError):
+        return []
     clauses = [
         line.strip()
         for line in text.splitlines()
@@ -115,3 +125,119 @@ def predict_clause_risks(
             }
         )
     return predictions
+
+
+def load_field_extractor_model(path: Path = DEFAULT_FIELD_MODEL_PATH):
+    if not path.exists():
+        raise FileNotFoundError(
+            "학습된 필드 추출 모델이 없습니다. "
+            "`python scripts/train_field_extractor.py`를 실행하세요."
+        )
+    return load_verified_joblib(path)
+
+
+def predict_field_candidates(
+    text: str,
+    document_group: str,
+    allowed_keys: set[str],
+    model=None,
+    minimum_probability: float = 0.25,
+) -> list[dict]:
+    classifier = model or load_field_extractor_model()
+    expected_labels = {f"{document_group}.{key}" for key in allowed_keys}
+    candidates = {}
+    for line in (item.strip() for item in text.splitlines()):
+        if len(line) < 4:
+            continue
+        probabilities = classifier.predict_proba([line])[0]
+        classes = [str(label) for label in classifier.classes_]
+        best_index = int(probabilities.argmax())
+        label = classes[best_index]
+        probability = float(probabilities[best_index])
+        if label not in expected_labels or probability < minimum_probability:
+            continue
+        key = label.split(".", 1)[1]
+        current = candidates.get(key)
+        if current and current["probability"] >= probability * 100:
+            continue
+        span = predict_field_value_span(line, label)
+        candidates[key] = {
+            "key": key,
+            "line": line,
+            **(span or _field_value_from_line(line)),
+            "probability": round(probability * 100, 2),
+            "model_type": (
+                "TF-IDF character n-gram + calibrated Logistic Regression"
+            ),
+        }
+    return list(candidates.values())
+
+
+def load_field_span_model(path: Path = DEFAULT_FIELD_SPAN_MODEL_PATH):
+    if not path.exists():
+        raise FileNotFoundError(
+            "학습된 필드 span 모델이 없습니다. "
+            "`python scripts/train_field_span_extractor.py`를 실행하세요."
+        )
+    return load_verified_joblib(path)
+
+
+def predict_field_value_span(
+    line: str,
+    field_label: str,
+    model=None,
+) -> dict | None:
+    from src.optional_models import predict_transformer_span
+
+    transformer_result = predict_transformer_span(line, field_label)
+    if transformer_result:
+        return transformer_result
+    try:
+        bundle = model or load_field_span_model()
+        from scripts.train_field_span_extractor import token_features
+
+        matches = list(re.finditer(r"\S+", line))
+        tokens = [match.group(0) for match in matches]
+        features = [
+            token_features(tokens, index, field_label)
+            for index in range(len(tokens))
+        ]
+        matrix = bundle["vectorizer"].transform(features)
+        labels = bundle["classifier"].predict(matrix)
+    except (FileNotFoundError, OSError, ValueError):
+        return None
+    selected = [
+        match
+        for match, label in zip(matches, labels)
+        if str(label) in {"B-VALUE", "I-VALUE"}
+    ]
+    if not selected:
+        return None
+    start = selected[0].start()
+    end = selected[-1].end()
+    return {
+        "value": line[start:end].strip(" -·ㆍ"),
+        "span_start": start,
+        "span_end": end,
+        "span_method": "bio_token_model",
+    }
+
+
+def _field_value_from_line(line: str) -> dict:
+    if re_match := re.search(r"[:：]\s*(.+)$", line):
+        raw_value = re_match.group(1)
+        value = raw_value.strip(" -·ㆍ")
+        start = line.find(value, re_match.start(1))
+        return {"value": value, "span_start": start, "span_end": start + len(value)}
+    particle_match = re.search(
+        r"(?:은|는)\s+(.+)$",
+        line,
+    )
+    if particle_match:
+        raw_value = particle_match.group(1)
+        value = raw_value.strip(" -·ㆍ")
+        start = line.find(value, particle_match.start(1))
+        return {"value": value, "span_start": start, "span_end": start + len(value)}
+    value = line.strip(" -·ㆍ")
+    start = line.find(value)
+    return {"value": value, "span_start": start, "span_end": start + len(value)}

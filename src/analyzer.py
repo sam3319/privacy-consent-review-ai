@@ -56,11 +56,50 @@ def redact_personal_data(text: str) -> str:
         "[전화번호 마스킹]",
         redacted,
     )
-    return re.sub(
+    redacted = re.sub(
         r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b",
         "[이메일 마스킹]",
         redacted,
     )
+    redacted = re.sub(
+        r"(?<!\d)\d{2,6}[-\s]\d{2,6}[-\s]\d{2,8}(?!\d)",
+        "[계좌번호 후보 마스킹]",
+        redacted,
+    )
+    redacted = re.sub(
+        r"(?m)^(\s*(?:성명|이름|임대인|임차인|근로자|사용자)\s*[:：]\s*)"
+        r"([가-힣]{2,4})(\s*)$",
+        r"\1[성명 마스킹]\3",
+        redacted,
+    )
+    return re.sub(
+        r"(?m)^(\s*(?:주소|소재지|도로명\s*주소|임대\s*목적물)\s*[:：]\s*)"
+        r"(.+)$",
+        r"\1[상세 주소 마스킹]",
+        redacted,
+    )
+
+
+def detect_sensitive_data(text: str) -> list[str]:
+    patterns = {
+        "주민등록번호": r"\b\d{6}\s*[-]?\s*[1-4]\d{6}\b",
+        "전화번호": r"\b01[016789][-\s]?\d{3,4}[-\s]?\d{4}\b",
+        "이메일": r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b",
+        "계좌번호 후보": r"(?<!\d)\d{2,6}[-\s]\d{2,6}[-\s]\d{2,8}(?!\d)",
+        "성명 후보": (
+            r"(?m)^\s*(?:성명|이름|임대인|임차인|근로자|사용자)"
+            r"\s*[:：]\s*[가-힣]{2,4}\s*$"
+        ),
+        "상세 주소 후보": (
+            r"(?m)^\s*(?:주소|소재지|도로명\s*주소|임대\s*목적물)"
+            r"\s*[:：]\s*.+$"
+        ),
+    }
+    return [
+        label
+        for label, pattern in patterns.items()
+        if re.search(pattern, text)
+    ]
 
 
 def analyze_document(text: str, document_type: str = "collection") -> dict:

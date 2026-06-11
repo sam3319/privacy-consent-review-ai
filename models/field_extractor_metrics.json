@@ -1,0 +1,241 @@
+{
+  "model_type": "TF-IDF character n-gram + calibrated Logistic Regression",
+  "task": "document field line classification",
+  "trained_at_utc": "2026-06-09T06:23:33+00:00",
+  "random_seed": 42,
+  "dataset_size": 1120,
+  "class_distribution": {
+    "housing.repairs": 36,
+    "other": 112,
+    "employment.workplace": 36,
+    "contract.term": 36,
+    "housing.term": 36,
+    "employment.wage": 36,
+    "employment.parties": 36,
+    "contract.parties": 36,
+    "employment.annual_leave": 36,
+    "employment.pay_date": 36,
+    "housing.parties": 36,
+    "housing.monthly_rent": 36,
+    "employment.holidays": 36,
+    "employment.work_days": 36,
+    "contract.payment": 36,
+    "contract.termination": 36,
+    "employment.duties": 36,
+    "housing.special_terms": 36,
+    "contract.subject": 36,
+    "housing.deposit": 36,
+    "employment.break_time": 36,
+    "employment.term": 36,
+    "housing.payment_date": 36,
+    "contract.dispute": 36,
+    "contract.damages": 36,
+    "housing.management_fee": 36,
+    "employment.work_hours": 36,
+    "housing.deposit_return": 36,
+    "housing.property": 36
+  },
+  "holdout_size": 280,
+  "holdout_accuracy": 1.0,
+  "holdout_macro_f1": 1.0,
+  "cross_validation_macro_f1_mean": 1.0,
+  "cross_validation_macro_f1_std": 0.0,
+  "classification_report": {
+    "contract.damages": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "contract.dispute": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "contract.parties": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "contract.payment": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "contract.subject": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "contract.term": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "contract.termination": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.annual_leave": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.break_time": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.duties": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.holidays": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.parties": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.pay_date": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.term": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.wage": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.work_days": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.work_hours": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "employment.workplace": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "housing.deposit": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "housing.deposit_return": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "housing.management_fee": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "housing.monthly_rent": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "housing.parties": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "housing.payment_date": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "housing.property": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "housing.repairs": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "housing.special_terms": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "housing.term": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 9.0
+    },
+    "other": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 28.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 280.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 280.0
+    }
+  },
+  "limitations": [
+    "합성 문장으로 학습되어 실제 계약서 표현과 OCR 오류에 대한 외부 검증이 필요하다.",
+    "문장 단위 필드 후보 분류 모델이며 토큰 단위 개체명 인식 모델은 아니다.",
+    "정규식 추출 결과를 대체하지 않고 누락된 필드의 후보를 보완한다."
+  ],
+  "probability_calibration": {
+    "method": "sigmoid",
+    "cross_validation_folds": 3
+  }
+}

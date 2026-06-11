@@ -12,6 +12,12 @@ from src.contract_structure import (
     summarize_by_perspective,
 )
 from src.ml_classifier import predict_clause_risks
+from src.field_extraction import augment_fields_with_ml
+from src.housing_verification import (
+    calculate_deposit_risk,
+    cross_check_housing_documents,
+    parse_money,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,7 +55,11 @@ def load_special_sources(filename: str) -> dict:
         return json.load(source_file)
 
 
-def _extract_special_fields(text: str, configurations: list[tuple]) -> list[dict]:
+def _extract_special_fields(
+    text: str,
+    configurations: list[tuple],
+    document_group: str,
+) -> list[dict]:
     fields = []
     for key, label, patterns in configurations:
         expression = "|".join(patterns)
@@ -73,17 +83,22 @@ def _extract_special_fields(text: str, configurations: list[tuple]) -> list[dict
                 ),
             }
         )
-    return fields
+    return augment_fields_with_ml(fields, text, document_group)
 
 
-def analyze_housing_contract(text: str, perspective: str = "임차인") -> dict:
+def analyze_housing_contract(
+    text: str,
+    perspective: str = "임차인",
+    supporting_documents: dict[str, str] | None = None,
+    financial_inputs: dict[str, int | float] | None = None,
+) -> dict:
     sources = load_special_sources("housing_legal_sources.json")
     result = _analyze_special_contract(
         text=text,
         document_type="housing_lease",
         perspective=perspective,
         sources=sources,
-        extracted_fields=_extract_special_fields(text, HOUSING_FIELDS),
+        extracted_fields=_extract_special_fields(text, HOUSING_FIELDS, "housing"),
         scope_warning=(
             "등기사항증명서, 건축물대장, 선순위 임차보증금, 국세·지방세 체납, "
             "소유자 일치 여부는 문서 원문만으로 확인할 수 없습니다."
@@ -120,6 +135,27 @@ def analyze_housing_contract(text: str, perspective: str = "임차인") -> dict:
             )
         )
         result["risk_counts"] = _risk_counts(result["findings"])
+    result["housing_verification"] = cross_check_housing_documents(
+        text, supporting_documents
+    )
+    amounts = financial_inputs or {}
+    registry_claim = result["housing_verification"]["registry"].get(
+        "senior_claim_amount"
+    )
+    deposit_field = next(
+        (
+            field["value"]
+            for field in result["extracted_fields"]
+            if field["key"] == "deposit"
+        ),
+        "",
+    )
+    result["deposit_risk"] = calculate_deposit_risk(
+        property_value=amounts.get("property_value", 0),
+        tenant_deposit=amounts.get("tenant_deposit") or parse_money(deposit_field) or 0,
+        senior_claims=amounts.get("senior_claims") or registry_claim or 0,
+        senior_deposits=amounts.get("senior_deposits", 0),
+    )
     return result
 
 
@@ -130,7 +166,9 @@ def analyze_employment_contract(text: str, perspective: str = "근로자") -> di
         document_type="employment_contract",
         perspective=perspective,
         sources=sources,
-        extracted_fields=_extract_special_fields(text, EMPLOYMENT_FIELDS),
+        extracted_fields=_extract_special_fields(
+            text, EMPLOYMENT_FIELDS, "employment"
+        ),
         scope_warning=(
             "근로자성, 사업장 규모, 업종, 수습·단시간근로 및 근로시간 적용 예외는 "
             "계약서 문언만으로 확정할 수 없습니다."

@@ -21,6 +21,34 @@ def test_housing_contract_flags_renewal_and_rent_increase():
     assert "HLA_RENEWAL_REQUEST_WAIVER" in ids
     assert "HLA_RENT_INCREASE" in ids
     assert result["perspective"] == "임차인"
+    assert result["housing_verification"]["summary"]["자료 부족"] >= 1
+
+
+def test_housing_contract_combines_external_documents_and_financial_inputs():
+    text = Path("samples/risky_housing_lease.txt").read_text(encoding="utf-8")
+
+    result = analyze_housing_contract(
+        text,
+        supporting_documents={
+            "registry": (
+                "소유자: 홍길동\n"
+                "소재지: 서울특별시 예시구 예시로 100, 101호\n"
+                "채권최고액: 120,000,000원"
+            ),
+            "building_ledger": (
+                "도로명 주소: 서울특별시 예시구 예시로 100, 101호\n"
+                "주용도: 공동주택"
+            ),
+        },
+        financial_inputs={
+            "property_value": 300_000_000,
+            "senior_deposits": 30_000_000,
+        },
+    )
+
+    assert result["housing_verification"]["summary"]["확인"] == 4
+    assert result["deposit_risk"]["prior_total"] == 150_000_000
+    assert result["deposit_risk"]["risk_level"] == "중간"
 
 
 def test_employment_contract_flags_hours_wage_and_penalty():

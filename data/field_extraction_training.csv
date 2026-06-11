@@ -1,0 +1,1121 @@
+text,label,value
+소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+근무  장소는  예시구  고객지원센터이다.,employment.workplace,예시구 고객지원센터
+계약 기간은 계약 체결일부터 12개월로 한다.,contract.term,계약 체결일부터 12개월
+계약 존속기간: 2026년 7월 1일부터 2028년 6월 30일까지,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+"급여  구성·금액:  월  기본급  3,000,000원",employment.wage,"월 기본급 3,000,000원"
+근로계약  당사자는  사용자  예시회사와  근로자  김예시이다.,employment.parties,사용자 예시회사와 근로자 김예시
+당사자: 사업자 예시회사와 이용자 김예시,contract.parties,사업자 예시회사와 이용자 김예시
+연차  유급휴가는  근로기준법에  따라  부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+임금  지급은  매월  25일  근로자  계좌로  지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+임대인·임차인:  임대인  홍길동과  임차인  김예시,housing.parties,임대인 홍길동과 임차인 김예시
+"연봉 40,000,000원을 지급한다.",employment.wage,"연봉 40,000,000원"
+근무  장소는  회사  지정  사업장이다.,employment.workplace,회사 지정 사업장
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+월세: 월 75만원,housing.monthly_rent,월 75만원
+매주 일요일을 휴일로 한다.,employment.holidays,매주 일요일
+소정근로일: 주 5일,employment.work_days,주 5일
+사업주 박대표 및 직원 이근로 사이에 근로계약을 체결한다.,employment.parties,사업주 박대표 및 직원 이근로
+"보수 및 지급 조건: 월 100,000원을 매월 25일 지급",contract.payment,"월 100,000원을 매월 25일 지급"
+30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+서울 본사에서 근무한다.,employment.workplace,서울 본사
+계약 해지는 30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+근로자는 소프트웨어 개발를 수행한다.,employment.duties,소프트웨어 개발
+계약 당사자는 갑 주식회사 예시와 을 김고객로 한다.,contract.parties,갑 주식회사 예시와 을 김고객
+특약사항:  반려동물  사육은  사전  동의를  받는다,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+당사자 :  사업자 예시회사와 이용자 김예시,contract.parties,사업자 예시회사와 이용자 김예시
+"차임은 매월 500,000원이다.",housing.monthly_rent,"매월 500,000원"
+계약 목적은 웹사이트 유지보수 용역이다.,contract.subject,웹사이트 유지보수 용역
+기타 정하지 않은 사항은 상호 협의한다.,other,
+업무 범위 :  웹사이트 유지보수 용역,contract.subject,웹사이트 유지보수 용역
+"임차인은 매월 500,000원을 지급한다.",housing.monthly_rent,"매월 500,000원"
+"임차인은  100,000,000원을  보증금으로  지급한다.",housing.deposit,"100,000,000원"
+특약사항 :  입주 전 도배를 완료한다,housing.special_terms,입주 전 도배를 완료한다
+오후 3시부터 3시 30분까지 자유롭게 이용한다.,employment.break_time,오후 3시부터 3시 30분까지
+"월세: 매월 500,000원",housing.monthly_rent,"매월 500,000원"
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+2026년  7월  1일부터  2028년  6월  30일까지  동안  임대한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+수선  책임은  주요  설비는  임대인이  수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+기간의 정함이 없음 동안 근무한다.,employment.term,기간의 정함이 없음
+근로계약  당사자는  사용자  예시회사와  근로자  김예시이다.,employment.parties,사용자 예시회사와 근로자 김예시
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+"연봉 40,000,000원을 지급한다.",employment.wage,"연봉 40,000,000원"
+연차휴가: 연 15일을 부여한다,employment.annual_leave,연 15일을 부여한다
+업무 범위: 온라인 정보 제공 서비스,contract.subject,온라인 정보 제공 서비스
+입주일부터 2년 동안 임대한다.,housing.term,입주일부터 2년
+소유자 박임대 및 세입자 이임차 사이에 임대차계약을 체결한다.,housing.parties,소유자 박임대 및 세입자 이임차
+지급  기일:  매달  10일,housing.payment_date,매달 10일
+유급 휴일: 매주 일요일,employment.holidays,매주 일요일
+임대인·임차인: 소유자 박임대 및 세입자 이임차,housing.parties,소유자 박임대 및 세입자 이임차
+재판 관할: 상호 협의 후 민사소송으로 해결한다,contract.dispute,상호 협의 후 민사소송으로 해결한다
+귀책 당사자가 직접 손해를 배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+계약 기간은 계약 체결일부터 12개월로 한다.,contract.term,계약 체결일부터 12개월
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+연차 유급휴가는 연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+"임금은 연봉 40,000,000원이다.",employment.wage,"연봉 40,000,000원"
+근로계약  기간은  2026년  7월  1일부터  2027년  6월  30일까지이다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+"공용관리비: 월 100,000원",housing.management_fee,"월 100,000원"
+"시간급 12,000원을 지급한다.",employment.wage,"시간급 12,000원"
+차임 지급일은 매달 10일이다.,housing.payment_date,매달 10일
+해제·해지 조건: 상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+사업자 예시회사와 이용자 김예시 사이에 계약을 체결한다.,contract.parties,사업자 예시회사와 이용자 김예시
+근무  시간:  오전  9시부터  오후  6시까지,employment.work_hours,오전 9시부터 오후 6시까지
+위약금 조건 :  지체일수마다 대금의 0.1%를 지급한다,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+위약금 조건: 귀책 당사자가 직접 손해를 배상한다,contract.damages,귀책 당사자가 직접 손해를 배상한다
+서울중앙지방법원을  관할  법원으로  한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+계약  목적은  웹사이트  유지보수  용역이다.,contract.subject,웹사이트 유지보수 용역
+1일 8시간 주 40시간 근무한다.,employment.work_hours,1일 8시간 주 40시간
+사용자·근로자 :  사업주 박대표 및 직원 이근로,employment.parties,사업주 박대표 및 직원 이근로
+근무 장소는 예시구 고객지원센터이다.,employment.workplace,예시구 고객지원센터
+계약 체결일부터 12개월 동안 계약은 유효하다.,contract.term,계약 체결일부터 12개월
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+고용  기간:  2026년  7월  1일부터  2027년  6월  30일까지,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+휴식 시간: 오후 3시부터 3시 30분까지,employment.break_time,오후 3시부터 3시 30분까지
+예시구  고객지원센터에서  근무한다.,employment.workplace,예시구 고객지원센터
+업무 내용: 매장 판매 업무,employment.duties,매장 판매 업무
+고용 기간: 기간의 정함이 없음,employment.term,기간의 정함이 없음
+임대인·임차인:  임대인  홍길동과  임차인  김예시,housing.parties,임대인 홍길동과 임차인 김예시
+유급 휴일 :  매주 일요일,employment.holidays,매주 일요일
+당사자는 개인정보를 안전하게 관리한다.,other,
+소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+월세는 매달 10일에 납부한다.,housing.payment_date,매달 10일
+갑 주식회사 예시와 을 김고객 사이에 계약을 체결한다.,contract.parties,갑 주식회사 예시와 을 김고객
+매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+임대인·임차인: 임대인 홍길동과 임차인 김예시,housing.parties,임대인 홍길동과 임차인 김예시
+보증금  반환은  목적물을  인도받는  즉시  반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+사용자·근로자: 사업주 박대표 및 직원 이근로,employment.parties,사업주 박대표 및 직원 이근로
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+근로계약 기간은 기간의 정함이 없음이다.,employment.term,기간의 정함이 없음
+반환 조건 :  퇴거와 동시에 정산하여 지급한다,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+담당 업무는 고객 상담과 문서 관리이다.,employment.duties,고객 상담과 문서 관리
+손해배상은 지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+차임 지급일은 매달 10일이다.,housing.payment_date,매달 10일
+소정근로일: 월요일부터 금요일,employment.work_days,월요일부터 금요일
+근로계약 기간은 2026년 7월 1일부터 2027년 6월 30일까지이다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+임대할 주택은 부산광역시 예시동 200번지 아파트 301호이다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+"보증금 :  100,000,000원",housing.deposit,"100,000,000원"
+관리비는  실비  정산이다.,housing.management_fee,실비 정산
+휴게시간은 12시부터 13시까지이다.,employment.break_time,12시부터 13시까지
+유효 기간 :  계약 체결일부터 12개월,contract.term,계약 체결일부터 12개월
+매월 25일 근로자 계좌로 지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+"목적물 소재지: 서울특별시 예시구 예시로 100, 101호",housing.property,"서울특별시 예시구 예시로 100, 101호"
+특약으로 입주 전 도배를 완료한다.,housing.special_terms,입주 전 도배를 완료한다
+임차보증금은 오천만원으로 정한다.,housing.deposit,오천만원
+계약 목적은 제품 공급 업무이다.,contract.subject,제품 공급 업무
+근무  장소는  서울  본사이다.,employment.workplace,서울 본사
+업무  범위:  온라인  정보  제공  서비스,contract.subject,온라인 정보 제공 서비스
+오후  3시부터  3시  30분까지  자유롭게  이용한다.,employment.break_time,오후 3시부터 3시 30분까지
+갑  주식회사  예시와  을  김고객  사이에  계약을  체결한다.,contract.parties,갑 주식회사 예시와 을 김고객
+유급 휴일: 매주 일요일,employment.holidays,매주 일요일
+"연봉 40,000,000원을 지급한다.",employment.wage,"연봉 40,000,000원"
+목적물 소재지 :  부산광역시 예시동 200번지 아파트 301호,housing.property,부산광역시 예시동 200번지 아파트 301호
+"계약 대금은 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+갑  주식회사  예시와  을  김고객  사이에  계약을  체결한다.,contract.parties,갑 주식회사 예시와 을 김고객
+소정근로일 :  매주 월·화·수·목·금,employment.work_days,매주 월·화·수·목·금
+임대인·임차인: 임대인 홍길동과 임차인 김예시,housing.parties,임대인 홍길동과 임차인 김예시
+근무 장소는 회사 지정 사업장이다.,employment.workplace,회사 지정 사업장
+휴식 시간: 오후 3시부터 3시 30분까지,employment.break_time,오후 3시부터 3시 30분까지
+사업주 박대표 및 직원 이근로 사이에 근로계약을 체결한다.,employment.parties,사업주 박대표 및 직원 이근로
+연차휴가: 근로기준법에 따라 부여한다,employment.annual_leave,근로기준법에 따라 부여한다
+"차임은 매월 말일 600,000원이다.",housing.monthly_rent,"매월 말일 600,000원"
+계약 체결일부터 12개월 동안 계약은 유효하다.,contract.term,계약 체결일부터 12개월
+반환 조건: 퇴거와 동시에 정산하여 지급한다,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+담당 업무는 소프트웨어 개발이다.,employment.duties,소프트웨어 개발
+해제·해지 조건 :  30일 전 통지로 종료할 수 있다,contract.termination,30일 전 통지로 종료할 수 있다
+사업자 예시회사와 이용자 김예시 사이에 계약을 체결한다.,contract.parties,사업자 예시회사와 이용자 김예시
+담당  업무는  소프트웨어  개발이다.,employment.duties,소프트웨어 개발
+근무 장소는 서울 본사이다.,employment.workplace,서울 본사
+임금  지급은  매월  25일  근로자  계좌로  지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+특약으로 입주 전 도배를 완료한다.,housing.special_terms,입주 전 도배를 완료한다
+"월세: 매월 말일 600,000원",housing.monthly_rent,"매월 말일 600,000원"
+"임차인은 1억 5,000만원을 보증금으로 지급한다.",housing.deposit,"1억 5,000만원"
+귀책  당사자가  직접  손해를  배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+기타 정하지 않은 사항은 상호 협의한다.,other,
+담당  업무는  매장  판매  업무이다.,employment.duties,매장 판매 업무
+입주일부터 2년 동안 임대한다.,housing.term,입주일부터 2년
+계약 기간은 계약 체결일부터 12개월로 한다.,contract.term,계약 체결일부터 12개월
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+"을에게 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+임차인이 실비 정산의 관리비를 부담한다.,housing.management_fee,실비 정산
+연차휴가: 연 15일을 부여한다,employment.annual_leave,연 15일을 부여한다
+소정근로시간은 1일 8시간 주 40시간이다.,employment.work_hours,1일 8시간 주 40시간
+업무 내용: 매장 판매 업무,employment.duties,매장 판매 업무
+계약 존속기간: 2026년 7월 1일부터 2028년 6월 30일까지,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+임차보증금은 오천만원으로 정한다.,housing.deposit,오천만원
+"임차인은 매월 말일 600,000원을 지급한다.",housing.monthly_rent,"매월 말일 600,000원"
+"급여 구성·금액: 월 기본급 3,000,000원",employment.wage,"월 기본급 3,000,000원"
+업무 범위: 제품 공급 업무,contract.subject,제품 공급 업무
+소정근로시간은 1일 8시간 주 40시간이다.,employment.work_hours,1일 8시간 주 40시간
+휴식  시간:  12시부터  13시까지,employment.break_time,12시부터 13시까지
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+임금 지급은 매월 25일 근로자 계좌로 지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+"서울특별시 예시구 예시로 100, 101호를 임대 목적물로 한다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+업무  범위:  제품  공급  업무,contract.subject,제품 공급 업무
+1일 8시간 주 40시간 근무한다.,employment.work_hours,1일 8시간 주 40시간
+임대차  기간은  2026년  7월  1일부터  2028년  6월  30일까지로  한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+하자 보수 :  소모품은 임차인이 교체한다,housing.repairs,소모품은 임차인이 교체한다
+지급 기일: 매월 말일,housing.payment_date,매월 말일
+"보수 및 지급 조건: 월 100,000원을 매월 25일 지급",contract.payment,"월 100,000원을 매월 25일 지급"
+특약사항: 반려동물 사육은 사전 동의를 받는다,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+계약 기간은 계약 체결일부터 12개월로 한다.,contract.term,계약 체결일부터 12개월
+휴식 시간: 근로 도중 1시간,employment.break_time,근로 도중 1시간
+사용자·근로자: 사업주 박대표 및 직원 이근로,employment.parties,사업주 박대표 및 직원 이근로
+분쟁 해결은 상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+임대인·임차인:  임대인  홍길동과  임차인  김예시,housing.parties,임대인 홍길동과 임차인 김예시
+기타 정하지 않은 사항은 상호 협의한다.,other,
+손해배상은 지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+유효 기간: 2026년 7월 1일부터 2027년 6월 30일까지,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+서울 본사에서 근무한다.,employment.workplace,서울 본사
+기타 정하지 않은 사항은 상호 협의한다.,other,
+임금 지급은 매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+소정근로시간은  오전  9시부터  오후  6시까지이다.,employment.work_hours,오전 9시부터 오후 6시까지
+근무일은  주  5일이다.,employment.work_days,주 5일
+임대인·임차인: 소유자 박임대 및 세입자 이임차,housing.parties,소유자 박임대 및 세입자 이임차
+"급여 구성·금액: 시간급 12,000원",employment.wage,"시간급 12,000원"
+임대차 기간은 입주일부터 2년로 한다.,housing.term,입주일부터 2년
+하자 보수: 주요 설비는 임대인이 수선한다,housing.repairs,주요 설비는 임대인이 수선한다
+업무 범위: 웹사이트 유지보수 용역,contract.subject,웹사이트 유지보수 용역
+"보증금 :  1억 5,000만원",housing.deposit,"1억 5,000만원"
+상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+제품 공급 업무를 계약 대상으로 한다.,contract.subject,제품 공급 업무
+임금 지급은 매월 25일 근로자 계좌로 지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+"임차인은 매월 말일 600,000원을 지급한다.",housing.monthly_rent,"매월 말일 600,000원"
+사용자·근로자: 사용자 예시회사와 근로자 김예시,employment.parties,사용자 예시회사와 근로자 김예시
+계약 해지는 30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+2026년 7월 1일부터 2028년 6월 30일까지 동안 임대한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+임차인이 매월 15만원의 관리비를 부담한다.,housing.management_fee,매월 15만원
+소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+2026년 7월 1일부터 2027년 6월 30일까지 동안 계약은 유효하다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+계약  당사자는  임대인  홍길동과  임차인  김예시이다.,housing.parties,임대인 홍길동과 임차인 김예시
+"계약 대금은 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+임대할 주택은 부산광역시 예시동 200번지 아파트 301호이다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+근무 장소는 서울 본사이다.,employment.workplace,서울 본사
+업무 범위 :  온라인 정보 제공 서비스,contract.subject,온라인 정보 제공 서비스
+연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+수선 책임은 주요 설비는 임대인이 수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+업무  내용:  고객  상담과  문서  관리,employment.duties,고객 상담과 문서 관리
+위약금 조건: 지체일수마다 대금의 0.1%를 지급한다,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+휴게시간은 근로 도중 1시간이다.,employment.break_time,근로 도중 1시간
+계약  당사자는  갑  주식회사  예시와  을  김고객로  한다.,contract.parties,갑 주식회사 예시와 을 김고객
+계약 목적은 온라인 정보 제공 서비스이다.,contract.subject,온라인 정보 제공 서비스
+"보증금:  100,000,000원",housing.deposit,"100,000,000원"
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+업무 내용 :  소프트웨어 개발,employment.duties,소프트웨어 개발
+근로기준법에  따라  부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+근로계약 당사자는 사용자 예시회사와 근로자 김예시이다.,employment.parties,사용자 예시회사와 근로자 김예시
+휴식  시간:  오후  3시부터  3시  30분까지,employment.break_time,오후 3시부터 3시 30분까지
+오전 9시부터 오후 6시까지 근무한다.,employment.work_hours,오전 9시부터 오후 6시까지
+계약 해지는 30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+특약사항: 입주 전 도배를 완료한다,housing.special_terms,입주 전 도배를 완료한다
+해제·해지 조건: 30일 전 통지로 종료할 수 있다,contract.termination,30일 전 통지로 종료할 수 있다
+계약  당사자는  갑  주식회사  예시와  을  김고객로  한다.,contract.parties,갑 주식회사 예시와 을 김고객
+계약  존속기간:  2026년  7월  1일부터  2028년  6월  30일까지,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+연차  유급휴가는  근로기준법에  따라  부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+갑 주식회사 예시와 을 김고객 사이에 계약을 체결한다.,contract.parties,갑 주식회사 예시와 을 김고객
+손해배상은  귀책  당사자가  직접  손해를  배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+사업자 예시회사와 이용자 김예시 사이에 계약을 체결한다.,contract.parties,사업자 예시회사와 이용자 김예시
+오전  9시부터  오후  6시까지  근무한다.,employment.work_hours,오전 9시부터 오후 6시까지
+서울중앙지방법원을 관할 법원으로 한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+특약으로 입주 전 도배를 완료한다.,housing.special_terms,입주 전 도배를 완료한다
+"임차인은 매월 500,000원을 지급한다.",housing.monthly_rent,"매월 500,000원"
+임대인은 목적물을 인도받는 즉시 반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+근로자는 소프트웨어 개발를 수행한다.,employment.duties,소프트웨어 개발
+임대차  기간은  2026년  7월  1일부터  2028년  6월  30일까지로  한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+하자 보수: 소모품은 임차인이 교체한다,housing.repairs,소모품은 임차인이 교체한다
+유급  휴일:  토요일과  일요일,employment.holidays,토요일과 일요일
+주요 설비는 임대인이 수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+연차휴가:  근로기준법에  따라  부여한다,employment.annual_leave,근로기준법에 따라 부여한다
+급여  지급일·방법:  매월  25일  근로자  계좌로  지급,employment.pay_date,매월 25일 근로자 계좌로 지급
+임대차 기간은 입주일부터 2년로 한다.,housing.term,입주일부터 2년
+"시간급 12,000원을 지급한다.",employment.wage,"시간급 12,000원"
+소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+임대차 기간은 2026년 7월 1일부터 2028년 6월 30일까지로 한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+수선 책임은 주요 설비는 임대인이 수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+급여 지급일·방법 :  매월 말일 현금으로 지급,employment.pay_date,매월 말일 현금으로 지급
+1일 8시간 주 40시간 근무한다.,employment.work_hours,1일 8시간 주 40시간
+보증금 반환은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+계약  당사자는  임대인  홍길동과  임차인  김예시이다.,housing.parties,임대인 홍길동과 임차인 김예시
+"차임은 매월 500,000원이다.",housing.monthly_rent,"매월 500,000원"
+연차휴가 :  연 15일을 부여한다,employment.annual_leave,연 15일을 부여한다
+연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+보증금 반환은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+"서울특별시  예시구  예시로  100,  101호를  임대  목적물로  한다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+2026년  7월  1일부터  2027년  6월  30일까지  동안  근무한다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+공용관리비: 매월 15만원,housing.management_fee,매월 15만원
+토요일과  일요일을  휴일로  한다.,employment.holidays,토요일과 일요일
+유효 기간: 2026년 7월 1일부터 2027년 6월 30일까지,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+"월세:  매월  말일  600,000원",housing.monthly_rent,"매월 말일 600,000원"
+연차 유급휴가는 연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+주휴일은  근로자의  날과  법정  공휴일이다.,employment.holidays,근로자의 날과 법정 공휴일
+하자 보수: 소모품은 임차인이 교체한다,housing.repairs,소모품은 임차인이 교체한다
+계약 해지는 상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+소정근로일: 매주 월·화·수·목·금,employment.work_days,매주 월·화·수·목·금
+반려동물  사육은  사전  동의를  받는다는  별도  특약으로  정한다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+기타 정하지 않은 사항은 상호 협의한다.,other,
+근로자는 고객 상담과 문서 관리를 수행한다.,employment.duties,고객 상담과 문서 관리
+담당 업무는 매장 판매 업무이다.,employment.duties,매장 판매 업무
+임대인  홍길동과  임차인  김예시  사이에  임대차계약을  체결한다.,housing.parties,임대인 홍길동과 임차인 김예시
+기타 정하지 않은 사항은 상호 협의한다.,other,
+유효  기간:  2026년  7월  1일부터  2027년  6월  30일까지,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+"임차보증금은 1억 5,000만원으로 정한다.",housing.deposit,"1억 5,000만원"
+휴게시간은 12시부터 13시까지이다.,employment.break_time,12시부터 13시까지
+"시간급 12,000원을 지급한다.",employment.wage,"시간급 12,000원"
+임차인이 실비 정산의 관리비를 부담한다.,housing.management_fee,실비 정산
+"보증금: 1억 5,000만원",housing.deposit,"1억 5,000만원"
+계약 존속기간 :  입주일부터 2년,housing.term,입주일부터 2년
+기타 정하지 않은 사항은 상호 협의한다.,other,
+"공용관리비 :  월 100,000원",housing.management_fee,"월 100,000원"
+분쟁 해결은 상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+해제·해지 조건: 상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+사용자 예시회사와 근로자 김예시 사이에 근로계약을 체결한다.,employment.parties,사용자 예시회사와 근로자 김예시
+"차임은 매월 500,000원이다.",housing.monthly_rent,"매월 500,000원"
+차임은 월 75만원이다.,housing.monthly_rent,월 75만원
+급여 지급일·방법: 매월 25일 근로자 계좌로 지급,employment.pay_date,매월 25일 근로자 계좌로 지급
+"보증금: 100,000,000원",housing.deposit,"100,000,000원"
+차임  지급일은  매월  말일이다.,housing.payment_date,매월 말일
+"을에게 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+매주 일요일을 휴일로 한다.,employment.holidays,매주 일요일
+기간의 정함이 없음 동안 근무한다.,employment.term,기간의 정함이 없음
+근로자는 매장 판매 업무를 수행한다.,employment.duties,매장 판매 업무
+분쟁 해결은 상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+주휴일은 근로자의 날과 법정 공휴일이다.,employment.holidays,근로자의 날과 법정 공휴일
+임대인은 목적물을 인도받는 즉시 반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+"서울특별시  예시구  예시로  100,  101호를  임대  목적물로  한다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+공용관리비:  매월  15만원,housing.management_fee,매월 15만원
+"월 기본급 3,000,000원을 지급한다.",employment.wage,"월 기본급 3,000,000원"
+웹사이트 유지보수 용역를 계약 대상으로 한다.,contract.subject,웹사이트 유지보수 용역
+계약 기간은 계약 체결일부터 12개월로 한다.,contract.term,계약 체결일부터 12개월
+계약 당사자는 임대인 홍길동과 임차인 김예시이다.,housing.parties,임대인 홍길동과 임차인 김예시
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+임대인 홍길동과 임차인 김예시 사이에 임대차계약을 체결한다.,housing.parties,임대인 홍길동과 임차인 김예시
+"보수 및 지급 조건 :  총 3,000,000원을 검수 후 지급",contract.payment,"총 3,000,000원을 검수 후 지급"
+소정근로일:  매주  월·화·수·목·금,employment.work_days,매주 월·화·수·목·금
+근무일은 매주 월·화·수·목·금이다.,employment.work_days,매주 월·화·수·목·금
+"계약 대금은 월 100,000원을 매월 25일 지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+취업 장소 :  회사 지정 사업장,employment.workplace,회사 지정 사업장
+입주 전 도배를 완료한다는 별도 특약으로 정한다.,housing.special_terms,입주 전 도배를 완료한다
+하자 보수: 주요 설비는 임대인이 수선한다,housing.repairs,주요 설비는 임대인이 수선한다
+계약 존속기간: 입주일부터 2년,housing.term,입주일부터 2년
+연차 유급휴가는 근로기준법에 따라 부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+근로자는  소프트웨어  개발를  수행한다.,employment.duties,소프트웨어 개발
+근로계약  기간은  2026년  7월  1일부터  2027년  6월  30일까지이다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+기타 정하지 않은 사항은 상호 협의한다.,other,
+"임금은 연봉 40,000,000원이다.",employment.wage,"연봉 40,000,000원"
+당사자는 개인정보를 안전하게 관리한다.,other,
+고용 기간: 2026년 7월 1일부터 2027년 6월 30일까지,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+재판 관할 :  상호 협의 후 민사소송으로 해결한다,contract.dispute,상호 협의 후 민사소송으로 해결한다
+"월세 :  매월 500,000원",housing.monthly_rent,"매월 500,000원"
+임대인은  목적물을  인도받는  즉시  반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+특약으로 입주 전 도배를 완료한다.,housing.special_terms,입주 전 도배를 완료한다
+제품 공급 업무를 계약 대상으로 한다.,contract.subject,제품 공급 업무
+"을에게 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+소정근로시간은 오전 9시부터 오후 6시까지이다.,employment.work_hours,오전 9시부터 오후 6시까지
+12시부터 13시까지 자유롭게 이용한다.,employment.break_time,12시부터 13시까지
+임차인이  실비  정산의  관리비를  부담한다.,housing.management_fee,실비 정산
+"임차인이  월  100,000원의  관리비를  부담한다.",housing.management_fee,"월 100,000원"
+월요일부터 금요일에 근무한다.,employment.work_days,월요일부터 금요일
+분쟁 해결은 상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+휴식 시간 :  근로 도중 1시간,employment.break_time,근로 도중 1시간
+근무일은  매주  월·화·수·목·금이다.,employment.work_days,매주 월·화·수·목·금
+"계약  대금은  월  100,000원을  매월  25일  지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+업무 내용 :  고객 상담과 문서 관리,employment.duties,고객 상담과 문서 관리
+계약  기간은  2026년  7월  1일부터  2027년  6월  30일까지로  한다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+급여 지급일·방법: 매월 말일 현금으로 지급,employment.pay_date,매월 말일 현금으로 지급
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+급여  지급일·방법:  매월  25일  근로자  계좌로  지급,employment.pay_date,매월 25일 근로자 계좌로 지급
+"임차보증금은 1억 5,000만원으로 정한다.",housing.deposit,"1억 5,000만원"
+지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+매월  25일  근로자  계좌로  지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+소정근로일 :  월요일부터 금요일,employment.work_days,월요일부터 금요일
+계약  당사자는  갑  주식회사  예시와  을  김고객로  한다.,contract.parties,갑 주식회사 예시와 을 김고객
+계약  해지는  상대방이  의무를  위반하면  서면  통지  후  해지할  수  있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+급여 지급일·방법 :  매월 말일 현금으로 지급,employment.pay_date,매월 말일 현금으로 지급
+계약 당사자는 소유자 박임대 및 세입자 이임차이다.,housing.parties,소유자 박임대 및 세입자 이임차
+휴식  시간:  근로  도중  1시간,employment.break_time,근로 도중 1시간
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+휴식 시간: 12시부터 13시까지,employment.break_time,12시부터 13시까지
+"임차인이 월 100,000원의 관리비를 부담한다.",housing.management_fee,"월 100,000원"
+임대인 홍길동과 임차인 김예시 사이에 임대차계약을 체결한다.,housing.parties,임대인 홍길동과 임차인 김예시
+해제·해지 조건 :  30일 전 통지로 종료할 수 있다,contract.termination,30일 전 통지로 종료할 수 있다
+"임금은  연봉  40,000,000원이다.",employment.wage,"연봉 40,000,000원"
+임대할 주택은 부산광역시 예시동 200번지 아파트 301호이다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+입주 전 도배를 완료한다는 별도 특약으로 정한다.,housing.special_terms,입주 전 도배를 완료한다
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+상대방이  의무를  위반하면  서면  통지  후  해지할  수  있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+"관리비는 월 100,000원이다.",housing.management_fee,"월 100,000원"
+연차휴가: 근로기준법에 따라 부여한다,employment.annual_leave,근로기준법에 따라 부여한다
+"임금은 시간급 12,000원이다.",employment.wage,"시간급 12,000원"
+소정근로시간은 1일 8시간 주 40시간이다.,employment.work_hours,1일 8시간 주 40시간
+입주 전 도배를 완료한다는 별도 특약으로 정한다.,housing.special_terms,입주 전 도배를 완료한다
+소정근로일 :  주 5일,employment.work_days,주 5일
+계약  목적은  제품  공급  업무이다.,contract.subject,제품 공급 업무
+계약 체결일부터 12개월 동안 계약은 유효하다.,contract.term,계약 체결일부터 12개월
+근무일은 주 5일이다.,employment.work_days,주 5일
+손해배상은 귀책 당사자가 직접 손해를 배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+"급여 구성·금액: 시간급 12,000원",employment.wage,"시간급 12,000원"
+공용관리비: 매월 15만원,housing.management_fee,매월 15만원
+소정근로시간은 1일 8시간 주 40시간이다.,employment.work_hours,1일 8시간 주 40시간
+근무 시간: 오전 9시부터 오후 6시까지,employment.work_hours,오전 9시부터 오후 6시까지
+"목적물 소재지: 서울특별시 예시구 예시로 100, 101호",housing.property,"서울특별시 예시구 예시로 100, 101호"
+소정근로일:  월요일부터  금요일,employment.work_days,월요일부터 금요일
+근로자는 고객 상담과 문서 관리를 수행한다.,employment.duties,고객 상담과 문서 관리
+1일 8시간 주 40시간 근무한다.,employment.work_hours,1일 8시간 주 40시간
+계약 존속기간: 입주일부터 2년,housing.term,입주일부터 2년
+임차인은 월 75만원을 지급한다.,housing.monthly_rent,월 75만원
+"임차인은 매월 말일 600,000원을 지급한다.",housing.monthly_rent,"매월 말일 600,000원"
+"서울특별시  예시구  예시로  100,  101호를  임대  목적물로  한다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+계약 기간은 계약 체결일부터 12개월로 한다.,contract.term,계약 체결일부터 12개월
+위약금 조건: 귀책 당사자가 직접 손해를 배상한다,contract.damages,귀책 당사자가 직접 손해를 배상한다
+"급여 구성·금액: 연봉 40,000,000원",employment.wage,"연봉 40,000,000원"
+근로계약 당사자는 사업주 박대표 및 직원 이근로이다.,employment.parties,사업주 박대표 및 직원 이근로
+관리비는 매월 15만원이다.,housing.management_fee,매월 15만원
+사용자·근로자:  사용자  예시회사와  근로자  김예시,employment.parties,사용자 예시회사와 근로자 김예시
+입주일부터 2년 동안 임대한다.,housing.term,입주일부터 2년
+근무  시간:  오전  9시부터  오후  6시까지,employment.work_hours,오전 9시부터 오후 6시까지
+연차 유급휴가는 연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+예시구 고객지원센터에서 근무한다.,employment.workplace,예시구 고객지원센터
+계약 목적은 웹사이트 유지보수 용역이다.,contract.subject,웹사이트 유지보수 용역
+오전 9시부터 오후 6시까지 근무한다.,employment.work_hours,오전 9시부터 오후 6시까지
+"관리비는 월 100,000원이다.",housing.management_fee,"월 100,000원"
+연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+반환 조건: 목적물을 인도받는 즉시 반환한다,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+연차휴가:  근로기준법에  따라  부여한다,employment.annual_leave,근로기준법에 따라 부여한다
+"계약  대금은  월  100,000원을  매월  25일  지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+근무일은 월요일부터 금요일이다.,employment.work_days,월요일부터 금요일
+"임차인은  매월  말일  600,000원을  지급한다.",housing.monthly_rent,"매월 말일 600,000원"
+당사자: 갑 주식회사 예시와 을 김고객,contract.parties,갑 주식회사 예시와 을 김고객
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+사업자 예시회사와 이용자 김예시 사이에 계약을 체결한다.,contract.parties,사업자 예시회사와 이용자 김예시
+임차인은 오천만원을 보증금으로 지급한다.,housing.deposit,오천만원
+업무 내용: 소프트웨어 개발,employment.duties,소프트웨어 개발
+30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+당사자:  갑  주식회사  예시와  을  김고객,contract.parties,갑 주식회사 예시와 을 김고객
+임차인이  매월  15만원의  관리비를  부담한다.,housing.management_fee,매월 15만원
+"월세: 매월 말일 600,000원",housing.monthly_rent,"매월 말일 600,000원"
+취업 장소: 회사 지정 사업장,employment.workplace,회사 지정 사업장
+기간의 정함이 없음 동안 근무한다.,employment.term,기간의 정함이 없음
+기타 정하지 않은 사항은 상호 협의한다.,other,
+"보수 및 지급 조건 :  총 3,000,000원을 검수 후 지급",contract.payment,"총 3,000,000원을 검수 후 지급"
+공용관리비:  실비  정산,housing.management_fee,실비 정산
+당사자는 개인정보를 안전하게 관리한다.,other,
+당사자는 개인정보를 안전하게 관리한다.,other,
+연차 유급휴가는 연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+"차임은 매월 말일 600,000원이다.",housing.monthly_rent,"매월 말일 600,000원"
+특약사항 :  입주 전 도배를 완료한다,housing.special_terms,입주 전 도배를 완료한다
+입주일부터 2년 동안 임대한다.,housing.term,입주일부터 2년
+서울중앙지방법원을 관할 법원으로 한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+사용자·근로자:  사용자  예시회사와  근로자  김예시,employment.parties,사용자 예시회사와 근로자 김예시
+업무 내용: 소프트웨어 개발,employment.duties,소프트웨어 개발
+연차 유급휴가는 근로기준법에 따라 부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+재판 관할: 서울중앙지방법원을 관할 법원으로 한다,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+근무 시간: 오전 9시부터 오후 6시까지,employment.work_hours,오전 9시부터 오후 6시까지
+매주 일요일을 휴일로 한다.,employment.holidays,매주 일요일
+휴식 시간: 12시부터 13시까지,employment.break_time,12시부터 13시까지
+근무 장소는 회사 지정 사업장이다.,employment.workplace,회사 지정 사업장
+차임  지급일은  매달  10일이다.,housing.payment_date,매달 10일
+사용자  예시회사와  근로자  김예시  사이에  근로계약을  체결한다.,employment.parties,사용자 예시회사와 근로자 김예시
+"임금은  시간급  12,000원이다.",employment.wage,"시간급 12,000원"
+12시부터  13시까지  자유롭게  이용한다.,employment.break_time,12시부터 13시까지
+소정근로시간은  오전  9시부터  오후  6시까지이다.,employment.work_hours,오전 9시부터 오후 6시까지
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+"월 기본급 3,000,000원을 지급한다.",employment.wage,"월 기본급 3,000,000원"
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+"급여 구성·금액: 월 기본급 3,000,000원",employment.wage,"월 기본급 3,000,000원"
+상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+임금 지급은 매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+계약 기간은 2026년 7월 1일부터 2027년 6월 30일까지로 한다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+차임은  월  75만원이다.,housing.monthly_rent,월 75만원
+위약금 조건: 지체일수마다 대금의 0.1%를 지급한다,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+근로계약 당사자는 사업주 박대표 및 직원 이근로이다.,employment.parties,사업주 박대표 및 직원 이근로
+소정근로일:  주  5일,employment.work_days,주 5일
+"임차보증금은  100,000,000원으로  정한다.",housing.deposit,"100,000,000원"
+상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+당사자:  갑  주식회사  예시와  을  김고객,contract.parties,갑 주식회사 예시와 을 김고객
+주휴일은 매주 일요일이다.,employment.holidays,매주 일요일
+분쟁 해결은 상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+월세는  매월  말일에  납부한다.,housing.payment_date,매월 말일
+"연봉  40,000,000원을  지급한다.",employment.wage,"연봉 40,000,000원"
+"을에게 월 100,000원을 매월 25일 지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+특약사항 :  입주 전 도배를 완료한다,housing.special_terms,입주 전 도배를 완료한다
+유급  휴일:  매주  일요일,employment.holidays,매주 일요일
+소유자 박임대 및 세입자 이임차 사이에 임대차계약을 체결한다.,housing.parties,소유자 박임대 및 세입자 이임차
+임차인은 월 75만원을 지급한다.,housing.monthly_rent,월 75만원
+"임금은 연봉 40,000,000원이다.",employment.wage,"연봉 40,000,000원"
+임대인·임차인: 소유자 박임대 및 세입자 이임차,housing.parties,소유자 박임대 및 세입자 이임차
+귀책  당사자가  직접  손해를  배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+임대차 기간은 입주일부터 2년로 한다.,housing.term,입주일부터 2년
+근로계약 당사자는 사업주 박대표 및 직원 이근로이다.,employment.parties,사업주 박대표 및 직원 이근로
+수선  책임은  주요  설비는  임대인이  수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+사업주 박대표 및 직원 이근로 사이에 근로계약을 체결한다.,employment.parties,사업주 박대표 및 직원 이근로
+임차인은 월 75만원을 지급한다.,housing.monthly_rent,월 75만원
+당사자는 개인정보를 안전하게 관리한다.,other,
+수선  책임은  주요  설비는  임대인이  수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+근로자는  고객  상담과  문서  관리를  수행한다.,employment.duties,고객 상담과 문서 관리
+하자 보수 :  소모품은 임차인이 교체한다,housing.repairs,소모품은 임차인이 교체한다
+반려동물 사육은 사전 동의를 받는다는 별도 특약으로 정한다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+"임대할  주택은  서울특별시  예시구  예시로  100,  101호이다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+근로계약 당사자는 사업주 박대표 및 직원 이근로이다.,employment.parties,사업주 박대표 및 직원 이근로
+수선 책임은 소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+지급  기일:  매월  25일,housing.payment_date,매월 25일
+갑  주식회사  예시와  을  김고객  사이에  계약을  체결한다.,contract.parties,갑 주식회사 예시와 을 김고객
+보증금: 오천만원,housing.deposit,오천만원
+부산광역시 예시동 200번지 아파트 301호를 임대 목적물로 한다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+특약사항:  반려동물  사육은  사전  동의를  받는다,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+월세는 매월 말일에 납부한다.,housing.payment_date,매월 말일
+반환 조건: 목적물을 인도받는 즉시 반환한다,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+보증금 반환은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+임대차  기간은  2026년  7월  1일부터  2028년  6월  30일까지로  한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+근무일은 월요일부터 금요일이다.,employment.work_days,월요일부터 금요일
+계약 당사자는 사업자 예시회사와 이용자 김예시로 한다.,contract.parties,사업자 예시회사와 이용자 김예시
+공용관리비: 실비 정산,housing.management_fee,실비 정산
+서울중앙지방법원을  관할  법원으로  한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+계약 당사자는 소유자 박임대 및 세입자 이임차이다.,housing.parties,소유자 박임대 및 세입자 이임차
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+담당  업무는  고객  상담과  문서  관리이다.,employment.duties,고객 상담과 문서 관리
+위약금 조건: 귀책 당사자가 직접 손해를 배상한다,contract.damages,귀책 당사자가 직접 손해를 배상한다
+토요일과 일요일을 휴일로 한다.,employment.holidays,토요일과 일요일
+하자 보수 :  소모품은 임차인이 교체한다,housing.repairs,소모품은 임차인이 교체한다
+차임은 월 75만원이다.,housing.monthly_rent,월 75만원
+계약  기간은  2026년  7월  1일부터  2027년  6월  30일까지로  한다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+"보증금: 1억 5,000만원",housing.deposit,"1억 5,000만원"
+입주 전 도배를 완료한다는 별도 특약으로 정한다.,housing.special_terms,입주 전 도배를 완료한다
+특약사항: 입주 전 도배를 완료한다,housing.special_terms,입주 전 도배를 완료한다
+취업  장소:  서울  본사,employment.workplace,서울 본사
+기간의 정함이 없음 동안 근무한다.,employment.term,기간의 정함이 없음
+업무 범위 :  제품 공급 업무,contract.subject,제품 공급 업무
+계약 당사자는 임대인 홍길동과 임차인 김예시이다.,housing.parties,임대인 홍길동과 임차인 김예시
+당사자는 개인정보를 안전하게 관리한다.,other,
+사용자·근로자 :  사업주 박대표 및 직원 이근로,employment.parties,사업주 박대표 및 직원 이근로
+해제·해지 조건: 30일 전 통지로 종료할 수 있다,contract.termination,30일 전 통지로 종료할 수 있다
+"계약 대금은 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+"계약 대금은 월 100,000원을 매월 25일 지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+"월세 :  매월 말일 600,000원",housing.monthly_rent,"매월 말일 600,000원"
+사용자·근로자: 사업주 박대표 및 직원 이근로,employment.parties,사업주 박대표 및 직원 이근로
+차임  지급일은  매월  25일이다.,housing.payment_date,매월 25일
+임대인·임차인 :  소유자 박임대 및 세입자 이임차,housing.parties,소유자 박임대 및 세입자 이임차
+휴게시간은  오후  3시부터  3시  30분까지이다.,employment.break_time,오후 3시부터 3시 30분까지
+관리비는 매월 15만원이다.,housing.management_fee,매월 15만원
+근로자는 매장 판매 업무를 수행한다.,employment.duties,매장 판매 업무
+근로기준법에 따라 부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+계약 당사자는 소유자 박임대 및 세입자 이임차이다.,housing.parties,소유자 박임대 및 세입자 이임차
+차임 지급일은 매월 말일이다.,housing.payment_date,매월 말일
+당사자는 개인정보를 안전하게 관리한다.,other,
+계약  해지는  상대방이  의무를  위반하면  서면  통지  후  해지할  수  있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+지급 기일: 매월 25일,housing.payment_date,매월 25일
+월세는 매월 말일에 납부한다.,housing.payment_date,매월 말일
+수선 책임은 주요 설비는 임대인이 수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+급여  지급일·방법:  매월  25일  근로자  계좌로  지급,employment.pay_date,매월 25일 근로자 계좌로 지급
+"임차보증금은 100,000,000원으로 정한다.",housing.deposit,"100,000,000원"
+입주 전 도배를 완료한다는 별도 특약으로 정한다.,housing.special_terms,입주 전 도배를 완료한다
+"을에게 월 100,000원을 매월 25일 지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+지급 기일: 매달 10일,housing.payment_date,매달 10일
+"을에게 월 100,000원을 매월 25일 지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+취업  장소:  회사  지정  사업장,employment.workplace,회사 지정 사업장
+근무 시간: 오전 9시부터 오후 6시까지,employment.work_hours,오전 9시부터 오후 6시까지
+임차인이 매월 15만원의 관리비를 부담한다.,housing.management_fee,매월 15만원
+하자  보수:  주요  설비는  임대인이  수선한다,housing.repairs,주요 설비는 임대인이 수선한다
+손해배상은 귀책 당사자가 직접 손해를 배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+근로자는  매장  판매  업무를  수행한다.,employment.duties,매장 판매 업무
+사업자 예시회사와 이용자 김예시 사이에 계약을 체결한다.,contract.parties,사업자 예시회사와 이용자 김예시
+취업 장소: 회사 지정 사업장,employment.workplace,회사 지정 사업장
+재판 관할 :  상호 협의 후 민사소송으로 해결한다,contract.dispute,상호 협의 후 민사소송으로 해결한다
+근로계약 당사자는 사용자 예시회사와 근로자 김예시이다.,employment.parties,사용자 예시회사와 근로자 김예시
+하자  보수:  주요  설비는  임대인이  수선한다,housing.repairs,주요 설비는 임대인이 수선한다
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+손해배상은 지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+2026년 7월 1일부터 2028년 6월 30일까지 동안 임대한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+근로계약 기간은 2026년 7월 1일부터 2027년 6월 30일까지이다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+"급여  구성·금액:  시간급  12,000원",employment.wage,"시간급 12,000원"
+"월 기본급 3,000,000원을 지급한다.",employment.wage,"월 기본급 3,000,000원"
+계약 목적은 제품 공급 업무이다.,contract.subject,제품 공급 업무
+취업 장소: 서울 본사,employment.workplace,서울 본사
+계약  해지는  상대방이  의무를  위반하면  서면  통지  후  해지할  수  있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+급여 지급일·방법 :  매월 말일 현금으로 지급,employment.pay_date,매월 말일 현금으로 지급
+"급여 구성·금액 :  연봉 40,000,000원",employment.wage,"연봉 40,000,000원"
+부산광역시 예시동 200번지 아파트 301호를 임대 목적물로 한다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+소정근로시간은  오전  9시부터  오후  6시까지이다.,employment.work_hours,오전 9시부터 오후 6시까지
+월요일부터  금요일에  근무한다.,employment.work_days,월요일부터 금요일
+"임차보증금은 1억 5,000만원으로 정한다.",housing.deposit,"1억 5,000만원"
+소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+"목적물  소재지:  서울특별시  예시구  예시로  100,  101호",housing.property,"서울특별시 예시구 예시로 100, 101호"
+유효  기간:  2026년  7월  1일부터  2027년  6월  30일까지,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+토요일과 일요일을 휴일로 한다.,employment.holidays,토요일과 일요일
+연차휴가:  근로기준법에  따라  부여한다,employment.annual_leave,근로기준법에 따라 부여한다
+연차 유급휴가는 근로기준법에 따라 부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+매주  일요일을  휴일로  한다.,employment.holidays,매주 일요일
+담당 업무는 고객 상담과 문서 관리이다.,employment.duties,고객 상담과 문서 관리
+당사자는 개인정보를 안전하게 관리한다.,other,
+보증금 :  오천만원,housing.deposit,오천만원
+취업  장소:  예시구  고객지원센터,employment.workplace,예시구 고객지원센터
+서울 본사에서 근무한다.,employment.workplace,서울 본사
+부산광역시 예시동 200번지 아파트 301호를 임대 목적물로 한다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+부산광역시 예시동 200번지 아파트 301호를 임대 목적물로 한다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+임대인은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+임대차 기간은 입주일부터 2년로 한다.,housing.term,입주일부터 2년
+"목적물 소재지: 서울특별시 예시구 예시로 100, 101호",housing.property,"서울특별시 예시구 예시로 100, 101호"
+기타 정하지 않은 사항은 상호 협의한다.,other,
+12시부터 13시까지 자유롭게 이용한다.,employment.break_time,12시부터 13시까지
+2026년  7월  1일부터  2028년  6월  30일까지  동안  임대한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+근무일은  월요일부터  금요일이다.,employment.work_days,월요일부터 금요일
+근로계약 기간은 기간의 정함이 없음이다.,employment.term,기간의 정함이 없음
+근로자는 고객 상담과 문서 관리를 수행한다.,employment.duties,고객 상담과 문서 관리
+"목적물  소재지:  서울특별시  예시구  예시로  100,  101호",housing.property,"서울특별시 예시구 예시로 100, 101호"
+월요일부터 금요일에 근무한다.,employment.work_days,월요일부터 금요일
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+2026년  7월  1일부터  2028년  6월  30일까지  동안  임대한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+"서울특별시 예시구 예시로 100, 101호를 임대 목적물로 한다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+당사자는 개인정보를 안전하게 관리한다.,other,
+"계약 대금은 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+매월  25일  근로자  계좌로  지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+유급 휴일: 근로자의 날과 법정 공휴일,employment.holidays,근로자의 날과 법정 공휴일
+사용자 예시회사와 근로자 김예시 사이에 근로계약을 체결한다.,employment.parties,사용자 예시회사와 근로자 김예시
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+"월세: 매월 500,000원",housing.monthly_rent,"매월 500,000원"
+위약금 조건 :  지체일수마다 대금의 0.1%를 지급한다,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+반환 조건: 퇴거와 동시에 정산하여 지급한다,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+주요 설비는 임대인이 수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+계약 당사자는 사업자 예시회사와 이용자 김예시로 한다.,contract.parties,사업자 예시회사와 이용자 김예시
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+당사자는 개인정보를 안전하게 관리한다.,other,
+임대인 홍길동과 임차인 김예시 사이에 임대차계약을 체결한다.,housing.parties,임대인 홍길동과 임차인 김예시
+근로 도중 1시간 자유롭게 이용한다.,employment.break_time,근로 도중 1시간
+주휴일은 근로자의 날과 법정 공휴일이다.,employment.holidays,근로자의 날과 법정 공휴일
+당사자는 개인정보를 안전하게 관리한다.,other,
+사용자·근로자: 사용자 예시회사와 근로자 김예시,employment.parties,사용자 예시회사와 근로자 김예시
+수선 책임은 소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+월세는  매달  10일에  납부한다.,housing.payment_date,매달 10일
+2026년  7월  1일부터  2027년  6월  30일까지  동안  근무한다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+임차보증금은 오천만원으로 정한다.,housing.deposit,오천만원
+월세는 매월 25일에 납부한다.,housing.payment_date,매월 25일
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+근무일은 매주 월·화·수·목·금이다.,employment.work_days,매주 월·화·수·목·금
+당사자는 개인정보를 안전하게 관리한다.,other,
+고용  기간:  2026년  7월  1일부터  2027년  6월  30일까지,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+특약사항:  반려동물  사육은  사전  동의를  받는다,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+연차휴가: 근로기준법에 따라 부여한다,employment.annual_leave,근로기준법에 따라 부여한다
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+담당 업무는 고객 상담과 문서 관리이다.,employment.duties,고객 상담과 문서 관리
+갑 주식회사 예시와 을 김고객 사이에 계약을 체결한다.,contract.parties,갑 주식회사 예시와 을 김고객
+"임차인은 100,000,000원을 보증금으로 지급한다.",housing.deposit,"100,000,000원"
+주 5일에 근무한다.,employment.work_days,주 5일
+임대차 기간은 입주일부터 2년로 한다.,housing.term,입주일부터 2년
+소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+임차인은 오천만원을 보증금으로 지급한다.,housing.deposit,오천만원
+사업주 박대표 및 직원 이근로 사이에 근로계약을 체결한다.,employment.parties,사업주 박대표 및 직원 이근로
+제품 공급 업무를 계약 대상으로 한다.,contract.subject,제품 공급 업무
+근무일은 매주 월·화·수·목·금이다.,employment.work_days,매주 월·화·수·목·금
+"보증금: 100,000,000원",housing.deposit,"100,000,000원"
+"급여  구성·금액:  연봉  40,000,000원",employment.wage,"연봉 40,000,000원"
+지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+계약 당사자는 갑 주식회사 예시와 을 김고객로 한다.,contract.parties,갑 주식회사 예시와 을 김고객
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+"임대할 주택은 서울특별시 예시구 예시로 100, 101호이다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+"임차인은  1억  5,000만원을  보증금으로  지급한다.",housing.deposit,"1억 5,000만원"
+"공용관리비: 월 100,000원",housing.management_fee,"월 100,000원"
+손해배상은 귀책 당사자가 직접 손해를 배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+공용관리비 :  매월 15만원,housing.management_fee,매월 15만원
+업무 범위: 온라인 정보 제공 서비스,contract.subject,온라인 정보 제공 서비스
+월세: 월 75만원,housing.monthly_rent,월 75만원
+"보수  및  지급  조건:  월  100,000원을  매월  25일  지급",contract.payment,"월 100,000원을 매월 25일 지급"
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+연차 유급휴가는 연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+근무일은 주 5일이다.,employment.work_days,주 5일
+임대차 기간은 입주일부터 2년로 한다.,housing.term,입주일부터 2년
+"임차인은 1억 5,000만원을 보증금으로 지급한다.",housing.deposit,"1억 5,000만원"
+위약금 조건: 지체일수마다 대금의 0.1%를 지급한다,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+계약 당사자는 사업자 예시회사와 이용자 김예시로 한다.,contract.parties,사업자 예시회사와 이용자 김예시
+계약  존속기간:  2026년  7월  1일부터  2028년  6월  30일까지,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+손해배상은 지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+상대방이  의무를  위반하면  서면  통지  후  해지할  수  있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+12시부터 13시까지 자유롭게 이용한다.,employment.break_time,12시부터 13시까지
+오후 3시부터 3시 30분까지 자유롭게 이용한다.,employment.break_time,오후 3시부터 3시 30분까지
+사업주 박대표 및 직원 이근로 사이에 근로계약을 체결한다.,employment.parties,사업주 박대표 및 직원 이근로
+휴식 시간: 근로 도중 1시간,employment.break_time,근로 도중 1시간
+임대인은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+매주 월·화·수·목·금에 근무한다.,employment.work_days,매주 월·화·수·목·금
+유효 기간 :  계약 체결일부터 12개월,contract.term,계약 체결일부터 12개월
+근무일은 월요일부터 금요일이다.,employment.work_days,월요일부터 금요일
+당사자는 개인정보를 안전하게 관리한다.,other,
+"임차인은  매월  500,000원을  지급한다.",housing.monthly_rent,"매월 500,000원"
+1일 8시간 주 40시간 근무한다.,employment.work_hours,1일 8시간 주 40시간
+월세 :  월 75만원,housing.monthly_rent,월 75만원
+목적물 소재지: 부산광역시 예시동 200번지 아파트 301호,housing.property,부산광역시 예시동 200번지 아파트 301호
+온라인  정보  제공  서비스를  계약  대상으로  한다.,contract.subject,온라인 정보 제공 서비스
+"을에게  월  100,000원을  매월  25일  지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+기타 정하지 않은 사항은 상호 협의한다.,other,
+계약 해지는 30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+보증금 반환은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+특약으로 반려동물 사육은 사전 동의를 받는다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+고용 기간 :  기간의 정함이 없음,employment.term,기간의 정함이 없음
+계약 목적은 온라인 정보 제공 서비스이다.,contract.subject,온라인 정보 제공 서비스
+보증금  반환은  목적물을  인도받는  즉시  반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+해제·해지 조건: 상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+매주 월·화·수·목·금에 근무한다.,employment.work_days,매주 월·화·수·목·금
+임금  지급은  매월  25일  근로자  계좌로  지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+기간의 정함이 없음 동안 근무한다.,employment.term,기간의 정함이 없음
+반환  조건:  목적물을  인도받는  즉시  반환한다,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+월세는 매달 10일에 납부한다.,housing.payment_date,매달 10일
+보증금 반환은 목적물을 인도받는 즉시 반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+차임 지급일은 매달 10일이다.,housing.payment_date,매달 10일
+근로기준법에  따라  부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+임대인·임차인: 임대인 홍길동과 임차인 김예시,housing.parties,임대인 홍길동과 임차인 김예시
+취업 장소: 예시구 고객지원센터,employment.workplace,예시구 고객지원센터
+"계약 대금은 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+임차인은 오천만원을 보증금으로 지급한다.,housing.deposit,오천만원
+근로기준법에 따라 부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+계약 목적은 온라인 정보 제공 서비스이다.,contract.subject,온라인 정보 제공 서비스
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+근로 도중 1시간 자유롭게 이용한다.,employment.break_time,근로 도중 1시간
+근로자는 매장 판매 업무를 수행한다.,employment.duties,매장 판매 업무
+2026년  7월  1일부터  2027년  6월  30일까지  동안  계약은  유효하다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+웹사이트 유지보수 용역를 계약 대상으로 한다.,contract.subject,웹사이트 유지보수 용역
+기타 정하지 않은 사항은 상호 협의한다.,other,
+급여 지급일·방법: 매월 25일 근로자 계좌로 지급,employment.pay_date,매월 25일 근로자 계좌로 지급
+수선 책임은 소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+담당 업무는 소프트웨어 개발이다.,employment.duties,소프트웨어 개발
+근무 장소는 예시구 고객지원센터이다.,employment.workplace,예시구 고객지원센터
+귀책 당사자가 직접 손해를 배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+"임차보증금은 100,000,000원으로 정한다.",housing.deposit,"100,000,000원"
+지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+근로계약 당사자는 사업주 박대표 및 직원 이근로이다.,employment.parties,사업주 박대표 및 직원 이근로
+"임대할 주택은 서울특별시 예시구 예시로 100, 101호이다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+임대인  홍길동과  임차인  김예시  사이에  임대차계약을  체결한다.,housing.parties,임대인 홍길동과 임차인 김예시
+해제·해지 조건: 30일 전 통지로 종료할 수 있다,contract.termination,30일 전 통지로 종료할 수 있다
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+"계약 대금은 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+"을에게  월  100,000원을  매월  25일  지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+계약  당사자는  임대인  홍길동과  임차인  김예시이다.,housing.parties,임대인 홍길동과 임차인 김예시
+"을에게 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+2026년  7월  1일부터  2027년  6월  30일까지  동안  계약은  유효하다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+취업 장소: 예시구 고객지원센터,employment.workplace,예시구 고객지원센터
+"임대할  주택은  서울특별시  예시구  예시로  100,  101호이다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+"임금은 시간급 12,000원이다.",employment.wage,"시간급 12,000원"
+회사 지정 사업장에서 근무한다.,employment.workplace,회사 지정 사업장
+당사자: 갑 주식회사 예시와 을 김고객,contract.parties,갑 주식회사 예시와 을 김고객
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+근무일은 주 5일이다.,employment.work_days,주 5일
+사용자·근로자:  사용자  예시회사와  근로자  김예시,employment.parties,사용자 예시회사와 근로자 김예시
+목적물 소재지 :  부산광역시 예시동 200번지 아파트 301호,housing.property,부산광역시 예시동 200번지 아파트 301호
+근로계약 기간은 2026년 7월 1일부터 2027년 6월 30일까지이다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+반환 조건: 목적물을 인도받는 즉시 반환한다,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+"임금은  월  기본급  3,000,000원이다.",employment.wage,"월 기본급 3,000,000원"
+근무 시간: 1일 8시간 주 40시간,employment.work_hours,1일 8시간 주 40시간
+목적물 소재지: 부산광역시 예시동 200번지 아파트 301호,housing.property,부산광역시 예시동 200번지 아파트 301호
+"차임은  매월  500,000원이다.",housing.monthly_rent,"매월 500,000원"
+서울중앙지방법원을  관할  법원으로  한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+임금 지급은 매월 25일 근로자 계좌로 지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+"임차인은 100,000,000원을 보증금으로 지급한다.",housing.deposit,"100,000,000원"
+유급  휴일:  근로자의  날과  법정  공휴일,employment.holidays,근로자의 날과 법정 공휴일
+고용 기간: 2026년 7월 1일부터 2027년 6월 30일까지,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+하자  보수:  주요  설비는  임대인이  수선한다,housing.repairs,주요 설비는 임대인이 수선한다
+휴게시간은 근로 도중 1시간이다.,employment.break_time,근로 도중 1시간
+반환  조건:  목적물을  인도받는  즉시  반환한다,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+유효 기간: 계약 체결일부터 12개월,contract.term,계약 체결일부터 12개월
+계약  기간은  2026년  7월  1일부터  2027년  6월  30일까지로  한다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+특약사항: 반려동물 사육은 사전 동의를 받는다,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+근로계약 당사자는 사용자 예시회사와 근로자 김예시이다.,employment.parties,사용자 예시회사와 근로자 김예시
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+당사자 :  사업자 예시회사와 이용자 김예시,contract.parties,사업자 예시회사와 이용자 김예시
+유효  기간:  2026년  7월  1일부터  2027년  6월  30일까지,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+근무 시간: 1일 8시간 주 40시간,employment.work_hours,1일 8시간 주 40시간
+"관리비는 월 100,000원이다.",housing.management_fee,"월 100,000원"
+임대할 주택은 부산광역시 예시동 200번지 아파트 301호이다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+취업 장소: 서울 본사,employment.workplace,서울 본사
+"급여 구성·금액 :  월 기본급 3,000,000원",employment.wage,"월 기본급 3,000,000원"
+"보수  및  지급  조건:  월  100,000원을  매월  25일  지급",contract.payment,"월 100,000원을 매월 25일 지급"
+계약 존속기간 :  입주일부터 2년,housing.term,입주일부터 2년
+휴식 시간 :  12시부터 13시까지,employment.break_time,12시부터 13시까지
+서울중앙지방법원을 관할 법원으로 한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+오전  9시부터  오후  6시까지  근무한다.,employment.work_hours,오전 9시부터 오후 6시까지
+근로계약 기간은 기간의 정함이 없음이다.,employment.term,기간의 정함이 없음
+주휴일은  매주  일요일이다.,employment.holidays,매주 일요일
+당사자는 개인정보를 안전하게 관리한다.,other,
+소유자 박임대 및 세입자 이임차 사이에 임대차계약을 체결한다.,housing.parties,소유자 박임대 및 세입자 이임차
+부산광역시 예시동 200번지 아파트 301호를 임대 목적물로 한다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+수선 책임은 소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+특약으로  반려동물  사육은  사전  동의를  받는다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+특약으로 입주 전 도배를 완료한다.,housing.special_terms,입주 전 도배를 완료한다
+예시구 고객지원센터에서 근무한다.,employment.workplace,예시구 고객지원센터
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+계약 체결일부터 12개월 동안 계약은 유효하다.,contract.term,계약 체결일부터 12개월
+사용자  예시회사와  근로자  김예시  사이에  근로계약을  체결한다.,employment.parties,사용자 예시회사와 근로자 김예시
+업무 범위: 웹사이트 유지보수 용역,contract.subject,웹사이트 유지보수 용역
+특약으로 반려동물 사육은 사전 동의를 받는다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+기타 정하지 않은 사항은 상호 협의한다.,other,
+계약 당사자는 임대인 홍길동과 임차인 김예시이다.,housing.parties,임대인 홍길동과 임차인 김예시
+특약사항: 입주 전 도배를 완료한다,housing.special_terms,입주 전 도배를 완료한다
+"보수  및  지급  조건:  월  100,000원을  매월  25일  지급",contract.payment,"월 100,000원을 매월 25일 지급"
+입주일부터 2년 동안 임대한다.,housing.term,입주일부터 2년
+분쟁 해결은 서울중앙지방법원을 관할 법원으로 한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+근로자는 소프트웨어 개발를 수행한다.,employment.duties,소프트웨어 개발
+근로자의  날과  법정  공휴일을  휴일로  한다.,employment.holidays,근로자의 날과 법정 공휴일
+특약으로 입주 전 도배를 완료한다.,housing.special_terms,입주 전 도배를 완료한다
+임금 지급은 매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+귀책  당사자가  직접  손해를  배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+2026년  7월  1일부터  2027년  6월  30일까지  동안  계약은  유효하다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+주요 설비는 임대인이 수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+근무 시간 :  1일 8시간 주 40시간,employment.work_hours,1일 8시간 주 40시간
+연차  유급휴가는  근로기준법에  따라  부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+임금 지급은 매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+주요  설비는  임대인이  수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+관리비는 실비 정산이다.,housing.management_fee,실비 정산
+반려동물  사육은  사전  동의를  받는다는  별도  특약으로  정한다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+소정근로일: 월요일부터 금요일,employment.work_days,월요일부터 금요일
+업무  범위:  웹사이트  유지보수  용역,contract.subject,웹사이트 유지보수 용역
+목적물 소재지 :  부산광역시 예시동 200번지 아파트 301호,housing.property,부산광역시 예시동 200번지 아파트 301호
+근무 시간 :  1일 8시간 주 40시간,employment.work_hours,1일 8시간 주 40시간
+주 5일에 근무한다.,employment.work_days,주 5일
+임대인은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+고용 기간 :  기간의 정함이 없음,employment.term,기간의 정함이 없음
+입주 전 도배를 완료한다는 별도 특약으로 정한다.,housing.special_terms,입주 전 도배를 완료한다
+당사자는 개인정보를 안전하게 관리한다.,other,
+분쟁  해결은  서울중앙지방법원을  관할  법원으로  한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+목적물 소재지: 부산광역시 예시동 200번지 아파트 301호,housing.property,부산광역시 예시동 200번지 아파트 301호
+매주 월·화·수·목·금에 근무한다.,employment.work_days,매주 월·화·수·목·금
+해제·해지  조건:  상대방이  의무를  위반하면  서면  통지  후  해지할  수  있다,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+"공용관리비:  월  100,000원",housing.management_fee,"월 100,000원"
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+근무 장소는 회사 지정 사업장이다.,employment.workplace,회사 지정 사업장
+기타 정하지 않은 사항은 상호 협의한다.,other,
+휴게시간은 오후 3시부터 3시 30분까지이다.,employment.break_time,오후 3시부터 3시 30분까지
+2026년 7월 1일부터 2027년 6월 30일까지 동안 근무한다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+담당 업무는 매장 판매 업무이다.,employment.duties,매장 판매 업무
+주  5일에  근무한다.,employment.work_days,주 5일
+기타 정하지 않은 사항은 상호 협의한다.,other,
+지급 기일 :  매월 25일,housing.payment_date,매월 25일
+근로자의 날과 법정 공휴일을 휴일로 한다.,employment.holidays,근로자의 날과 법정 공휴일
+휴게시간은  근로  도중  1시간이다.,employment.break_time,근로 도중 1시간
+"임금은 시간급 12,000원이다.",employment.wage,"시간급 12,000원"
+계약 존속기간: 입주일부터 2년,housing.term,입주일부터 2년
+당사자:  갑  주식회사  예시와  을  김고객,contract.parties,갑 주식회사 예시와 을 김고객
+차임은 월 75만원이다.,housing.monthly_rent,월 75만원
+계약 해지는 상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+주휴일은 토요일과 일요일이다.,employment.holidays,토요일과 일요일
+계약  존속기간:  2026년  7월  1일부터  2028년  6월  30일까지,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+재판  관할:  서울중앙지방법원을  관할  법원으로  한다,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+"임차인이 월 100,000원의 관리비를 부담한다.",housing.management_fee,"월 100,000원"
+연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+유급 휴일 :  근로자의 날과 법정 공휴일,employment.holidays,근로자의 날과 법정 공휴일
+해제·해지  조건:  상대방이  의무를  위반하면  서면  통지  후  해지할  수  있다,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+재판  관할:  서울중앙지방법원을  관할  법원으로  한다,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+근무 시간: 1일 8시간 주 40시간,employment.work_hours,1일 8시간 주 40시간
+계약 체결일부터 12개월 동안 계약은 유효하다.,contract.term,계약 체결일부터 12개월
+당사자: 사업자 예시회사와 이용자 김예시,contract.parties,사업자 예시회사와 이용자 김예시
+보증금 반환은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+근무 장소는 예시구 고객지원센터이다.,employment.workplace,예시구 고객지원센터
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+매주  월·화·수·목·금에  근무한다.,employment.work_days,매주 월·화·수·목·금
+기타 정하지 않은 사항은 상호 협의한다.,other,
+오후 3시부터 3시 30분까지 자유롭게 이용한다.,employment.break_time,오후 3시부터 3시 30분까지
+월세는 매월 25일에 납부한다.,housing.payment_date,매월 25일
+계약 체결일부터 12개월 동안 계약은 유효하다.,contract.term,계약 체결일부터 12개월
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+공용관리비 :  실비 정산,housing.management_fee,실비 정산
+주휴일은 토요일과 일요일이다.,employment.holidays,토요일과 일요일
+손해배상은 지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+"을에게 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+차임 지급일은 매월 25일이다.,housing.payment_date,매월 25일
+연차휴가: 연 15일을 부여한다,employment.annual_leave,연 15일을 부여한다
+유급 휴일: 토요일과 일요일,employment.holidays,토요일과 일요일
+귀책 당사자가 직접 손해를 배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+임대인  홍길동과  임차인  김예시  사이에  임대차계약을  체결한다.,housing.parties,임대인 홍길동과 임차인 김예시
+"보수 및 지급 조건: 총 3,000,000원을 검수 후 지급",contract.payment,"총 3,000,000원을 검수 후 지급"
+휴게시간은 12시부터 13시까지이다.,employment.break_time,12시부터 13시까지
+보증금: 오천만원,housing.deposit,오천만원
+근로계약 기간은 기간의 정함이 없음이다.,employment.term,기간의 정함이 없음
+2026년 7월 1일부터 2028년 6월 30일까지 동안 임대한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+제품  공급  업무를  계약  대상으로  한다.,contract.subject,제품 공급 업무
+2026년 7월 1일부터 2027년 6월 30일까지 동안 계약은 유효하다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+취업 장소 :  예시구 고객지원센터,employment.workplace,예시구 고객지원센터
+취업 장소 :  서울 본사,employment.workplace,서울 본사
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+계약 목적은 웹사이트 유지보수 용역이다.,contract.subject,웹사이트 유지보수 용역
+고용  기간:  2026년  7월  1일부터  2027년  6월  30일까지,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+관리비는  매월  15만원이다.,housing.management_fee,매월 15만원
+임대차 기간은 2026년 7월 1일부터 2028년 6월 30일까지로 한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+"급여 구성·금액: 연봉 40,000,000원",employment.wage,"연봉 40,000,000원"
+"차임은  매월  말일  600,000원이다.",housing.monthly_rent,"매월 말일 600,000원"
+차임 지급일은 매월 25일이다.,housing.payment_date,매월 25일
+회사  지정  사업장에서  근무한다.,employment.workplace,회사 지정 사업장
+유효 기간: 계약 체결일부터 12개월,contract.term,계약 체결일부터 12개월
+당사자는 개인정보를 안전하게 관리한다.,other,
+위약금  조건:  귀책  당사자가  직접  손해를  배상한다,contract.damages,귀책 당사자가 직접 손해를 배상한다
+계약 존속기간: 2026년 7월 1일부터 2028년 6월 30일까지,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+임금 지급은 매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+주휴일은  토요일과  일요일이다.,employment.holidays,토요일과 일요일
+휴게시간은 오후 3시부터 3시 30분까지이다.,employment.break_time,오후 3시부터 3시 30분까지
+재판 관할: 서울중앙지방법원을 관할 법원으로 한다,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+임차인이 매월 15만원의 관리비를 부담한다.,housing.management_fee,매월 15만원
+특약으로  반려동물  사육은  사전  동의를  받는다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+특약으로 반려동물 사육은 사전 동의를 받는다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+기타 정하지 않은 사항은 상호 협의한다.,other,
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+"급여 구성·금액 :  시간급 12,000원",employment.wage,"시간급 12,000원"
+재판 관할: 상호 협의 후 민사소송으로 해결한다,contract.dispute,상호 협의 후 민사소송으로 해결한다
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+담당 업무는 소프트웨어 개발이다.,employment.duties,소프트웨어 개발
+당사자는 개인정보를 안전하게 관리한다.,other,
+재판 관할: 상호 협의 후 민사소송으로 해결한다,contract.dispute,상호 협의 후 민사소송으로 해결한다
+주요  설비는  임대인이  수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+유급 휴일: 토요일과 일요일,employment.holidays,토요일과 일요일
+보증금:  오천만원,housing.deposit,오천만원
+토요일과 일요일을 휴일로 한다.,employment.holidays,토요일과 일요일
+당사자: 갑 주식회사 예시와 을 김고객,contract.parties,갑 주식회사 예시와 을 김고객
+온라인 정보 제공 서비스를 계약 대상으로 한다.,contract.subject,온라인 정보 제공 서비스
+분쟁  해결은  서울중앙지방법원을  관할  법원으로  한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+온라인 정보 제공 서비스를 계약 대상으로 한다.,contract.subject,온라인 정보 제공 서비스
+기타 정하지 않은 사항은 상호 협의한다.,other,
+2026년 7월 1일부터 2027년 6월 30일까지 동안 근무한다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+계약 기간은 2026년 7월 1일부터 2027년 6월 30일까지로 한다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+계약 당사자는 사업자 예시회사와 이용자 김예시로 한다.,contract.parties,사업자 예시회사와 이용자 김예시
+재판 관할 :  상호 협의 후 민사소송으로 해결한다,contract.dispute,상호 협의 후 민사소송으로 해결한다
+"임금은 월 기본급 3,000,000원이다.",employment.wage,"월 기본급 3,000,000원"
+분쟁 해결은 상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+임대인은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+특약으로  반려동물  사육은  사전  동의를  받는다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+당사자 :  사업자 예시회사와 이용자 김예시,contract.parties,사업자 예시회사와 이용자 김예시
+"보증금:  1억  5,000만원",housing.deposit,"1억 5,000만원"
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+재판  관할:  서울중앙지방법원을  관할  법원으로  한다,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+계약 당사자는 소유자 박임대 및 세입자 이임차이다.,housing.parties,소유자 박임대 및 세입자 이임차
+"보수 및 지급 조건: 총 3,000,000원을 검수 후 지급",contract.payment,"총 3,000,000원을 검수 후 지급"
+월세는  매월  25일에  납부한다.,housing.payment_date,매월 25일
+수선 책임은 소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+지급 기일: 매월 말일,housing.payment_date,매월 말일
+임금 지급은 매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+회사 지정 사업장에서 근무한다.,employment.workplace,회사 지정 사업장
+업무 내용: 고객 상담과 문서 관리,employment.duties,고객 상담과 문서 관리
+임대차 기간은 2026년 7월 1일부터 2028년 6월 30일까지로 한다.,housing.term,2026년 7월 1일부터 2028년 6월 30일까지
+임대할 주택은 부산광역시 예시동 200번지 아파트 301호이다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+2026년  7월  1일부터  2027년  6월  30일까지  동안  근무한다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+손해배상은 지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+업무  내용:  소프트웨어  개발,employment.duties,소프트웨어 개발
+당사자는 개인정보를 안전하게 관리한다.,other,
+1일 8시간 주 40시간 근무한다.,employment.work_hours,1일 8시간 주 40시간
+매월 25일 근로자 계좌로 지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+분쟁 해결은 서울중앙지방법원을 관할 법원으로 한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+차임 지급일은 매월 말일이다.,housing.payment_date,매월 말일
+사용자·근로자 :  사업주 박대표 및 직원 이근로,employment.parties,사업주 박대표 및 직원 이근로
+주휴일은 근로자의 날과 법정 공휴일이다.,employment.holidays,근로자의 날과 법정 공휴일
+보증금 반환은 목적물을 인도받는 즉시 반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+계약 당사자는 소유자 박임대 및 세입자 이임차이다.,housing.parties,소유자 박임대 및 세입자 이임차
+계약 해지는 30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+반환  조건:  목적물을  인도받는  즉시  반환한다,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+"관리비는  월  100,000원이다.",housing.management_fee,"월 100,000원"
+근무 장소는 서울 본사이다.,employment.workplace,서울 본사
+"을에게 총 3,000,000원을 검수 후 지급한다.",contract.payment,"총 3,000,000원을 검수 후 지급"
+"보수 및 지급 조건: 월 100,000원을 매월 25일 지급",contract.payment,"월 100,000원을 매월 25일 지급"
+오전 9시부터 오후 6시까지 근무한다.,employment.work_hours,오전 9시부터 오후 6시까지
+반환 조건 :  퇴거와 동시에 정산하여 지급한다,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+웹사이트  유지보수  용역를  계약  대상으로  한다.,contract.subject,웹사이트 유지보수 용역
+주 5일에 근무한다.,employment.work_days,주 5일
+관리비는 실비 정산이다.,housing.management_fee,실비 정산
+기간의 정함이 없음 동안 근무한다.,employment.term,기간의 정함이 없음
+유효 기간: 계약 체결일부터 12개월,contract.term,계약 체결일부터 12개월
+유효 기간: 2026년 7월 1일부터 2027년 6월 30일까지,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+반려동물 사육은 사전 동의를 받는다는 별도 특약으로 정한다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+분쟁  해결은  서울중앙지방법원을  관할  법원으로  한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+업무 범위: 제품 공급 업무,contract.subject,제품 공급 업무
+상호 협의 후 민사소송으로 해결한다.,contract.dispute,상호 협의 후 민사소송으로 해결한다
+"목적물  소재지:  서울특별시  예시구  예시로  100,  101호",housing.property,"서울특별시 예시구 예시로 100, 101호"
+근로  도중  1시간  자유롭게  이용한다.,employment.break_time,근로 도중 1시간
+소정근로일: 매주 월·화·수·목·금,employment.work_days,매주 월·화·수·목·금
+근로자의 날과 법정 공휴일을 휴일로 한다.,employment.holidays,근로자의 날과 법정 공휴일
+"차임은 매월 말일 600,000원이다.",housing.monthly_rent,"매월 말일 600,000원"
+급여 지급일·방법: 매월 말일 현금으로 지급,employment.pay_date,매월 말일 현금으로 지급
+연차휴가 :  연 15일을 부여한다,employment.annual_leave,연 15일을 부여한다
+계약 당사자는 사업자 예시회사와 이용자 김예시로 한다.,contract.parties,사업자 예시회사와 이용자 김예시
+공용관리비: 실비 정산,housing.management_fee,실비 정산
+"임차인은 1억 5,000만원을 보증금으로 지급한다.",housing.deposit,"1억 5,000만원"
+근로계약 당사자는 사업주 박대표 및 직원 이근로이다.,employment.parties,사업주 박대표 및 직원 이근로
+계약 당사자는 갑 주식회사 예시와 을 김고객로 한다.,contract.parties,갑 주식회사 예시와 을 김고객
+기타 정하지 않은 사항은 상호 협의한다.,other,
+임대인은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+급여 지급일·방법: 매월 25일 근로자 계좌로 지급,employment.pay_date,매월 25일 근로자 계좌로 지급
+휴식 시간 :  오후 3시부터 3시 30분까지,employment.break_time,오후 3시부터 3시 30분까지
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+해제·해지 조건 :  30일 전 통지로 종료할 수 있다,contract.termination,30일 전 통지로 종료할 수 있다
+연차휴가 :  연 15일을 부여한다,employment.annual_leave,연 15일을 부여한다
+월세:  월  75만원,housing.monthly_rent,월 75만원
+계약 해지는 상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+사업주 박대표 및 직원 이근로 사이에 근로계약을 체결한다.,employment.parties,사업주 박대표 및 직원 이근로
+연차 유급휴가는 연 15일을 부여한다.,employment.annual_leave,연 15일을 부여한다
+서울  본사에서  근무한다.,employment.workplace,서울 본사
+월요일부터 금요일에 근무한다.,employment.work_days,월요일부터 금요일
+부산광역시 예시동 200번지 아파트 301호를 임대 목적물로 한다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+사용자 예시회사와 근로자 김예시 사이에 근로계약을 체결한다.,employment.parties,사용자 예시회사와 근로자 김예시
+주휴일은 매주 일요일이다.,employment.holidays,매주 일요일
+"계약 대금은 월 100,000원을 매월 25일 지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+"월  기본급  3,000,000원을  지급한다.",employment.wage,"월 기본급 3,000,000원"
+하자 보수: 소모품은 임차인이 교체한다,housing.repairs,소모품은 임차인이 교체한다
+위약금  조건:  귀책  당사자가  직접  손해를  배상한다,contract.damages,귀책 당사자가 직접 손해를 배상한다
+소정근로시간은 오전 9시부터 오후 6시까지이다.,employment.work_hours,오전 9시부터 오후 6시까지
+하자 보수: 주요 설비는 임대인이 수선한다,housing.repairs,주요 설비는 임대인이 수선한다
+임대인·임차인 :  소유자 박임대 및 세입자 이임차,housing.parties,소유자 박임대 및 세입자 이임차
+2026년 7월 1일부터 2027년 6월 30일까지 동안 근무한다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+유급 휴일: 근로자의 날과 법정 공휴일,employment.holidays,근로자의 날과 법정 공휴일
+근로계약 기간은 기간의 정함이 없음이다.,employment.term,기간의 정함이 없음
+근로기준법에 따라 부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+당사자: 사업자 예시회사와 이용자 김예시,contract.parties,사업자 예시회사와 이용자 김예시
+월세는 매달 10일에 납부한다.,housing.payment_date,매달 10일
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+월세는 매월 말일에 납부한다.,housing.payment_date,매월 말일
+"임대할 주택은 서울특별시 예시구 예시로 100, 101호이다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+당사자는 개인정보를 안전하게 관리한다.,other,
+"임차인은 100,000,000원을 보증금으로 지급한다.",housing.deposit,"100,000,000원"
+회사 지정 사업장에서 근무한다.,employment.workplace,회사 지정 사업장
+소정근로시간은 1일 8시간 주 40시간이다.,employment.work_hours,1일 8시간 주 40시간
+소유자 박임대 및 세입자 이임차 사이에 임대차계약을 체결한다.,housing.parties,소유자 박임대 및 세입자 이임차
+소정근로시간은 오전 9시부터 오후 6시까지이다.,employment.work_hours,오전 9시부터 오후 6시까지
+임대인은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+"시간급  12,000원을  지급한다.",employment.wage,"시간급 12,000원"
+업무  내용:  매장  판매  업무,employment.duties,매장 판매 업무
+"보수 및 지급 조건 :  총 3,000,000원을 검수 후 지급",contract.payment,"총 3,000,000원을 검수 후 지급"
+근로계약  기간은  2026년  7월  1일부터  2027년  6월  30일까지이다.,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+사업자 예시회사와 이용자 김예시 사이에 계약을 체결한다.,contract.parties,사업자 예시회사와 이용자 김예시
+매월 말일 현금으로 지급한다.,employment.pay_date,매월 말일 현금으로 지급
+근로자의 날과 법정 공휴일을 휴일로 한다.,employment.holidays,근로자의 날과 법정 공휴일
+임대인은  목적물을  인도받는  즉시  반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+근로기준법에  따라  부여한다.,employment.annual_leave,근로기준법에 따라 부여한다
+임대인·임차인 :  소유자 박임대 및 세입자 이임차,housing.parties,소유자 박임대 및 세입자 이임차
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+관리비는 실비 정산이다.,housing.management_fee,실비 정산
+기타 정하지 않은 사항은 상호 협의한다.,other,
+"월세:  매월  500,000원",housing.monthly_rent,"매월 500,000원"
+임차인은  월  75만원을  지급한다.,housing.monthly_rent,월 75만원
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+반려동물  사육은  사전  동의를  받는다는  별도  특약으로  정한다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+당사자는 개인정보를 안전하게 관리한다.,other,
+휴게시간은 근로 도중 1시간이다.,employment.break_time,근로 도중 1시간
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+근로계약  당사자는  사용자  예시회사와  근로자  김예시이다.,employment.parties,사용자 예시회사와 근로자 김예시
+임대할 주택은 부산광역시 예시동 200번지 아파트 301호이다.,housing.property,부산광역시 예시동 200번지 아파트 301호
+재판 관할: 서울중앙지방법원을 관할 법원으로 한다,contract.dispute,서울중앙지방법원을 관할 법원으로 한다
+계약 기간은 2026년 7월 1일부터 2027년 6월 30일까지로 한다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+손해배상은  귀책  당사자가  직접  손해를  배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+당사자는 개인정보를 안전하게 관리한다.,other,
+계약 당사자는 소유자 박임대 및 세입자 이임차이다.,housing.parties,소유자 박임대 및 세입자 이임차
+기타 정하지 않은 사항은 상호 협의한다.,other,
+고용 기간 :  기간의 정함이 없음,employment.term,기간의 정함이 없음
+근로 도중 1시간 자유롭게 이용한다.,employment.break_time,근로 도중 1시간
+유급 휴일 :  토요일과 일요일,employment.holidays,토요일과 일요일
+주요  설비는  임대인이  수선한다.,housing.repairs,주요 설비는 임대인이 수선한다
+수선 책임은 소모품은 임차인이 교체한다.,housing.repairs,소모품은 임차인이 교체한다
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+임대인은  목적물을  인도받는  즉시  반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+"서울특별시 예시구 예시로 100, 101호를 임대 목적물로 한다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+급여 지급일·방법: 매월 말일 현금으로 지급,employment.pay_date,매월 말일 현금으로 지급
+휴게시간은  12시부터  13시까지이다.,employment.break_time,12시부터 13시까지
+기타 정하지 않은 사항은 상호 협의한다.,other,
+월세는 매월 25일에 납부한다.,housing.payment_date,매월 25일
+사용자·근로자: 사용자 예시회사와 근로자 김예시,employment.parties,사용자 예시회사와 근로자 김예시
+차임 지급일은 매월 25일이다.,housing.payment_date,매월 25일
+"보수 및 지급 조건: 총 3,000,000원을 검수 후 지급",contract.payment,"총 3,000,000원을 검수 후 지급"
+임대인은 목적물을 인도받는 즉시 반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+휴게시간은 오후 3시부터 3시 30분까지이다.,employment.break_time,오후 3시부터 3시 30분까지
+사용자  예시회사와  근로자  김예시  사이에  근로계약을  체결한다.,employment.parties,사용자 예시회사와 근로자 김예시
+당사자는 개인정보를 안전하게 관리한다.,other,
+관리비는 매월 15만원이다.,housing.management_fee,매월 15만원
+"계약  대금은  월  100,000원을  매월  25일  지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+예시구 고객지원센터에서 근무한다.,employment.workplace,예시구 고객지원센터
+지급 기일 :  매달 10일,housing.payment_date,매달 10일
+보증금 반환은 목적물을 인도받는 즉시 반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+근무 시간 :  1일 8시간 주 40시간,employment.work_hours,1일 8시간 주 40시간
+매월  25일  근로자  계좌로  지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+"임차보증금은  1억  5,000만원으로  정한다.",housing.deposit,"1억 5,000만원"
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+임차인은  오천만원을  보증금으로  지급한다.,housing.deposit,오천만원
+해제·해지  조건:  상대방이  의무를  위반하면  서면  통지  후  해지할  수  있다,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+보증금  반환은  목적물을  인도받는  즉시  반환한다.,housing.deposit_return,목적물을 인도받는 즉시 반환한다
+계약 존속기간 :  입주일부터 2년,housing.term,입주일부터 2년
+근로계약 기간은 기간의 정함이 없음이다.,employment.term,기간의 정함이 없음
+근무  시간:  오전  9시부터  오후  6시까지,employment.work_hours,오전 9시부터 오후 6시까지
+"임차보증금은 100,000,000원으로 정한다.",housing.deposit,"100,000,000원"
+고용 기간: 기간의 정함이 없음,employment.term,기간의 정함이 없음
+"임금은 월 기본급 3,000,000원이다.",employment.wage,"월 기본급 3,000,000원"
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+위약금  조건:  귀책  당사자가  직접  손해를  배상한다,contract.damages,귀책 당사자가 직접 손해를 배상한다
+계약서 두 부를 작성하여 각각 한 부씩 보관한다.,other,
+계약 해지는 30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+반려동물 사육은 사전 동의를 받는다는 별도 특약으로 정한다.,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+지급  기일:  매월  말일,housing.payment_date,매월 말일
+유효 기간 :  계약 체결일부터 12개월,contract.term,계약 체결일부터 12개월
+"을에게  월  100,000원을  매월  25일  지급한다.",contract.payment,"월 100,000원을 매월 25일 지급"
+"임차인은 매월 500,000원을 지급한다.",housing.monthly_rent,"매월 500,000원"
+고용 기간: 2026년 7월 1일부터 2027년 6월 30일까지,employment.term,2026년 7월 1일부터 2027년 6월 30일까지
+특약사항: 반려동물 사육은 사전 동의를 받는다,housing.special_terms,반려동물 사육은 사전 동의를 받는다
+30일 전 통지로 종료할 수 있다.,contract.termination,30일 전 통지로 종료할 수 있다
+소정근로시간은 1일 8시간 주 40시간이다.,employment.work_hours,1일 8시간 주 40시간
+소유자 박임대 및 세입자 이임차 사이에 임대차계약을 체결한다.,housing.parties,소유자 박임대 및 세입자 이임차
+매월 25일 근로자 계좌로 지급한다.,employment.pay_date,매월 25일 근로자 계좌로 지급
+2026년 7월 1일부터 2027년 6월 30일까지 동안 계약은 유효하다.,contract.term,2026년 7월 1일부터 2027년 6월 30일까지
+보증금 반환은 퇴거와 동시에 정산하여 지급한다.,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+담당 업무는 매장 판매 업무이다.,employment.duties,매장 판매 업무
+고용 기간: 기간의 정함이 없음,employment.term,기간의 정함이 없음
+손해배상은  귀책  당사자가  직접  손해를  배상한다.,contract.damages,귀책 당사자가 직접 손해를 배상한다
+오전  9시부터  오후  6시까지  근무한다.,employment.work_hours,오전 9시부터 오후 6시까지
+위약금 조건 :  지체일수마다 대금의 0.1%를 지급한다,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+본 계약은 상호 신뢰를 바탕으로 성실히 이행한다.,other,
+업무 내용 :  매장 판매 업무,employment.duties,매장 판매 업무
+지급 기일: 매달 10일,housing.payment_date,매달 10일
+"임대할  주택은  서울특별시  예시구  예시로  100,  101호이다.",housing.property,"서울특별시 예시구 예시로 100, 101호"
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+업무 내용: 고객 상담과 문서 관리,employment.duties,고객 상담과 문서 관리
+주휴일은 토요일과 일요일이다.,employment.holidays,토요일과 일요일
+임차보증금은  오천만원으로  정한다.,housing.deposit,오천만원
+계약 당사자는 사업자 예시회사와 이용자 김예시로 한다.,contract.parties,사업자 예시회사와 이용자 김예시
+반환 조건 :  퇴거와 동시에 정산하여 지급한다,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+"임금은 월 기본급 3,000,000원이다.",employment.wage,"월 기본급 3,000,000원"
+차임 지급일은 매월 말일이다.,housing.payment_date,매월 말일
+소정근로일: 주 5일,employment.work_days,주 5일
+입주일부터 2년 동안 임대한다.,housing.term,입주일부터 2년
+계약  목적은  온라인  정보  제공  서비스이다.,contract.subject,온라인 정보 제공 서비스
+문서의 제목과 조 번호는 편의를 위한 것이다.,other,
+임차인이 실비 정산의 관리비를 부담한다.,housing.management_fee,실비 정산
+지급 기일: 매월 25일,housing.payment_date,매월 25일
+지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+웹사이트 유지보수 용역를 계약 대상으로 한다.,contract.subject,웹사이트 유지보수 용역
+계약 목적은 제품 공급 업무이다.,contract.subject,제품 공급 업무
+주휴일은 매주 일요일이다.,employment.holidays,매주 일요일
+상대방이  의무를  위반하면  서면  통지  후  해지할  수  있다.,contract.termination,상대방이 의무를 위반하면 서면 통지 후 해지할 수 있다
+지체일수마다 대금의 0.1%를 지급한다.,contract.damages,지체일수마다 대금의 0.1%를 지급한다
+소유자 박임대 및 세입자 이임차 사이에 임대차계약을 체결한다.,housing.parties,소유자 박임대 및 세입자 이임차
+지급 기일 :  매월 말일,housing.payment_date,매월 말일
+"임차인이 월 100,000원의 관리비를 부담한다.",housing.management_fee,"월 100,000원"
+반환 조건: 퇴거와 동시에 정산하여 지급한다,housing.deposit_return,퇴거와 동시에 정산하여 지급한다
+온라인 정보 제공 서비스를 계약 대상으로 한다.,contract.subject,온라인 정보 제공 서비스
+분쟁 해결은 서울중앙지방법원을 관할 법원으로 한다.,contract.dispute,서울중앙지방법원을 관할 법원으로 한다

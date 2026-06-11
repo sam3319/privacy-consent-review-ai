@@ -119,11 +119,40 @@ def detect_document_type(text: str) -> dict:
 def detect_document_type_hybrid(text: str) -> dict:
     from src.ml_classifier import predict_document_type
 
-    ml_prediction = predict_document_type(text)
     try:
         rule_prediction = detect_document_type(text)
     except ValueError:
         rule_prediction = None
+    try:
+        ml_prediction = predict_document_type(text)
+    except (FileNotFoundError, OSError, ValueError):
+        if not rule_prediction:
+            raise ValueError(
+                "문서 유형 모델을 사용할 수 없고 규칙 엔진도 유형을 감지하지 못했습니다."
+            )
+        rule_type = rule_prediction["document_type"]
+        ml_group = (
+            "privacy_consent"
+            if rule_type in {"collection", "third_party", "combined"}
+            else rule_type
+        )
+        ml_prediction = {
+            "document_type": ml_group,
+            "label": rule_prediction["label"],
+            "probability": 0,
+            "confidence": 0,
+            "probabilities": [],
+            "model_type": "모델 사용 불가 - 규칙 엔진 폴백",
+        }
+        return {
+            "document_type": rule_type,
+            "label": rule_prediction["label"],
+            "confidence": rule_prediction["confidence"],
+            "method": "rule_only_fallback",
+            "agreement": True,
+            "ml_prediction": ml_prediction,
+            "rule_prediction": rule_prediction,
+        }
 
     if ml_prediction["document_type"] == "privacy_consent":
         if rule_prediction and rule_prediction["document_type"] in {

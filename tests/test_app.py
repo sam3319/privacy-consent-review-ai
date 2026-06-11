@@ -93,6 +93,31 @@ def test_app_analyzes_housing_lease():
     assert any("계약갱신요구권" in expander.label for expander in app.expander)
 
 
+def test_app_calculates_housing_deposit_risk():
+    app = AppTest.from_file("app/app.py").run(timeout=30)
+    app.selectbox[0].set_value("주택 임대차(전세·월세) 계약서").run(timeout=30)
+    app.text_area[0].set_value(
+        """
+        주택 임대차 계약서
+        임대인: 홍길동
+        임대 목적물: 서울특별시 예시구 101호
+        보증금: 100,000,000원
+        임대차 기간: 2026년 7월 1일부터 2028년 6월 30일까지
+        """
+    )
+    app.number_input[0].set_value(300_000_000)
+    app.number_input[2].set_value(120_000_000)
+    app.number_input[3].set_value(30_000_000)
+    app.button[0].click().run(timeout=30)
+
+    assert not app.exception
+    assert any(
+        markdown.value == "### 보증금 담보여력 참고 계산"
+        for markdown in app.markdown
+    )
+    assert any(metric.label == "총 부담 비율" for metric in app.metric)
+
+
 def test_app_analyzes_employment_contract():
     app = AppTest.from_file("app/app.py").run(timeout=30)
     app.selectbox[0].set_value("근로계약서")
@@ -113,3 +138,57 @@ def test_app_analyzes_employment_contract():
     labels = [expander.label for expander in app.expander]
     assert any("법정근로시간" in label for label in labels)
     assert any("최저임금" in label for label in labels)
+
+
+def test_app_calculates_employment_wage_estimate():
+    app = AppTest.from_file("app/app.py").run(timeout=30)
+    app.selectbox[0].set_value("근로계약서").run(timeout=30)
+    app.text_area[0].set_value(
+        """
+        근로계약서
+        사용자·근로자: 사용자 예시회사, 근로자 김예시
+        소정근로시간: 주 40시간
+        임금 구성·금액: 시급 12,000원
+        """
+    )
+    app.number_input[0].set_value(12_000)
+    app.number_input[1].set_value(40)
+    app.number_input[2].set_value(5)
+    app.button[0].click().run(timeout=30)
+
+    assert not app.exception
+    assert any(
+        markdown.value == "### 근로시간·예상 수당 참고 계산"
+        for markdown in app.markdown
+    )
+    assert any(metric.label == "주간 합계" for metric in app.metric)
+
+
+def test_app_applies_field_correction_json():
+    app = AppTest.from_file("app/app.py").run(timeout=30)
+    app.selectbox[0].set_value("근로계약서")
+    app.text_area[0].set_value(
+        "근로계약서\n임금 구성·금액: 시급 12,000원"
+    )
+    app.text_area[1].set_value('{"wage": "시급 13,000원"}')
+    app.button[0].click().run(timeout=30)
+
+    assert not app.exception
+    assert any("시급 13,000원" in text.value for text in app.markdown)
+    assert any("사용자 수정" in text.value for text in app.markdown)
+
+
+def test_app_applies_direct_field_correction():
+    app = AppTest.from_file("app/app.py").run(timeout=30)
+    app.selectbox[0].set_value("주택 임대차(전세·월세) 계약서").run(timeout=30)
+    app.text_area[0].set_value(
+        "주택 임대차 계약서\n보증금: 100,000,000원"
+    )
+    deposit_input = next(
+        item for item in app.text_input if item.label == "보증금"
+    )
+    deposit_input.set_value("120,000,000원")
+    app.button[0].click().run(timeout=30)
+
+    assert not app.exception
+    assert any("120,000,000원" in text.value for text in app.markdown)

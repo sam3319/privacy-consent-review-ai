@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "generated_from_latest_training_utc": "2026-06-09T06:25:56+00:00",
+  "models": [
+    {
+      "name": "clause_risk_classifier",
+      "file": "clause_risk_classifier.joblib",
+      "sha256": "5a2d90f2a3c8d894d284f57e46799e0f3a46fa397128361028c720a3772e0be5",
+      "size_bytes": 142372,
+      "trained_at_utc": "2026-06-09T02:07:09+00:00",
+      "dataset_size": 420,
+      "model_type": "TF-IDF character n-gram + Logistic Regression"
+    },
+    {
+      "name": "document_type_classifier",
+      "file": "document_type_classifier.joblib",
+      "sha256": "32d14645401883a8e248c0b02177d6a6d9e95036d4123fb16bfe5a393181dfca",
+      "size_bytes": 121020,
+      "trained_at_utc": "2026-06-09T02:07:05+00:00",
+      "dataset_size": 320,
+      "model_type": "TF-IDF character n-gram + Logistic Regression"
+    },
+    {
+      "name": "field_extractor",
+      "file": "field_extractor.joblib",
+      "sha256": "1466f83778602ca86ecc30f2df22ee40458e27e6644a344f7c746c795d84247c",
+      "size_bytes": 2257533,
+      "trained_at_utc": "2026-06-09T06:23:33+00:00",
+      "dataset_size": 1120,
+      "model_type": "TF-IDF character n-gram + calibrated Logistic Regression"
+    },
+    {
+      "name": "field_span_extractor",
+      "file": "field_span_extractor.joblib",
+      "sha256": "9e5efa5f9c451c135058a357ac44ea49e744402f677fa7a758df0b88d346942a",
+      "size_bytes": 86367,
+      "trained_at_utc": "2026-06-09T06:25:56+00:00",
+      "dataset_size": 1008,
+      "model_type": "token feature Logistic Regression BIO tagger"
+    }
+  ]
+}

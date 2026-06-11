@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m compileall -q src app scripts tests
+      - run: python -m json.tool ai_model_training.ipynb > /dev/null
+      - run: python -m json.tool privacy_consent_review_demo.ipynb > /dev/null
+      - run: python scripts/build_model_manifest.py
+      - run: git diff --exit-code models/model_manifest.json
+      - run: python scripts/deployment_smoke_test.py
+      - run: python -m pytest -q

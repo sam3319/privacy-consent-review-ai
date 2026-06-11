@@ -16,19 +16,63 @@ Google Colab 제출 및 기능 재현용 노트북은
 AI 모델 학습·평가·저장 과정을 재현하는 노트북은
 `ai_model_training.ipynb`입니다.
 
+아직 GitHub에 푸시하지 않은 최신 작업본을 Colab에서 실행하려면 다음 두
+파일을 사용합니다.
+
+- `privacy_consent_review_colab.ipynb`
+- `privacy-consent-review-ai-colab.zip`
+
+Colab에서 노트북을 연 뒤 첫 번째 실행 셀의 업로드 창에 ZIP을 선택하고
+`런타임 > 모두 실행`을 누릅니다. ZIP을 선택하지 않으면 GitHub 저장소를
+복제하므로 최신 로컬 변경 사항이 포함되지 않을 수 있습니다.
+
 ## AI 모델
 
-프로젝트는 규칙 엔진과 다음 두 머신러닝 모델을 결합합니다.
+프로젝트는 규칙 엔진과 다음 네 머신러닝 모델을 결합합니다.
 
 - 문서 유형 분류: 개인정보 동의서, 약관형 계약서, 주택 임대차, 근로계약
 - 계약 조항 위험 유형 분류: 책임 면제, 해지 제한, 위약금, 갱신권 제한,
   근로계약 위약, 장시간 근로 등
+- 계약 필드 분류: 당사자, 목적물, 보증금, 임금, 기간 등 28개 항목의
+  자연 문장 후보를 분류해 정규식 추출의 누락을 보완
+- 필드 값 span 추출: BIO 토큰 분류로 선택된 문장 안의 값 범위를 추출
 
-두 모델은 문자 n-gram `TF-IDF`와 `Logistic Regression`으로 구현했습니다.
+문서·조항·필드 분류 모델은 문자 n-gram `TF-IDF`와 Logistic Regression,
+span 모델은 토큰 특징 기반 Logistic Regression BIO 태거로 구현했습니다.
 학습 데이터는 실제 개인정보를 포함하지 않는 합성 템플릿 데이터이며,
 모델 파일과 평가 지표는 `models` 폴더에 저장합니다. 내부 평가 점수는 실제
 법률 문서에 대한 일반화 성능을 의미하지 않으며, 공식 법률 근거는 규칙 엔진
 결과를 우선합니다.
+
+필드 모델은 3겹 교차검증 기반 sigmoid 확률 보정을 사용합니다. 신뢰도가
+낮은 예측은 `사용자 확인 필요`로 표시하며, 모델 파일이 없거나 손상되면
+규칙 엔진만으로 분석을 계속합니다.
+
+로컬 한국어 Transformer NER 또는 문장 임베딩 모델을 선택적으로 사용할 수
+있습니다. 기본 배포에는 대형 모델을 포함하지 않으며 다음 패키지를 별도로
+설치하고 로컬 모델 경로를 환경변수로 지정합니다.
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-optional-ml.txt
+$env:LEGAL_NER_MODEL_PATH="로컬 NER 모델 경로"
+$env:LEGAL_EMBEDDING_MODEL_PATH="로컬 문장 임베딩 모델 경로"
+```
+
+환경변수가 없거나 모델 로딩에 실패하면 BIO span 모델과 TF-IDF 법률 검색으로
+자동 폴백합니다.
+
+필드 분류 모델 재학습:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\generate_field_training_data.py
+.\.venv\Scripts\python.exe scripts\train_field_extractor.py
+.\.venv\Scripts\python.exe scripts\train_field_span_extractor.py
+.\.venv\Scripts\python.exe scripts\build_model_manifest.py
+```
+
+모델은 로드 전에 `models/model_manifest.json`의 파일명, 크기와 SHA-256을
+검증합니다. 재학습 후 매니페스트를 갱신하지 않거나 파일이 변조되면
+`joblib.load`를 실행하지 않고 규칙 엔진으로 폴백합니다.
 
 ## 현재 범위
 
@@ -68,6 +112,17 @@ AI 모델 학습·평가·저장 과정을 재현하는 노트북은
 8. Markdown 및 JSON 보고서를 다운로드할 수 있습니다.
 9. 계약서를 조항 단위로 분리하고 선택한 당사자 관점의 권리·의무·금액·기간을 요약합니다.
 10. 날짜 역전, 총액과 분할 지급액 불일치, 자동 갱신 및 해지 통보기간을 점검합니다.
+11. 주택 임대차에서는 등기사항증명서·건축물대장을 선택적으로 입력해 임대인,
+    소재지와 건축물 용도를 문자열 기준으로 교차확인합니다.
+12. 주택가액, 선순위 채권·보증금과 임차보증금을 입력하면 총 부담 비율과
+    보증금 커버리지를 참고 지표로 계산합니다.
+13. 근로시간과 시간급을 입력하면 연장·야간·휴일근로 예상 수당을 계산합니다.
+14. 문서 내용과 의미가 가까운 공식 법률 규칙 후보를 검색해 원문 링크를 제공합니다.
+15. 추출값 수정 JSON을 적용하고 익명화된 수정 피드백을 다운로드할 수 있습니다.
+16. 문서 유형별 주요 추출값을 입력창에서 직접 수정할 수 있습니다.
+17. 업로드 문서를 페이지별로 추출해 품질 점수와 수정 가능한 OCR 텍스트를 표시합니다.
+18. 문서 작성일과 현재 규칙의 법률 시행일·근거 확인일을 비교합니다.
+19. 성명·상세 주소·계좌번호 후보를 추가 마스킹하고 다운로드 전 경고합니다.
 
 문구가 탐지되었다고 해서 해당 동의가 적법하거나 충분하다는 의미는 아닙니다.
 반대로 문구를 찾지 못했다는 결과도 실제 법 위반을 확정하지 않습니다.
@@ -90,7 +145,32 @@ Community Cloud에서는 루트의 `packages.txt`를 통해 설치됩니다.
 ```
 
 테스트는 필수 고지사항 탐지, 누락 가능성, 민감정보 검토 신호, 개인정보
-마스킹, 문서 읽기, 공식 법령 URL 제약 및 Streamlit 입력 흐름을 검증합니다.
+마스킹, 문서 읽기, 공식 법령 URL 제약, 임대차 외부 서류 교차확인,
+보증금 참고 계산 및 Streamlit 입력 흐름을 검증합니다.
+
+근로수당 계산은 휴일근로 8시간 이내 50%, 8시간 초과 100% 가산과
+연장·야간 가산 중복 입력을 지원합니다. 월 통상임금을 기준시간으로 나눈
+시간급 환산과 사용자가 확인한 주휴 유급시간도 입력할 수 있습니다.
+
+## 익명화 외부 평가
+
+실제 문서는 저장소에 커밋하지 않습니다. 전문가 검수가 끝난 익명화 JSONL
+데이터를 `data/evaluation/private/`에 두고 다음 명령으로 검사·평가합니다.
+
+```powershell
+.\.venv\Scripts\python.exe scripts\validate_anonymized_dataset.py data\evaluation\private\cases.jsonl
+.\.venv\Scripts\python.exe scripts\evaluate_anonymized_dataset.py data\evaluation\private\cases.jsonl --output evaluation.json
+```
+
+형식과 익명화 원칙은 `data/evaluation/README.md`에 기록되어 있습니다.
+모델 버전·학습시각·SHA-256은 `models/model_manifest.json`으로 관리하며,
+GitHub Actions가 구문 검사, 노트북 JSON, 매니페스트와 전체 테스트를 검증합니다.
+
+배포 사전 점검:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\deployment_smoke_test.py
+```
 
 `samples` 폴더에는 실제 개인정보를 포함하지 않는 합성 테스트 문서가 있습니다.
 

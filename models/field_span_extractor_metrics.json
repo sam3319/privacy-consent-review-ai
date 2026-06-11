@@ -1,0 +1,52 @@
+{
+  "model_type": "token feature Logistic Regression BIO tagger",
+  "task": "contract field value span extraction",
+  "trained_at_utc": "2026-06-09T06:25:56+00:00",
+  "random_seed": 42,
+  "dataset_size": 1008,
+  "token_count": 5538,
+  "class_distribution": {
+    "O": 2823,
+    "B-VALUE": 762,
+    "I-VALUE": 1953
+  },
+  "holdout_macro_f1": 0.835,
+  "classification_report": {
+    "B-VALUE": {
+      "precision": 0.7936507936507936,
+      "recall": 1.0,
+      "f1-score": 0.8849557522123894,
+      "support": 200.0
+    },
+    "I-VALUE": {
+      "precision": 0.7615894039735099,
+      "recall": 0.9019607843137255,
+      "f1-score": 0.8258527827648114,
+      "support": 510.0
+    },
+    "O": {
+      "precision": 0.9047619047619048,
+      "recall": 0.7078986587183308,
+      "f1-score": 0.794314381270903,
+      "support": 671.0
+    },
+    "accuracy": 0.8218682114409848,
+    "macro avg": {
+      "precision": 0.8200007007954028,
+      "recall": 0.869953147677352,
+      "f1-score": 0.8350409720827013,
+      "support": 1381.0
+    },
+    "weighted avg": {
+      "precision": 0.8357972431947044,
+      "recall": 0.8218682114409848,
+      "f1-score": 0.8190883558908817,
+      "support": 1381.0
+    }
+  },
+  "limitations": [
+    "공백 토큰 기반 BIO 모델로 형태소 단위 한국어 NER보다 단순하다.",
+    "합성 문장으로 학습되어 실제 문서와 OCR 오류에 대한 외부 평가가 필요하다.",
+    "필드 문장 분류 모델이 선택한 문장 안에서 값 범위만 보조 추출한다."
+  ]
+}

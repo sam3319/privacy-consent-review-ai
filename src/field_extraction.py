@@ -2,6 +2,7 @@ import re
 from dataclasses import asdict, dataclass
 from typing import Callable
 
+from src.ml_classifier import predict_field_candidates
 
 @dataclass(frozen=True)
 class ExtractedField:
@@ -256,7 +257,7 @@ def extract_contract_fields(text: str) -> list[dict]:
                 )
             )
         )
-    return fields
+    return augment_fields_with_ml(fields, text, "contract")
 
 
 HOUSING_FIELD_CONFIGURATIONS = [
@@ -289,11 +290,19 @@ EMPLOYMENT_FIELD_CONFIGURATIONS = [
 
 
 def extract_housing_fields(text: str) -> list[dict]:
-    return _extract_configured_fields(text, HOUSING_FIELD_CONFIGURATIONS)
+    return augment_fields_with_ml(
+        _extract_configured_fields(text, HOUSING_FIELD_CONFIGURATIONS),
+        text,
+        "housing",
+    )
 
 
 def extract_employment_fields(text: str) -> list[dict]:
-    return _extract_configured_fields(text, EMPLOYMENT_FIELD_CONFIGURATIONS)
+    return augment_fields_with_ml(
+        _extract_configured_fields(text, EMPLOYMENT_FIELD_CONFIGURATIONS),
+        text,
+        "employment",
+    )
 
 
 def _extract_configured_fields(text: str, configurations: list[tuple]) -> list[dict]:
@@ -311,5 +320,56 @@ def _extract_configured_fields(text: str, configurations: list[tuple]) -> list[d
                     ),
                 )
             )
+        )
+    return fields
+
+
+def augment_fields_with_ml(
+    fields: list[dict],
+    text: str,
+    document_group: str,
+) -> list[dict]:
+    missing_keys = {field["key"] for field in fields if not field["value"]}
+    if not missing_keys:
+        return fields
+    try:
+        predictions = predict_field_candidates(
+            text,
+            document_group,
+            missing_keys,
+        )
+    except (FileNotFoundError, OSError, ValueError):
+        return fields
+
+    predictions_by_key = {item["key"]: item for item in predictions}
+    for field in fields:
+        prediction = predictions_by_key.get(field["key"])
+        if not prediction:
+            field["extraction_method"] = "rule"
+            continue
+        field.update(
+            {
+                "value": prediction["value"],
+                "status": (
+                    "확인"
+                    if prediction["probability"] >= 55
+                    else "사용자 확인 필요"
+                ),
+                "confidence": round(prediction["probability"]),
+                "message": (
+                    "정규식으로 찾지 못한 값을 필드 분류 모델이 후보로 탐지했습니다. "
+                    + (
+                        "원문에서 항목과 값의 대응을 확인해야 합니다."
+                        if prediction["probability"] >= 55
+                        else "신뢰도가 낮아 사용자 확인 전에는 확정값으로 취급하지 않습니다."
+                    )
+                ),
+                "extraction_method": "ml_fallback",
+                "ml_source_line": prediction["line"],
+                "source_span": {
+                    "start": prediction["span_start"],
+                    "end": prediction["span_end"],
+                },
+            }
         )
     return fields

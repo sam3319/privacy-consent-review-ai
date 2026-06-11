@@ -16,11 +16,22 @@ Streamlit 기반 검토 보조 도구입니다.
 
 - 문서 유형 분류 모델: 문자 n-gram TF-IDF + Logistic Regression
 - 조항 위험 유형 분류 모델: 문자 n-gram TF-IDF + Logistic Regression
-- 학습 데이터: 합성 템플릿 문서 320건, 합성 조항 420건
+- 계약 필드 분류 모델: 문자 n-gram TF-IDF + Logistic Regression
+- 필드 값 span 모델: 공백 토큰 특징 + Logistic Regression BIO 태거
+- 선택형 Transformer NER: `LEGAL_NER_MODEL_PATH`가 설정된 경우 우선 사용
+- 선택형 문장 임베딩 검색: `LEGAL_EMBEDDING_MODEL_PATH`가 설정된 경우 우선 사용
+- 학습 데이터: 합성 템플릿 문서 320건, 합성 조항 420건, 합성 필드 문장 1,120건
 - 모델 산출물: `models/*.joblib`
 - 평가 지표: `models/*_metrics.json`
 - 학습 재현: `ai_model_training.ipynb`, `scripts/train_*.py`
-- 적용 방식: ML 예측과 공식 법령 규칙 엔진을 함께 표시하는 하이브리드 분석
+- 적용 방식: 규칙 추출을 우선하고 누락 필드만 ML 후보로 보완하며, 공식 법령
+  규칙 엔진의 검토 결과와 함께 표시하는 하이브리드 분석
+- 필드 모델 확률: 3겹 교차검증 sigmoid 보정
+- 낮은 신뢰도 필드: `사용자 확인 필요`로 표시하고 탐지율 확정값에서 제외
+- 모델 장애: 문서 유형은 규칙 엔진으로 폴백하고 조항·필드 ML은 생략
+- 모델 버전: `models/model_manifest.json`에 학습시각·크기·SHA-256 기록
+- 모델 로드 보안: 파일명·크기·SHA-256 일치 후에만 `joblib.load` 실행
+- 변조·매니페스트 누락: 모델 역직렬화를 차단하고 규칙 엔진으로 폴백
 
 합성 템플릿 데이터의 내부 평가 점수가 실제 문서 성능을 의미하지 않으므로
 전문가 라벨 실제 문서에 대한 외부 검증이 필요합니다.
@@ -32,6 +43,9 @@ Streamlit 기반 검토 보조 도구입니다.
 - 스캔 PDF OCR은 최대 20페이지
 - 파일 크기 최대 10MB
 - 직접 텍스트 입력 지원
+- 업로드 파일 페이지별 텍스트·OCR 품질 점수 표시
+- 이미지 원본과 OCR 텍스트 나란히 표시
+- 페이지별 OCR 문구 수정 후 전체 문서에 재반영
 
 ### 자동 문서 유형 감지
 
@@ -98,6 +112,11 @@ Streamlit 기반 검토 보조 도구입니다.
 ### 주택 임대차 분석
 
 - 임대인·임차인, 목적물, 보증금, 월세, 기간, 관리비, 수선, 보증금 반환 추출
+- 등기사항증명서의 소유자·소재지와 계약서 임대인·목적물 교차확인
+- 건축물대장의 주소·주용도와 계약 목적물 교차확인
+- 등기 문서의 채권최고액 추출 및 사용자 입력 선순위 금액과 연계
+- 주택가액 대비 선순위 채권·선순위 보증금·본인 보증금 총 부담 비율 계산
+- 선순위 금액 차감 후 보증금 커버리지와 참고 위험 수준 표시
 - 2년 미만 임대차 기간 검토
 - 보증금 반환 제한 문구 검토
 - 묵시적 갱신 후 임차인 해지권 제한 검토
@@ -106,6 +125,10 @@ Streamlit 기반 검토 보조 도구입니다.
 - 선순위 임대차 및 임대인 체납 정보 확인 제한 신호
 
 법률 기준은 주택임대차보호법 2026-01-02 시행본이며 2026-06-09 확인했습니다.
+
+외부 서류 교차확인은 문자열 기반이며 서류 진위, 최신 상태, 권리 순위와
+법적 효력을 판정하지 않습니다. 보증금 계산은 경매 낙찰가율, 우선변제권,
+소액임차인, 세금과 집행비용을 반영하지 않는 참고 지표입니다.
 
 ### 근로계약 분석
 
@@ -127,6 +150,34 @@ Streamlit 기반 검토 보조 도구입니다.
 - 주민등록번호, 전화번호, 이메일 마스킹
 - Markdown 및 JSON 보고서 다운로드
 - 업로드 문서를 애플리케이션 코드에서 별도 저장하지 않음
+- 사용자가 추출값 수정 JSON을 적용하고 수정 전·후 이력을 보고서에 기록
+- 개인정보를 마스킹한 수정 피드백 JSON 다운로드
+- 실제 전문가 평가 데이터는 `data/evaluation/private/`에 두고 Git에서 제외
+
+### 근로시간·수당 참고 계산
+
+- 시간급, 주간 통상·연장·야간·휴일근로 시간 입력
+- 5인 이상 사업장 선택 시 연장·야간·휴일 50% 가산 참고 계산
+- 휴일근로 8시간 초과 구간은 100% 가산 참고 계산
+- 야간시간을 별도 입력해 연장·휴일 가산과 중복 계산
+- 월 통상임금과 환산 기준시간을 이용한 시간급 계산
+- 사용자가 확인한 주휴 유급시간 입력
+- 주 12시간 연장근로 및 주 52시간 초과 입력 경고
+- 주휴수당, 통상임금 범위와 근로시간제 예외는 계산에서 제외
+
+### 공식 법률 근거 검색
+
+- 로컬 공식 법률 규칙의 제목·메시지·패턴을 문자 n-gram TF-IDF로 검색
+- 문서와 가까운 상위 공식 조문 후보와 URL 표시
+- 유사도는 법적 적용 여부나 결론이 아닌 탐색 보조 점수
+- 문서 작성일과 법률 시행일·근거 확인일 비교 경고
+
+### 외부 평가 체계
+
+- `data/evaluation/README.md`: 전문가 검수 JSONL 형식과 익명화 원칙
+- `scripts/validate_anonymized_dataset.py`: 식별정보 후보 검사
+- `scripts/evaluate_anonymized_dataset.py`: 문서 유형 분류표와 필드 exact match 평가
+- 실제 문서와 전문가 라벨은 제공되지 않았으므로 외부 성능 수치는 아직 없음
 
 ## 법률 근거
 
@@ -153,12 +204,22 @@ Streamlit 기반 검토 보조 도구입니다.
 - `src/document_classifier.py`: 문서 유형 자동 감지
 - `src/document_io.py`: TXT, PDF, DOCX, 이미지 및 OCR 처리
 - `src/field_extraction.py`: 동의서와 계약서 핵심 값 추출
+- `src/ml_classifier.py`: 문서 유형·위험 조항·계약 필드 ML 예측
+- `scripts/train_field_extractor.py`: 계약 필드 분류 모델 학습과 평가
+- `scripts/train_field_span_extractor.py`: 필드 값 BIO span 모델 학습과 평가
+- `data/field_extraction_training.csv`: 개인정보 없는 합성 필드 학습 문장
 - `src/analyzer.py`: 개인정보 동의서 분석
 - `src/contract_analyzer.py`: 약관형 계약서 분석
 - `src/contract_structure.py`: 조항 분리, 관점별 요약 및 내부 일관성 검사
 - `src/special_contract_analyzer.py`: 주택 임대차 및 근로계약 분석
 - `src/legal_rules.py`: 법률 데이터 로딩
 - `src/reporting.py`: Markdown 및 JSON 보고서 생성
+- `src/employment_calculator.py`: 근로시간·예상 수당 참고 계산
+- `src/legal_retrieval.py`: 공식 법률 규칙 의미 검색
+- `src/review_feedback.py`: 사용자 수정 적용과 익명화 피드백 생성
+- `src/optional_models.py`: 선택형 Transformer NER·문장 임베딩 어댑터
+- `scripts/deployment_smoke_test.py`: 모델·샘플 분석·배포 파일 사전 점검
+- `src/model_security.py`: 모델 매니페스트·SHA-256 검증과 안전 로딩
 - `data/legal_sources.json`: 개인정보 보호법 규칙
 - `data/contract_legal_sources.json`: 약관법 검토 신호
 - `data/housing_legal_sources.json`: 주택임대차보호법 검토 신호
@@ -193,7 +254,7 @@ Streamlit 기반 검토 보조 도구입니다.
 마지막 전체 테스트 결과:
 
 ```text
-38 passed
+77 passed
 ```
 
 실행 명령:
@@ -216,6 +277,23 @@ cd C:\Users\USER\Desktop\privacy-consent-review-ai
 ```
 
 로컬 OCR 실행에는 Tesseract 한국어 언어팩과 Poppler가 필요합니다.
+
+## Colab 최신 작업본 실행
+
+데스크톱에 생성된 다음 두 파일을 사용합니다.
+
+- `privacy_consent_review_colab.ipynb`
+- `privacy-consent-review-ai-colab.zip`
+
+노트북 첫 셀에서 ZIP을 업로드하면 GitHub에 아직 푸시되지 않은 현재 작업본을
+`/content/privacy-consent-review-ai`에 풀고 Python 패키지와 OCR 시스템
+패키지를 설치합니다. TXT, PDF, DOCX, PNG, JPG 업로드 분석을 지원합니다.
+
+ZIP 압축본을 별도 폴더에 풀어 배포 점검과 전체 테스트를 실행한 결과:
+
+```text
+77 passed
+```
 
 ## GitHub 및 배포
 
@@ -250,14 +328,11 @@ Tesseract 한국어 언어팩과 Poppler 설치에 사용됩니다.
 
 ## 다음 작업 우선순위
 
-1. 등기사항증명서·건축물대장 등 외부 문서 교차검증 입력 흐름
-2. 임대차 보증금 대비 선순위 채권·보증금 위험 계산
-3. 근로시간표 기반 연장·야간·휴일근로 및 수당 계산
-4. 기간제·단시간근로자 추가 명시사항과 사업장 규모별 예외 처리
-5. 용역·프리랜서 계약서와 근로자성 검토 보조
-6. 전자상거래 이용약관 별도 분석
-7. OCR 페이지별 품질과 사용자의 OCR 문구 수정 기능
-8. 전문가 검수 데이터셋 구축 후 조항 분류 모델 평가
+1. 전문가 검수·익명화 실제 문서 데이터 수집 및 외부 성능 측정
+2. 전문가 라벨 데이터로 한국어 Transformer NER를 학습해 선택형 어댑터에 연결
+3. 기간제·단시간근로자 추가 명시사항과 업종·사업장 규모별 예외 처리
+4. 용역·프리랜서 계약서와 근로자성 검토 보조
+5. 전자상거래 이용약관 별도 분석
 
 ## 다음 작업 시 주의사항
 
