@@ -27,7 +27,9 @@ def run() -> dict:
     analysis = analyze_housing_contract(sample)
     integrity = model_integrity_status()
     model_size = sum(
-        path.stat().st_size for path in (ROOT / "models").glob("*.joblib")
+        path.stat().st_size
+        for path in (ROOT / "models").rglob("*")
+        if path.is_file() and path.suffix in {".joblib", ".safetensors"}
     )
     result = {
         "missing_files": missing,

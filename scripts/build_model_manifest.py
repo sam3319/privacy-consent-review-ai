@@ -12,6 +12,8 @@ METRICS_FILES = {
     "field_extractor": "field_extractor_metrics.json",
     "field_span_extractor": "field_span_extractor_metrics.json",
 }
+TRANSFORMER_DIR = MODEL_DIR / "transformer_ner"
+TRANSFORMER_METRICS_PATH = MODEL_DIR / "transformer_ner_metrics.json"
 
 
 def build_manifest() -> dict:
@@ -37,6 +39,35 @@ def build_manifest() -> dict:
                 "trained_at_utc": metrics.get("trained_at_utc"),
                 "dataset_size": metrics.get("dataset_size"),
                 "model_type": metrics.get("model_type"),
+            }
+        )
+    if TRANSFORMER_DIR.is_dir():
+        metrics = (
+            json.loads(TRANSFORMER_METRICS_PATH.read_text(encoding="utf-8"))
+            if TRANSFORMER_METRICS_PATH.exists()
+            else {}
+        )
+        files = []
+        for path in sorted(
+            item for item in TRANSFORMER_DIR.rglob("*") if item.is_file()
+        ):
+            files.append(
+                {
+                    "path": path.relative_to(TRANSFORMER_DIR).as_posix(),
+                    "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                    "size_bytes": path.stat().st_size,
+                }
+            )
+        models.append(
+            {
+                "name": "transformer_ner",
+                "directory": TRANSFORMER_DIR.name,
+                "files": files,
+                "size_bytes": sum(item["size_bytes"] for item in files),
+                "trained_at_utc": metrics.get("trained_at_utc"),
+                "dataset_size": metrics.get("dataset_size"),
+                "model_type": metrics.get("model_type"),
+                "base_model": metrics.get("base_model"),
             }
         )
     trained_dates = [

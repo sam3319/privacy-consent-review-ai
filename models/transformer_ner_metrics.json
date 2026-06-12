@@ -1,0 +1,62 @@
+{
+  "model_type": "Transformer token classification BIO NER",
+  "task": "contract field value span extraction",
+  "base_model": "monologg/koelectra-small-v3-discriminator",
+  "trained_at_utc": "2026-06-12T05:49:08+00:00",
+  "random_seed": 42,
+  "dataset_size": 1008,
+  "train_size": 806,
+  "test_size": 202,
+  "label_count": 3,
+  "field_count": 28,
+  "epochs": 5.0,
+  "batch_size": 16,
+  "learning_rate": 3e-05,
+  "max_length": 128,
+  "device": "cpu",
+  "holdout_macro_f1": 0.9988,
+  "holdout_accuracy": 0.9983,
+  "classification_report": {
+    "B-VALUE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 202.0
+    },
+    "I-VALUE": {
+      "precision": 0.9984650805832693,
+      "recall": 0.9984650805832693,
+      "f1-score": 0.9984650805832693,
+      "support": 1303.0
+    },
+    "O": {
+      "precision": 0.9978142076502732,
+      "recall": 0.9978142076502732,
+      "f1-score": 0.9978142076502732,
+      "support": 915.0
+    },
+    "accuracy": 0.9983471074380166,
+    "macro avg": {
+      "precision": 0.9987597627445141,
+      "recall": 0.9987597627445141,
+      "f1-score": 0.9987597627445141,
+      "support": 2420.0
+    },
+    "weighted avg": {
+      "precision": 0.9983471074380166,
+      "recall": 0.9983471074380166,
+      "f1-score": 0.9983471074380166,
+      "support": 2420.0
+    }
+  },
+  "class_distribution": {
+    "O": 915,
+    "B-VALUE": 202,
+    "I-VALUE": 1303
+  },
+  "limitations": [
+    "합성 문장으로 학습되어 실제 계약서와 OCR 오류에 대한 외부 평가가 필요하다.",
+    "필드 문장 분류 모델이 선택한 문장 안에서 값 범위를 추출한다.",
+    "자동 추출 결과는 법률 판단이 아니라 사용자 검토를 위한 보조 정보다."
+  ]
+}

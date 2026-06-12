@@ -17,4 +17,15 @@ python scripts/validate_anonymized_dataset.py data/evaluation/private/cases.json
 python scripts/evaluate_anonymized_dataset.py data/evaluation/private/cases.jsonl --output evaluation.json
 ```
 
+평가 결과에는 다음 항목이 포함됩니다.
+
+- `document_type_accuracy`: 전체 문서 유형 정확도
+- `document_type_report`: 문서 유형별 precision, recall, F1
+- `document_type_errors`: 문서 유형 오분류 사례
+- `field_evaluation.by_field`: 필드별 예측 수와 exact-match 비율
+- `field_evaluation.errors`: 누락 또는 값 불일치 사례
+
+오류 사례에는 원문 전체가 아니라 사례 `id`, 기대값, 예측값만 기록됩니다.
+`evaluation.json`도 실제 값이 포함될 수 있으므로 저장소에 커밋하지 않습니다.
+
 이름, 상세 주소, 연락처, 주민등록번호, 계좌번호, 서명 이미지는 제거해야 합니다.

@@ -1,6 +1,68 @@
 # 개발 인수인계 기록
 
-최종 업데이트: 2026-06-09
+최종 업데이트: 2026-06-12
+
+## 2026-06-12 후속 작업
+
+- 익명 평가 결과에 전체 문서 유형 정확도와 오분류 사례 추가
+- 필드별 exact-match 통계와 누락·불일치 사례 추가
+- 동일 작업본에서 동일 SHA-256을 생성하는 Colab ZIP 패키징 스크립트 추가
+- Git 제외 파일, 비공개 평가 데이터, 가상환경 및 Git 메타데이터 ZIP 제외
+- 평가 지표 및 패키징 재현성 테스트 추가
+- README와 평가 데이터 문서에 실행 명령 및 출력 구조 반영
+- 전체 테스트: `86 passed`
+- `compileall` 구문 검사 통과
+- 배포 스모크 테스트: `ready: true`
+- 새 ZIP 해제본 전체 테스트: `86 passed`
+- 새 ZIP 해제본 배포 스모크 테스트: `ready: true`
+- 생성 ZIP: `C:\Users\USER\Desktop\privacy-consent-review-ai-colab.zip`
+
+### Transformer NER 적용
+
+- 한국어 ELECTRA 기반 3-class BIO NER 학습 스크립트 추가
+- 기반 모델: `monologg/koelectra-small-v3-discriminator`
+- 학습 데이터: 합성 필드 문장 1,008건
+- 출력 모델: `models/transformer_ner`
+- 합성 holdout macro F1: `0.9988`
+- 합성 holdout accuracy: `0.9983`
+- 필드 분류 모델이 선택한 문장에서 Transformer NER가 값 span을 우선 추출
+- Transformer 로딩 실패 시 기존 Logistic Regression BIO 모델로 자동 복귀
+- 모델 디렉터리 전체 파일의 크기와 SHA-256을 매니페스트로 검증
+- 추론에 불필요한 `training_args.bin`은 배포 산출물에서 제외
+- 실제 문서 일반화 성능은 아직 확인되지 않았으며 익명화 전문가 평가 필요
+- 배포 스모크 테스트 모델 용량: `56.13 MB`
+- Transformer 포함 Colab ZIP 크기: `53,813,417 bytes`
+- Transformer 포함 ZIP 해제본에서 실제 `transformer_ner` 추론 확인
+
+## 2026-06-11 작업 중단 시점
+
+### 확인 완료
+
+- Git 상태: `main`과 `origin/main`이 동기화되어 있고 미커밋 변경 없음
+- 최신 커밋: `01467d5` (`Update`, 2026-06-11)
+- 전체 테스트: `77 passed`
+- `compileall` 구문 검사 통과
+- `scripts/deployment_smoke_test.py`: `ready: true`
+- 모델 4개의 파일 크기와 SHA-256이 매니페스트와 일치
+- 데스크톱 Colab 산출물 존재 확인:
+  - `C:\Users\USER\Desktop\privacy_consent_review_colab.ipynb`
+  - `C:\Users\USER\Desktop\privacy-consent-review-ai-colab.zip`
+- Colab 노트북은 `nbformat 4.5`, 총 20개 셀의 정상 JSON 파일
+- ZIP을 임시 폴더에 해제해 현재 저장소와 비교했으며, 가상환경·Git 캐시 등을
+  제외한 프로젝트 파일 해시가 현재 작업본과 일치
+
+### 중단 당시 계획했지만 아직 수정하지 않은 작업
+
+1. `scripts/evaluate_anonymized_dataset.py`에 문서 유형 정확도, 필드별 정확도,
+   오류 사례를 추가해 실제 전문가 데이터 투입 전 평가 체계를 보강
+2. 평가 데이터와 로컬 비밀 파일을 제외하고 동일한 Colab ZIP을 재생성하는
+   결정적 패키징 스크립트 추가
+3. 패키징 스크립트와 평가 지표에 대한 테스트 추가
+4. README의 Colab 파일 위치와 재생성 명령을 실제 데스크톱 산출물에 맞게 수정
+5. 변경 후 전체 테스트, 배포 스모크 테스트, 새 ZIP 해제본 테스트 재실행
+
+코드 수정은 시작하기 전에 작업이 중단되었습니다. 다음 작업에서는 현재
+Git 상태를 다시 확인한 뒤 위 순서대로 진행하면 됩니다.
 
 ## 프로젝트 목적
 
@@ -17,11 +79,12 @@ Streamlit 기반 검토 보조 도구입니다.
 - 문서 유형 분류 모델: 문자 n-gram TF-IDF + Logistic Regression
 - 조항 위험 유형 분류 모델: 문자 n-gram TF-IDF + Logistic Regression
 - 계약 필드 분류 모델: 문자 n-gram TF-IDF + Logistic Regression
-- 필드 값 span 모델: 공백 토큰 특징 + Logistic Regression BIO 태거
-- 선택형 Transformer NER: `LEGAL_NER_MODEL_PATH`가 설정된 경우 우선 사용
+- 필드 값 span 모델: 한국어 ELECTRA Transformer BIO NER 우선 사용
+- fallback span 모델: 공백 토큰 특징 + Logistic Regression BIO 태거
+- Transformer NER: 기본 `models/transformer_ner`, 환경변수로 재정의 가능
 - 선택형 문장 임베딩 검색: `LEGAL_EMBEDDING_MODEL_PATH`가 설정된 경우 우선 사용
 - 학습 데이터: 합성 템플릿 문서 320건, 합성 조항 420건, 합성 필드 문장 1,120건
-- 모델 산출물: `models/*.joblib`
+- 모델 산출물: `models/*.joblib`, `models/transformer_ner`
 - 평가 지표: `models/*_metrics.json`
 - 학습 재현: `ai_model_training.ipynb`, `scripts/train_*.py`
 - 적용 방식: 규칙 추출을 우선하고 누락 필드만 ML 후보로 보완하며, 공식 법령
@@ -329,7 +392,7 @@ Tesseract 한국어 언어팩과 Poppler 설치에 사용됩니다.
 ## 다음 작업 우선순위
 
 1. 전문가 검수·익명화 실제 문서 데이터 수집 및 외부 성능 측정
-2. 전문가 라벨 데이터로 한국어 Transformer NER를 학습해 선택형 어댑터에 연결
+2. 전문가 라벨 데이터로 Transformer NER 외부 성능 측정 및 재학습
 3. 기간제·단시간근로자 추가 명시사항과 업종·사업장 규모별 예외 처리
 4. 용역·프리랜서 계약서와 근로자성 검토 보조
 5. 전자상거래 이용약관 별도 분석

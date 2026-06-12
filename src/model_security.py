@@ -80,6 +80,57 @@ def load_verified_joblib(
     return joblib.load(model_path)
 
 
+def verify_model_directory(
+    model_path: Path,
+    manifest_path: Path = DEFAULT_MANIFEST_PATH,
+) -> dict:
+    model_path = model_path.resolve()
+    manifest_path = manifest_path.resolve()
+    if not model_path.is_dir():
+        raise FileNotFoundError(f"모델 디렉터리가 없습니다: {model_path.name}")
+    if not manifest_path.exists():
+        raise ModelIntegrityError("모델 매니페스트가 없습니다.")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("schema_version") != "1.0":
+        raise ModelIntegrityError("지원하지 않는 모델 매니페스트 버전입니다.")
+    entry = next(
+        (
+            item
+            for item in manifest.get("models", [])
+            if item.get("directory") == model_path.name
+        ),
+        None,
+    )
+    if entry is None:
+        raise ModelIntegrityError(
+            f"모델 디렉터리가 매니페스트에 등록되지 않았습니다: {model_path.name}"
+        )
+    expected_files = {
+        item["path"]: item for item in entry.get("files", [])
+    }
+    actual_files = {
+        path.relative_to(model_path).as_posix(): path
+        for path in model_path.rglob("*")
+        if path.is_file()
+    }
+    if set(expected_files) != set(actual_files):
+        raise ModelIntegrityError(
+            f"모델 디렉터리 파일 목록이 다릅니다: {model_path.name}"
+        )
+    for relative_path, path in actual_files.items():
+        expected = expected_files[relative_path]
+        if path.stat().st_size != expected.get("size_bytes"):
+            raise ModelIntegrityError(
+                f"모델 파일 크기가 다릅니다: {relative_path}"
+            )
+        actual_hash = hashlib.sha256(path.read_bytes()).hexdigest()
+        if actual_hash != expected.get("sha256"):
+            raise ModelIntegrityError(
+                f"모델 SHA-256이 다릅니다: {relative_path}"
+            )
+    return entry
+
+
 def model_integrity_status(
     manifest_path: Path = DEFAULT_MANIFEST_PATH,
 ) -> dict:
@@ -93,14 +144,21 @@ def model_integrity_status(
     statuses = []
     errors = []
     for entry in manifest.get("models", []):
-        model_path = manifest_path.parent / entry["file"]
+        is_directory = bool(entry.get("directory"))
+        model_path = manifest_path.parent / (
+            entry["directory"] if is_directory else entry["file"]
+        )
         try:
-            verified = verify_model_file(model_path, manifest_path)
+            verified = (
+                verify_model_directory(model_path, manifest_path)
+                if is_directory
+                else verify_model_file(model_path, manifest_path)
+            )
         except (FileNotFoundError, ModelIntegrityError) as error:
             statuses.append(
                 {
-                    "name": entry.get("name", entry["file"]),
-                    "file": entry["file"],
+                    "name": entry.get("name", model_path.name),
+                    "file": model_path.name,
                     "valid": False,
                     "error": str(error),
                 }
@@ -110,9 +168,13 @@ def model_integrity_status(
             statuses.append(
                 {
                     "name": verified["name"],
-                    "file": verified["file"],
+                    "file": verified.get("file", verified.get("directory")),
                     "valid": True,
-                    "sha256": verified["sha256"],
+                    **(
+                        {"sha256": verified["sha256"]}
+                        if verified.get("sha256")
+                        else {"file_count": len(verified.get("files", []))}
+                    ),
                 }
             )
     return {

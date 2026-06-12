@@ -41,40 +41,101 @@ def evaluate(rows: list[dict]) -> dict:
     expected_types = []
     predicted_types = []
     field_totals = Counter()
-    for row in rows:
+    field_metrics = {}
+    document_type_errors = []
+    field_errors = []
+    for index, row in enumerate(rows, 1):
         prediction = detect_document_type_hybrid(row["text"])
-        expected_types.append(row["document_type"])
-        predicted_types.append(prediction["document_type"])
+        expected_type = row["document_type"]
+        predicted_type = prediction["document_type"]
+        case_id = row.get("id", f"row-{index}")
+        expected_types.append(expected_type)
+        predicted_types.append(predicted_type)
+        if expected_type != predicted_type:
+            document_type_errors.append(
+                {
+                    "id": case_id,
+                    "expected": expected_type,
+                    "predicted": predicted_type,
+                    "confidence": prediction.get("confidence"),
+                }
+            )
         extractor = FIELD_EXTRACTORS.get(row["document_type"])
         if not extractor:
             continue
         extracted = {field["key"]: field["value"] for field in extractor(row["text"])}
         for key, expected_value in row.get("fields", {}).items():
+            predicted_value = extracted.get(key, "")
+            normalized_expected = _normalize(expected_value)
+            normalized_predicted = _normalize(predicted_value)
+            matched = normalized_predicted == normalized_expected
             field_totals["expected"] += 1
-            if extracted.get(key):
+            metrics = field_metrics.setdefault(key, Counter())
+            metrics["expected"] += 1
+            if predicted_value:
                 field_totals["predicted"] += 1
-            if _normalize(extracted.get(key, "")) == _normalize(expected_value):
+                metrics["predicted"] += 1
+            if matched:
                 field_totals["exact_match"] += 1
+                metrics["exact_match"] += 1
+            else:
+                field_errors.append(
+                    {
+                        "id": case_id,
+                        "document_type": expected_type,
+                        "field": key,
+                        "expected": expected_value,
+                        "predicted": predicted_value,
+                        "error_type": (
+                            "missing" if not predicted_value else "mismatch"
+                        ),
+                    }
+                )
+
+    document_type_correct = sum(
+        expected == predicted
+        for expected, predicted in zip(expected_types, predicted_types)
+    )
 
     return {
         "dataset_size": len(rows),
+        "document_type_accuracy": round(document_type_correct / len(rows), 4)
+        if rows
+        else None,
         "document_type_report": classification_report(
             expected_types,
             predicted_types,
             output_dict=True,
             zero_division=0,
-        ),
+        )
+        if rows
+        else {},
+        "document_type_errors": document_type_errors,
         "field_evaluation": {
             "expected": field_totals["expected"],
             "predicted": field_totals["predicted"],
             "exact_match": field_totals["exact_match"],
-            "exact_match_rate": round(
-                field_totals["exact_match"] / field_totals["expected"], 4
-            )
-            if field_totals["expected"]
-            else None,
+            "exact_match_rate": _rate(
+                field_totals["exact_match"], field_totals["expected"]
+            ),
+            "by_field": {
+                key: {
+                    "expected": metrics["expected"],
+                    "predicted": metrics["predicted"],
+                    "exact_match": metrics["exact_match"],
+                    "exact_match_rate": _rate(
+                        metrics["exact_match"], metrics["expected"]
+                    ),
+                }
+                for key, metrics in sorted(field_metrics.items())
+            },
+            "errors": field_errors,
         },
     }
+
+
+def _rate(numerator: int, denominator: int) -> float | None:
+    return round(numerator / denominator, 4) if denominator else None
 
 
 def _normalize(value: str) -> str:

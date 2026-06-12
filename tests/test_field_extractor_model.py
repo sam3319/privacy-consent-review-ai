@@ -36,7 +36,7 @@ def test_field_span_model_extracts_value_tokens():
 
     assert result is not None
     assert "1억" in result["value"]
-    assert result["span_method"] == "bio_token_model"
+    assert result["span_method"] in {"transformer_ner", "bio_token_model"}
 
 
 def test_field_model_classifies_natural_housing_line():

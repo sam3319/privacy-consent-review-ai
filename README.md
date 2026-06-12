@@ -26,9 +26,18 @@ Colab에서 노트북을 연 뒤 첫 번째 실행 셀의 업로드 창에 ZIP�
 `런타임 > 모두 실행`을 누릅니다. ZIP을 선택하지 않으면 GitHub 저장소를
 복제하므로 최신 로컬 변경 사항이 포함되지 않을 수 있습니다.
 
+ZIP은 저장소 루트에서 다음 명령으로 데스크톱에 재생성합니다. Git 추적 파일과
+`.gitignore`에 걸리지 않은 작업 파일만 포함하며 비공개 평가 데이터, 가상환경,
+Git 메타데이터는 제외합니다. 파일 순서와 ZIP 타임스탬프가 고정되어 같은
+작업본에서는 같은 SHA-256이 생성됩니다.
+
+```powershell
+.\.venv\Scripts\python.exe scripts\package_colab_release.py
+```
+
 ## AI 모델
 
-프로젝트는 규칙 엔진과 다음 네 머신러닝 모델을 결합합니다.
+프로젝트는 규칙 엔진과 다섯 머신러닝 모델을 결합합니다.
 
 - 문서 유형 분류: 개인정보 동의서, 약관형 계약서, 주택 임대차, 근로계약
 - 계약 조항 위험 유형 분류: 책임 면제, 해지 제한, 위약금, 갱신권 제한,
@@ -37,8 +46,10 @@ Colab에서 노트북을 연 뒤 첫 번째 실행 셀의 업로드 창에 ZIP�
   자연 문장 후보를 분류해 정규식 추출의 누락을 보완
 - 필드 값 span 추출: BIO 토큰 분류로 선택된 문장 안의 값 범위를 추출
 
-문서·조항·필드 분류 모델은 문자 n-gram `TF-IDF`와 Logistic Regression,
-span 모델은 토큰 특징 기반 Logistic Regression BIO 태거로 구현했습니다.
+문서·조항·필드 분류 모델은 문자 n-gram `TF-IDF`와 Logistic Regression으로
+구현했습니다. 필드 값 span은 한국어 ELECTRA 기반 Transformer BIO NER를
+우선 사용하고, 로딩에 실패하면 토큰 특징 기반 Logistic Regression BIO
+태거로 복귀합니다.
 학습 데이터는 실제 개인정보를 포함하지 않는 합성 템플릿 데이터이며,
 모델 파일과 평가 지표는 `models` 폴더에 저장합니다. 내부 평가 점수는 실제
 법률 문서에 대한 일반화 성능을 의미하지 않으며, 공식 법률 근거는 규칙 엔진
@@ -48,13 +59,20 @@ span 모델은 토큰 특징 기반 Logistic Regression BIO 태거로 구현했�
 낮은 예측은 `사용자 확인 필요`로 표시하며, 모델 파일이 없거나 손상되면
 규칙 엔진만으로 분석을 계속합니다.
 
-로컬 한국어 Transformer NER 또는 문장 임베딩 모델을 선택적으로 사용할 수
-있습니다. 기본 배포에는 대형 모델을 포함하지 않으며 다음 패키지를 별도로
-설치하고 로컬 모델 경로를 환경변수로 지정합니다.
+기본 Transformer NER 모델은 `models/transformer_ner`에 포함되며 별도
+환경변수 없이 자동으로 사용합니다. 다른 호환 모델을 사용하려면 로컬 모델
+경로를 환경변수로 지정할 수 있습니다. `LEGAL_NER_MINIMUM_SCORE`의 기본값은
+`0.5`입니다.
+
+```powershell
+$env:LEGAL_NER_MODEL_PATH="로컬 NER 모델 경로"
+$env:LEGAL_NER_MINIMUM_SCORE="0.5"
+```
+
+문장 임베딩 모델과 Transformer 재학습 도구는 선택 패키지를 추가 설치합니다.
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements-optional-ml.txt
-$env:LEGAL_NER_MODEL_PATH="로컬 NER 모델 경로"
 $env:LEGAL_EMBEDDING_MODEL_PATH="로컬 문장 임베딩 모델 경로"
 ```
 
@@ -67,12 +85,19 @@ $env:LEGAL_EMBEDDING_MODEL_PATH="로컬 문장 임베딩 모델 경로"
 .\.venv\Scripts\python.exe scripts\generate_field_training_data.py
 .\.venv\Scripts\python.exe scripts\train_field_extractor.py
 .\.venv\Scripts\python.exe scripts\train_field_span_extractor.py
+.\.venv\Scripts\python.exe scripts\train_transformer_ner.py --epochs 5
 .\.venv\Scripts\python.exe scripts\build_model_manifest.py
 ```
 
+Transformer NER는 `monologg/koelectra-small-v3-discriminator`를 기반으로
+합성 필드 문장 1,008건에서 `B-VALUE`, `I-VALUE`, `O`를 학습합니다.
+현재 합성 holdout macro F1은 `0.9988`이지만 실제 계약서나 OCR 문서에 대한
+일반화 성능을 의미하지 않으므로 익명화 전문가 데이터 평가가 필요합니다.
+
 모델은 로드 전에 `models/model_manifest.json`의 파일명, 크기와 SHA-256을
-검증합니다. 재학습 후 매니페스트를 갱신하지 않거나 파일이 변조되면
-`joblib.load`를 실행하지 않고 규칙 엔진으로 폴백합니다.
+검증합니다. Transformer 디렉터리도 모든 구성 파일을 검증하며, 재학습 후
+매니페스트를 갱신하지 않거나 파일이 변조되면 모델을 로드하지 않고 기존
+BIO 모델 또는 규칙 엔진으로 폴백합니다.
 
 ## 현재 범위
 
@@ -163,6 +188,8 @@ Community Cloud에서는 루트의 `packages.txt`를 통해 설치됩니다.
 ```
 
 형식과 익명화 원칙은 `data/evaluation/README.md`에 기록되어 있습니다.
+평가 JSON에는 전체 문서 유형 정확도와 분류표, 오분류 사례, 전체 및 필드별
+exact-match 비율, 누락·불일치 필드 사례가 포함됩니다.
 모델 버전·학습시각·SHA-256은 `models/model_manifest.json`으로 관리하며,
 GitHub Actions가 구문 검사, 노트북 JSON, 매니페스트와 전체 테스트를 검증합니다.
 

@@ -8,6 +8,7 @@ def test_evaluation_framework_measures_document_and_fields():
     result = evaluate(
         [
             {
+                "id": "housing-1",
                 "document_type": "housing_lease",
                 "text": (
                     "주택 임대차 계약서\n"
@@ -20,7 +21,42 @@ def test_evaluation_framework_measures_document_and_fields():
         ]
     )
     assert result["dataset_size"] == 1
+    assert result["document_type_accuracy"] == 1.0
+    assert result["document_type_errors"] == []
     assert result["field_evaluation"]["exact_match_rate"] == 1.0
+    assert result["field_evaluation"]["by_field"]["deposit"] == {
+        "expected": 1,
+        "predicted": 1,
+        "exact_match": 1,
+        "exact_match_rate": 1.0,
+    }
+    assert result["field_evaluation"]["errors"] == []
+
+
+def test_evaluation_framework_reports_field_errors():
+    result = evaluate(
+        [
+            {
+                "id": "housing-2",
+                "document_type": "housing_lease",
+                "text": "housing lease without a deposit value",
+                "fields": {"deposit": "100000000"},
+            }
+        ]
+    )
+
+    assert result["field_evaluation"]["exact_match_rate"] == 0.0
+    assert result["field_evaluation"]["by_field"]["deposit"]["predicted"] == 0
+    assert result["field_evaluation"]["errors"] == [
+        {
+            "id": "housing-2",
+            "document_type": "housing_lease",
+            "field": "deposit",
+            "expected": "100000000",
+            "predicted": "",
+            "error_type": "missing",
+        }
+    ]
 
 
 def test_anonymization_validator_detects_sensitive_values(tmp_path):
