@@ -8,6 +8,7 @@ import joblib
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MANIFEST_PATH = ROOT / "models" / "model_manifest.json"
+OPTIONAL_MODEL_NAMES = {"transformer_ner"}
 
 
 class ModelIntegrityError(ValueError):
@@ -148,6 +149,7 @@ def model_integrity_status(
     errors = []
     warnings = []
     for entry in manifest.get("models", []):
+        is_optional = entry.get("name") in OPTIONAL_MODEL_NAMES
         is_directory = bool(entry.get("directory"))
         model_path = manifest_path.parent / (
             entry["directory"] if is_directory else entry["file"]
@@ -164,10 +166,17 @@ def model_integrity_status(
                     "name": entry.get("name", model_path.name),
                     "file": model_path.name,
                     "valid": False,
+                    "optional": is_optional,
                     "error": str(error),
                 }
             )
-            errors.append(str(error))
+            if is_optional:
+                warnings.append(
+                    f"선택 모델 {entry.get('name', model_path.name)}을 사용할 수 "
+                    f"없어 fallback 모델을 사용합니다: {error}"
+                )
+            else:
+                errors.append(str(error))
         else:
             extra_files = verified.get("extra_files", [])
             if extra_files:
@@ -180,6 +189,7 @@ def model_integrity_status(
                     "name": verified["name"],
                     "file": verified.get("file", verified.get("directory")),
                     "valid": True,
+                    "optional": is_optional,
                     **(
                         {"sha256": verified["sha256"]}
                         if verified.get("sha256")

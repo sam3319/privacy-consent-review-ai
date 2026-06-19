@@ -80,8 +80,13 @@ st.warning(
     "공식 법령에 연결된 문구 탐지와 추가 검토 신호만 제공합니다."
 )
 if integrity_status["valid"]:
+    required_models = [
+        item
+        for item in integrity_status["models"]
+        if item["valid"] and not item.get("optional")
+    ]
     st.caption(
-        f"모델 무결성 확인: {len(integrity_status['models'])}개 모델 SHA-256 일치"
+        f"필수 모델 무결성 확인: {len(required_models)}개 모델 SHA-256 일치"
     )
     for warning in integrity_status.get("warnings", []):
         st.caption(f"모델 참고: {warning}")

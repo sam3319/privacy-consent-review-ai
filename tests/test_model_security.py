@@ -132,3 +132,38 @@ def test_unregistered_extra_directory_file_is_reported_but_not_rejected(tmp_path
     assert status["errors"] == []
     assert status["warnings"]
     assert status["models"][0]["extra_files"] == [extra_path.name]
+
+
+def test_missing_optional_transformer_directory_uses_warning_not_global_failure(
+    tmp_path,
+):
+    manifest_path = tmp_path / "model_manifest.json"
+    manifest_path.write_text(
+        json.dumps(
+            {
+                "schema_version": "1.0",
+                "models": [
+                    {
+                        "name": "transformer_ner",
+                        "directory": "transformer_ner",
+                        "files": [
+                            {
+                                "path": "config.json",
+                                "size_bytes": 2,
+                                "sha256": "unused",
+                            }
+                        ],
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    status = model_integrity_status(manifest_path)
+
+    assert status["valid"]
+    assert status["errors"] == []
+    assert status["warnings"]
+    assert status["models"][0]["optional"]
+    assert not status["models"][0]["valid"]
