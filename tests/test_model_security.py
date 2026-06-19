@@ -90,3 +90,45 @@ def test_tampered_model_directory_is_rejected(tmp_path):
 
     with pytest.raises(ModelIntegrityError):
         verify_model_directory(model_path, manifest_path)
+
+
+def test_unregistered_extra_directory_file_is_reported_but_not_rejected(tmp_path):
+    model_path = tmp_path / "transformer_ner"
+    model_path.mkdir()
+    config_path = model_path / "config.json"
+    config_path.write_text("{}", encoding="utf-8")
+    extra_path = model_path / "README.md"
+    extra_path.write_text("local note", encoding="utf-8")
+    manifest_path = tmp_path / "model_manifest.json"
+    manifest_path.write_text(
+        json.dumps(
+            {
+                "schema_version": "1.0",
+                "models": [
+                    {
+                        "name": "transformer_ner",
+                        "directory": model_path.name,
+                        "files": [
+                            {
+                                "path": config_path.name,
+                                "size_bytes": config_path.stat().st_size,
+                                "sha256": hashlib.sha256(
+                                    config_path.read_bytes()
+                                ).hexdigest(),
+                            }
+                        ],
+                    }
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    entry = verify_model_directory(model_path, manifest_path)
+    status = model_integrity_status(manifest_path)
+
+    assert entry["extra_files"] == [extra_path.name]
+    assert status["valid"]
+    assert status["errors"] == []
+    assert status["warnings"]
+    assert status["models"][0]["extra_files"] == [extra_path.name]

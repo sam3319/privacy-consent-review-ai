@@ -113,12 +113,13 @@ def verify_model_directory(
         for path in model_path.rglob("*")
         if path.is_file()
     }
-    if set(expected_files) != set(actual_files):
+    missing_files = sorted(set(expected_files) - set(actual_files))
+    if missing_files:
         raise ModelIntegrityError(
-            f"모델 디렉터리 파일 목록이 다릅니다: {model_path.name}"
+            f"모델 디렉터리 필수 파일이 없습니다: {', '.join(missing_files)}"
         )
-    for relative_path, path in actual_files.items():
-        expected = expected_files[relative_path]
+    for relative_path, expected in expected_files.items():
+        path = actual_files[relative_path]
         if path.stat().st_size != expected.get("size_bytes"):
             raise ModelIntegrityError(
                 f"모델 파일 크기가 다릅니다: {relative_path}"
@@ -128,7 +129,8 @@ def verify_model_directory(
             raise ModelIntegrityError(
                 f"모델 SHA-256이 다릅니다: {relative_path}"
             )
-    return entry
+    extra_files = sorted(set(actual_files) - set(expected_files))
+    return {**entry, "extra_files": extra_files}
 
 
 def model_integrity_status(
@@ -139,10 +141,12 @@ def model_integrity_status(
             "valid": False,
             "models": [],
             "errors": ["모델 매니페스트가 없습니다."],
+            "warnings": [],
         }
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     statuses = []
     errors = []
+    warnings = []
     for entry in manifest.get("models", []):
         is_directory = bool(entry.get("directory"))
         model_path = manifest_path.parent / (
@@ -165,6 +169,12 @@ def model_integrity_status(
             )
             errors.append(str(error))
         else:
+            extra_files = verified.get("extra_files", [])
+            if extra_files:
+                warnings.append(
+                    f"{model_path.name} 디렉터리에 매니페스트 미등록 파일 "
+                    f"{len(extra_files)}개가 있습니다."
+                )
             statuses.append(
                 {
                     "name": verified["name"],
@@ -175,10 +185,12 @@ def model_integrity_status(
                         if verified.get("sha256")
                         else {"file_count": len(verified.get("files", []))}
                     ),
+                    **({"extra_files": extra_files} if extra_files else {}),
                 }
             )
     return {
         "valid": bool(statuses) and not errors,
         "models": statuses,
         "errors": errors,
+        "warnings": warnings,
     }

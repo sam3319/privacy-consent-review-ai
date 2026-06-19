@@ -83,6 +83,8 @@ if integrity_status["valid"]:
     st.caption(
         f"모델 무결성 확인: {len(integrity_status['models'])}개 모델 SHA-256 일치"
     )
+    for warning in integrity_status.get("warnings", []):
+        st.caption(f"모델 참고: {warning}")
 else:
     st.error(
         "모델 무결성 검증에 실패했습니다. 해당 ML 기능은 규칙 엔진으로 "
