@@ -44,8 +44,8 @@
       "files": [
         {
           "path": "config.json",
-          "sha256": "4dfff5fd9c402c6b1682c7ef3818c397bc54d4cb875d91ba9a45f93317c92297",
-          "size_bytes": 923
+          "sha256": "b272a176aa1c93f4d26450ac852a76c97a308ca5a5a2746b8340f3d8732f7444",
+          "size_bytes": 884
         },
         {
           "path": "model.safetensors",
@@ -54,8 +54,8 @@
         },
         {
           "path": "special_tokens_map.json",
-          "sha256": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
-          "size_bytes": 132
+          "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+          "size_bytes": 125
         },
         {
           "path": "tokenizer.json",
@@ -64,8 +64,8 @@
         },
         {
           "path": "tokenizer_config.json",
-          "sha256": "bf65cec9f778d67388090a0b07fc1a055111f1ee93aedd1d29fd38d4854508ec",
-          "size_bytes": 1326
+          "sha256": "06f6141cd1231cd88beafbcdc7860f442b2ea8115279682f29f21bf9fb20b275",
+          "size_bytes": 1268
         },
         {
           "path": "vocab.txt",
@@ -73,7 +73,7 @@
           "size_bytes": 263327
         }
       ],
-      "size_bytes": 57332244,
+      "size_bytes": 57332140,
       "trained_at_utc": "2026-06-12T05:49:08+00:00",
       "dataset_size": 1008,
       "model_type": "Transformer token classification BIO NER",

@@ -1,0 +1,3 @@
+models/transformer_ner/*.json text eol=lf
+models/transformer_ner/vocab.txt text eol=lf
+models/transformer_ner/*.safetensors binary
